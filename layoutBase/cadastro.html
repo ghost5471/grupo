@@ -4,23 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style_cad.css">
+    <link rel="stylesheet" href="style.css">
     <title>Cadastro</title>
 </head>
-<body>
-    <div class="main">
-        <div class="container-cad">
+<div class="main">
+    <div class="conteiner">
+        <div class="title">
+            <h1> Cadastro</h1>
+        </div>
+        <div class="form">
+            <form action="#">
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="name">Nome Completo</label>
+                        <input id="name" type="text" name="name" placeholder="Digite seu nome completo" required>
+                    </div>
 
-            <form action="" class="form">
-                <div class="title"><h1>Cadastro</h1></div>
-                <div class="form-group"><input type="email" name="email" id="email" placeholder="E-mail"></div>
-                <div class="form-group"><input type="password" name="password" id="password" placeholder="Senha"></div>
-                <div class="form-group"><input type="password" name="password" id="password" placeholder="Confirmar senha"></div>
-                <div class="form-group"><button type="submit">Cadastrar</button></div>
-                
-                
-            </form>
+                    <div class="input-box">
+                        <label for="datanascimento">Data de Nascimento</label>
+                        <input id="datanascimento" type="date" name="datanascimento" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="gender">Genero</label>
+                        <select id="gender" name="gender" >
+                            <option value="male">Masculino</option>
+                            <option value="female">Feminino</option>
+                            <option value="other">Outro</option>
+                            <option value="none">Prefiro não responder</option>
+                        </select>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="namemother">Nome da Mãe</label>
+                        <input id="namemother" type="text" name="namemother" placeholder="Digite o nome da mãe" required>
+                    </div>
+                    
+                    <div class="input-box">
+                        <label for="cpf">CPF</label>
+                        <input id="cpf" type="tel" name="cpf" placeholder="Digite seu CPF" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
+                    </div>
+                    
+                    <div class="input-box">
+                        <label for="celular">Telefone Celular</label>
+                        <input id="celular" type="tel" name="celular" placeholder="(+55) xx-xxxxxxxx" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="Telefone">Telefone Fixo</label>
+                        <input id="Telefone" type="tel" name="Telefone" placeholder="(+55) xx-xxxxxxxx" required>
+                    </div>
+                    
+                    <div class="input-box">
+                        <label for="endereco">Endereço</label>
+                        <input id="endereco" type="text" name="endereco" placeholder="Digite seu endereço" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="username">Username</label>
+                        <input id="username" type="text" name="username" placeholder="Digite seu username" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="password">Senha</label>
+                        <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="passwordconfirm">Confirmar Senha</label>
+                        <input id="passwordconfirm" type="password" name="passwordconfirm" placeholder="Confirme sua senha" required>
+                    </div>
+
+                </div>
+                <div class="button-group">
+                    <div class="input-button">
+                        <button type="submit"><a href="#">Enviar</a></button>
+                    </div>
+
+                    <div class="input-button">
+                        <button type="reset">Limpar</button>
+                    </div>
+                </div>
+            </form>            
         </div>
     </div>
+</div>
     
 </body>
 </html>

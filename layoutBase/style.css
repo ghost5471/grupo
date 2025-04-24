@@ -3,7 +3,9 @@
 }
 
 body{
-    background-color: #802e2e;
+    background-image: url(./img/controllerWallpaper.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     animation: fade-in 1s ease-in-out;
 }
 
