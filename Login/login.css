@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    animation: fadeIn 1s ease-in-out;
   }
   
   /* Estilizando o corpo da página */
@@ -70,6 +71,21 @@
     width: 100%;
     background-color: #333;
     border: none;
+  }
+
+  /*estilizando a ancora*/
+  a {
+    position: relative;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #fff9f9;
+    left: 25%;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+
+  a:hover {
+    color: #043a63;
   }
 
   /* Estilizando o botão de envio */
@@ -150,4 +166,16 @@
   .toggle-password:hover {
     opacity: 0.7;
     background: none;
+  }
+
+
+  /*animação de fade no site*/
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }

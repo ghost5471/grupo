@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    animation: fadeIn 1s ease-in-out;  
   }
   
   /* Estilizando o corpo da página */
@@ -136,4 +137,14 @@
   .toggle-password:hover {
     opacity: 0.7;
     background: none;
+  }
+
+  /*Animação de fade no site*/
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
