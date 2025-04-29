@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="website icon" type="png" href="/img/error.png">
+    <title>Error</title>
+
+    <style>
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fdd;
+            color: #900;
+            padding: 20px;
+        }
+
+        .box {
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #900;
+            border-radius: 5px;
+            max-width: 500px;
+            margin: auto;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="box">
+        <h1>Error</h1>
+        <p id="msgError">Carregando mensagem...</p>
+        <a href="javascript:history.back()">⬅ Voltar</a>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const msg = decodeURIComponent(params.get('mensagem')) || 'Erro desconhecido.';
+        document.getElementById('msgError').textContent = msg;
+    </script>
+
+</body>
+</html>

@@ -2,53 +2,50 @@ document.getElementById('formCad').addEventListener('submit', function(event)
 {
     event.preventDefault(); // Impede o comportamento padrão do formulário (envio)
 
-    // Validação de senha e confirmação
+    const user = document.getElementById('usuario').value.trim();
+    const email = document.getElementById('email').value.trim();
     const senha = document.getElementById('senha').value;
     const confirmarSenha = document.getElementById('confirmarSenha').value;
-
+    
+    // Validação de senha e confirmação
     if (senha !== confirmarSenha)
     {
-        alert('As senhas não coincidem. Por favor, verifique e tente novamente.');
+        window.location.href = `erro.html?mensagem=${
+        encodeURIComponent('Erro: As senhas não coincidem. Por favor, verifique e tente novamente.')
+        }`;
         confirmarSenha.reset(); // Limpa o campo de confirmação
         confirmarSenha.focus(); // Foca no campo de confirmação
         return; // Impede o envio do formulário se as senhas não conferirem
     }
 
-    // criando um objeto com os dados do cadastro
-    const cadastro =
-    {
-        email: document.getElementById('email').value,
-        senha: senha
-    };
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+
+    const alreadyExists = users.some(u => u.email === email);
+
+    if (alreadyExists) {
+        window.location.href = `erro.html?mensagem=${encodeURIComponent('Erro: Este e-mail já está cadastrado!')}`;
+        return;
+    }
+
+    const newUsers = { user, email, senha };
+    user.push(newUsers);
+    localStorage.setItem('users', JSON.stringify(users));
+
+    alert("Cadastro realizado com sucesso!");
+    window.location.href = '/grupo/Login/login.html';
+
 
     /*
     O localStorage é uma tecnologia que permite armazenar
     dados no navegador de forma persistente, ou seja, mesmo
-    depois de o usuário fechar o navegador, os dados permanecem
-    disponíveis. Neste exemplo, estamos utilizando a função localStorage.
+    depois do usuário fechar o navegador, os dados permanecem
+    disponíveis. Neste caso, estamos utilizando a função localStorage:
     setItem('cadastro', JSON.stringify(cadastro)) para salvar os dados 
     inseridos pelo usuário. Quando o formulário é enviado, os dados
     de nome, e-mail e senha são armazenados no localStorage como uma
     string JSON.
     */
 
-    try{
-    // convertendo o objeto em JSON e salva na localStorage
-    localStorage.setItem('cadastro', JSON.stringify(cadastro));
-
-    // mostrando mensagem de sucesso
-    alert('Cadastro realizado com sucesso!');
-
-    // Redirecionando para a página de login
-    window.location.href = '../Login/login.html';
-    } catch(error) {
-
-        alert('Erro ao realizar o cadastro: ' + error.message);
-        console.error('Erro: ' + error);
-
-        // limpando os campos do formulário
-        document.getElementById('formCad').reset();
-    }
 });
 
 // Função para alternar a visibilidade da senha
