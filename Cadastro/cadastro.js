@@ -65,44 +65,73 @@ function togglePassword(inputId) {
     }
 }
 
-// Formatação d email em tempo real
-let email = document.getElementById('email').value;
-
-email.addEventListener("keydown", Validate);
-
-function Validate()
+// Formatação de email
+document.getElementById('email').addEventListener('input', function()
 {
-    let form = document.getElementById("formCad");
-    let pattern = /^[^]+@[^]+\.[a-z]{2,3}$/; // regex para validar o email
-    
-    if (email.value.match(pattern))
-    {
-        form.classList.add("valid");
-        form.classList.remove("invalid");
+    let email = this.value;
+    let pattern = /^[^]+@[^]+\.[a-z]{2,3}$/; // Regex para validar o email
+
+    if (email.match(pattern)) {
+        this.setCustomValidity(''); // remove a mensagem de erro
     } else {
-        form.classList.add("invalid");
-        form.classList.remove("valid");
+        this.setCustomValidity('Erro: Por favor, insira um email válido.'); // mensagem de erro
     }
-}
+
+});
 
 // Formatação do CPF em tempo real
 document.getElementById('cpf').addEventListener('input', function(e)
 {
     let value = e.target.value.replace(/\D/g, ''); // Remove tudo o que não é dígito
 
-    if (value.lenght > 11) value = value.slice(0, 11);
-
-    value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4'); // Formata o CPF
+    if (value.length > 11) value = value.slice(0, 11); // Limita o CPF a 11 dígitos
+    if (value.length <= 11) {
+        value = value.replace(/(\d{3})(\d)/, '$1.$2'); // adiciona o primeiro ponto
+        value = value.replace(/(\d{3})(\d)/, '$1.$2'); // adiciona o segundo ponto
+        value = value.replace(/(\d{3})(\d{2})$/, '$1-$2'); // adiciona o traço
+    }
     e.target.value = value;
 });
 
-// Formatação telefone em tempo real
+// Formatação de telefone fixo
+document.getElementById('telefoneFixo').addEventListener('input', function(e)
+{
+    let value = e.target.value.replace(/\D/g, ''); // remove tudo que não é dígito
+
+    if (value.length > 10) value = value.slice(0, 10); // Limita o telefone a 10 dígitos
+    if (value.length <= 10) {
+        value = value.replace(/(\d{2})(\d)/, '($1) $2'); // adiciona o DDD
+        value = value.replace(/(\d{4})(\d)/, '$1-$2'); // adiciona o segundo dígito do CEP
+        value = value.replace(/(\d{4})(\d)/, '$1'); // adiciona o terceiro dígito do CEP
+    }
+    e.target.value = value;
+});
+
+// Formatação telefone celular
 document.getElementById('telefone').addEventListener('input', function(e)
 {
     let value = e.target.value.replace(/\D/g, ''); // Remove tudo o que não é dígito
 
-    if (value.lenght > 11) value = value.slice(0, 11);
+    if (value.length > 11) value = value.slice(0, 11);
 
-    value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3'); // Formata o telefone
+    if(value.length <= 11) {
+        value = value.replace(/(\d{2})(\d)/, '($1) $2'); // adiciona o DDD
+        if(value.length > 6) {
+            value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3'); // Formata o telefone celular
+        }
+    }
+    e.target.value = value;
+});
+
+// Formatação do CEP
+document.getElementById('cep').addEventListener('input', function(e)
+{
+    let value = e.target.value.replace(/\D/g, ''); // Remove tudo o que não é dígito
+
+    if (value.length > 8) value = value.slice(0, 8); // Limita o CEP a 9 dígitos
+    
+    if (value.length <= 8) {
+        value = value.replace(/(\d{5})(\d)/, '$1-$2'); // adiciona o traço
+    }
     e.target.value = value;
 });
