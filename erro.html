@@ -37,11 +37,13 @@
 
     <script>
 
-        const msg = sessionStorage.getItem('Erro');
-        
-        document.getElementById('msgErro').textContent = msg || 'Erro desconhecido';
+        const box = document.createElement('div');
+        box.classList.add('box');
 
+        const msg = sessionStorage.getItem('Erro');
+        document.getElementById('msgErro').textContent = msg || 'Erro desconhecido';
         sessionStorage.removeItem('Erro'); // Limpa para não repetir a mensagem
+        document.body.appendChild(box);
     </script>
 
 </body>

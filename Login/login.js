@@ -8,7 +8,7 @@ document.getElementById('formLog').addEventListener('submit', function(event)
 
     const users = JSON.parse(localStorage.getItem('users')) || [];
 
-    const validUser = users.find(user.email === email && user.senha === senha);
+    const validUser = users.find(user => user.email === email && user.senha === senha);
 
     if(!validUser) {
         redirecionarComErro("Erro: E-mail ou senha inválidos.");

@@ -2,7 +2,13 @@ document.getElementById('formRecuperar').addEventListener('submit', function(eve
     event.preventDefault();
 
     const email = document.getElementById('email').value;
-    const novaSenha = document.getElementById('senha').value;
+    const novaSenha = document.getElementById('nova-senha').value;
+    const confirmarSenha = document.getElementById('confirmarSenha').value;
+
+    if (novaSenha !== confirmarSenha) {
+        redirecionarComErro("Erro: As senhas não coicidem.");
+        return;
+    }
 
     let users = JSON.parse(localStorage.getItem('users')) || [];
 

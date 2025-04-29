@@ -2,7 +2,7 @@ document.getElementById('formCad').addEventListener('submit', function(event)
 {
     event.preventDefault(); // Impede o comportamento padrão do formulário (envio)
 
-    const user = document.getElementById('usuario').value.trim();
+    const usuario = document.getElementById('usuario').value.trim();
     const email = document.getElementById('email').value.trim();
     const senha = document.getElementById('senha').value;
     const confirmarSenha = document.getElementById('confirmarSenha').value;
@@ -11,8 +11,8 @@ document.getElementById('formCad').addEventListener('submit', function(event)
     if (senha !== confirmarSenha)
     {
         redirecionarComErro("Erro: As senhas não coicidem.");
-        confirmarSenha.reset(); // Limpa o campo de confirmação
-        confirmarSenha.focus(); // Foca no campo de confirmação
+        confirmarSenha.value = ''; // limpa o campo
+        confirmarSenha.focus(); // foca no campo
         return; // Impede o envio do formulário se as senhas não conferirem
     }
 
@@ -25,7 +25,7 @@ document.getElementById('formCad').addEventListener('submit', function(event)
         return;
     }
 
-    users.push({ nome, email, senha });
+    users.push({ usuario, email, senha });
     localStorage.setItem('users', JSON.stringify(users));
 
     alert("Cadastro realizado com sucesso!");
