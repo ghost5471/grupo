@@ -106,6 +106,10 @@
     background-color: #60056a;
   }
 
+  #reset:active, #submit:active {
+    transform: scale(1.05);
+  }
+
   .butao{
     display: flex;
     align-items: center;

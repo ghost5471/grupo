@@ -82,7 +82,12 @@
   button:hover {
     background-color: #60056a;
   }
-  
+
+  #reset:active, #submit:active {
+    transform: scale(1.05);
+  }
+
+
   /* Estilizando o contêiner do formulário */
   .form-container {
     width: 100%;

@@ -1,45 +1,25 @@
-function ValidarLogin() {
-
-    try {
+document.getElementById('formRecuperar').addEventListener('submit', function(event){
+    event.preventDefault();
 
     const email = document.getElementById('email').value;
-    const senha = document.getElementById('senha').value;
+    const novaSenha = document.getElementById('senha').value;
 
-    // recupera os dados da localstorage
-    const usuario = JSON.parse(localStorage.getItem(usuario));
+    let users = JSON.parse(localStorage.getItem('users')) || [];
 
-    // verificando as credenciais
-    if (usuario && usuario.email === email && usuario.senha === senha)
-    {
-        alert('Login realizasdo com sucesso!')
-        // local para redirecionar para a pagina principal ou dashboard
-    }
-    else
-    {
-        ExibirErroPopUp();
+    const index = users.findIndex(u => u.email === email);
+
+    if (index === -1) {
+        redirecionarComErro("Erro: E-mail não encontrado.");
+        return;
     }
 
-    }
-    catch(error)
-    {
-        console.error("Erro ao processar o login: ", error);
-        ExibirErroPopUp();
-    }
-}
+    users[index].senha = novaSenha;
+    localStorage.setItem('users', JSON.stringify(users));
 
-// função para exibir o pop-up de erro
-function ExibirErroPopUp()
-{
-    const popup = document.getElementById('errorPopup');
-    popup.style.display = 'block';
-}
+    alert("Senha redefinida com sucesso.");
+    window.location.href = '../login.html';
 
-// Função para fechar o pop-up de erro
-function FecharPopupErro()
-{
-    const popup = document.getElementById('errorPopup');
-    popup.style.display = 'none';
-}
+});
 
 // Função para alternar a visibilidade da senha
 function togglePassword(inputId) {

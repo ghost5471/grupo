@@ -31,14 +31,17 @@
     
     <div class="box">
         <h1>Error</h1>
-        <p id="msgError">Carregando mensagem...</p>
+        <p id="msgErro">Carregando mensagem...</p>
         <a href="javascript:history.back()">⬅ Voltar</a>
     </div>
 
     <script>
-        const params = new URLSearchParams(window.location.search);
-        const msg = decodeURIComponent(params.get('mensagem')) || 'Erro desconhecido.';
-        document.getElementById('msgError').textContent = msg;
+
+        const msg = sessionStorage.getItem('Erro');
+        
+        document.getElementById('msgErro').textContent = msg || 'Erro desconhecido';
+
+        sessionStorage.removeItem('Erro'); // Limpa para não repetir a mensagem
     </script>
 
 </body>

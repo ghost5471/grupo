@@ -11,13 +11,13 @@ document.getElementById('formLog').addEventListener('submit', function(event)
     const validUser = users.find(user.email === email && user.senha === senha);
 
     if(!validUser) {
-        window.location.href = `erro.html?mensagem=${encodeURIComponent("Erro: E-mail ou senha inválidos.")}`;
+        redirecionarComErro("Erro: E-mail ou senha inválidos.");
         return;
     }
 
     alert('Login bem-sucedido!');
 
-    window.location.href = '/grupo/HomePage/homePage.html';
+    window.location.href = '../HomePage/homePage.html';
 
 });
 

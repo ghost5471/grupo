@@ -10,9 +10,7 @@ document.getElementById('formCad').addEventListener('submit', function(event)
     // Validação de senha e confirmação
     if (senha !== confirmarSenha)
     {
-        window.location.href = `erro.html?mensagem=${
-        encodeURIComponent('Erro: As senhas não coincidem. Por favor, verifique e tente novamente.')
-        }`;
+       redirecionarComErro("Erro: As senhas não coicidem.");
         confirmarSenha.reset(); // Limpa o campo de confirmação
         confirmarSenha.focus(); // Foca no campo de confirmação
         return; // Impede o envio do formulário se as senhas não conferirem
@@ -20,19 +18,18 @@ document.getElementById('formCad').addEventListener('submit', function(event)
 
     let users = JSON.parse(localStorage.getItem('users')) || [];
 
-    const alreadyExists = users.some(u => u.email === email);
+    const exists = users.some(u => u.email === email);
 
-    if (alreadyExists) {
-        window.location.href = `erro.html?mensagem=${encodeURIComponent('Erro: Este e-mail já está cadastrado!')}`;
+    if (exists) {
+        redirecionarComErro("Erro: E-mail já cadastro.");
         return;
     }
 
-    const newUsers = { user, email, senha };
-    user.push(newUsers);
+    users.push({ nome, email, senha });
     localStorage.setItem('users', JSON.stringify(users));
 
     alert("Cadastro realizado com sucesso!");
-    window.location.href = '/grupo/Login/login.html';
+    window.location.href = '../Login/login.html';
 
 
     /*
