@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="erro.css">
+</head>
+<body>
+    <h2>erro</h2>
+    <div class="botao_js">
+        <div class="bola"></div>
+</body>
+<script>
+     document.querySelector('.bola').addEventListener('click', (e)=>{
+            e.target.classList.toggle('bola_move');
+            document.body.classList.toggle('dark');
+
+            const body = document.body;
+    const bg = body.style.backgroundImage;
+
+    if ( bg !== 'none') {
+        // Se tiver imagem, troca por uma cor
+        body.style.backgroundImage = 'none';
+        body.style.backgroundColor = '#39a2db'; // ou qualquer cor que quiser
+       
+    }
+     
+    else {
+          // Se tiver cor, volta para a imagem
+          body.style.backgroundImage = "url(./img/controllerWallpaper.jpg)";
+        body.style.backgroundColor = 'transparent'; // ou remova a cor se quiser
+              
+    }
+    
+        });
+      
+     
+//// alterar valor dos butoes (possamos talves usar em imagen=m ou outras tags)
+//////     const toggleButton = document.getElementById('theme-toggle');
+///const body = document.body;
+//const icon = document.getElementById('icon');
+///
+///toggleButton.addEventListener('click', () => {
+///  if (body.classList.contains('claro')) {
+///    body.classList.remove('claro');
+///    body.classList.add('escuro');
+///    icon.src = 'lua.png'; // imagem do lua para modo escuro
+///    icon.alt = 'Modo Escuro';
+///  } else {
+///    body.classList.remove('escuro');
+///    body.classList.add('claro');
+///    icon.src = 'sol.png'; // imagem do sol para modo claro
+///    icon.alt = 'Modo Claro';
+///  }});
+//--------------------------------------------------------------------
+    //// para mudar plano de fundo da pagina(cor)
+    ///document.querySelector('.bola').addEventListener('click', (e)=>{
+       ///     e.target.classList.toggle('bola_move');
+          ///  document.body.classList.toggle('dark');
+   // });
+</script>
+</html>
