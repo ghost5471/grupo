@@ -10,7 +10,7 @@ document.getElementById('formCad').addEventListener('submit', function(event)
     // Validação de senha e confirmação
     if (senha !== confirmarSenha)
     {
-       redirecionarComErro("Erro: As senhas não coicidem.");
+        redirecionarComErro("Erro: As senhas não coicidem.");
         confirmarSenha.reset(); // Limpa o campo de confirmação
         confirmarSenha.focus(); // Foca no campo de confirmação
         return; // Impede o envio do formulário se as senhas não conferirem
@@ -21,7 +21,7 @@ document.getElementById('formCad').addEventListener('submit', function(event)
     const exists = users.some(u => u.email === email);
 
     if (exists) {
-        redirecionarComErro("Erro: E-mail já cadastro.");
+        redirecionarComErro("Erro: E-mail já cadastrado.");
         return;
     }
 
