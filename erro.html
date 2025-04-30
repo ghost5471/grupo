@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="website icon" type="png" href="/img/error.png">
+    <title>Error</title>
+
+    <style>
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fdd;
+            color: #900;
+            padding: 20px;
+        }
+
+        .box {
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #900;
+            border-radius: 5px;
+            max-width: 500px;
+            margin: auto;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="box">
+        <h1>Error</h1>
+        <p id="msgErro">Carregando mensagem...</p>
+        <a href="javascript:history.back()">⬅ Voltar</a>
+    </div>
+
+    <script>
+
+        const box = document.createElement('div');
+        box.classList.add('box');
+
+        const msg = sessionStorage.getItem('Erro');
+        document.getElementById('msgErro').textContent = msg || 'Erro desconhecido';
+        sessionStorage.removeItem('Erro'); // Limpa para não repetir a mensagem
+        document.body.appendChild(box);
+    </script>
+
+</body>
+</html>

@@ -1,47 +1,25 @@
 // função para validação de login 
-
-function ValidarLogin() {
-
-    try {
+document.getElementById('formLog').addEventListener('submit', function(event)
+{
+    event.preventDefault(); // impede o envio do formulário
 
     const email = document.getElementById('email').value;
     const senha = document.getElementById('senha').value;
 
-    // recupera os dados da localstorage
-    const usuario = JSON.parse(localStorage.getItem(usuario));
+    const users = JSON.parse(localStorage.getItem('users')) || [];
 
-    // verificando as credenciais
-    if (usuario && usuario.email === email && usuario.senha === senha)
-    {
-        alert('Login realizasdo com sucesso!')
-        // local para redirecionar para a pagina principal ou dashboard
-    }
-    else
-    {
-        ExibirErroPopUp();
+    const validUser = users.find(user => user.email === email && user.senha === senha);
+
+    if(!validUser) {
+        redirecionarComErro("Erro: E-mail ou senha inválidos.");
+        return;
     }
 
-    }
-    catch(error)
-    {
-        console.error("Erro ao processar o login: ", error);
-        ExibirErroPopUp();
-    }
-}
+    alert('Login bem-sucedido!');
 
-// função para exibir o pop-up de erro
-function ExibirErroPopUp()
-{
-    const popup = document.getElementById('errorPopup');
-    popup.style.display = 'block';
-}
+    window.location.href = '../HomePage/homePage.html';
 
-// Função para fechar o pop-up de erro
-function FecharPopupErro()
-{
-    const popup = document.getElementById('errorPopup');
-    popup.style.display = 'none';
-}
+});
 
 // Função para alternar a visibilidade da senha
 function togglePassword(inputId) {
