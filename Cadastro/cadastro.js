@@ -29,7 +29,7 @@ document.getElementById('formCad').addEventListener('submit', function(event)
     localStorage.setItem('users', JSON.stringify(users));
 
     alert("Cadastro realizado com sucesso!");
-    window.location.href = '../Login/login.html';
+    window.location.href = './login.html';
 
 
     /*
