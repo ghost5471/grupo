@@ -37,8 +37,8 @@ function draw() {
 
 draw();
 
-// Recalcula tamanho da tela
+/* Recalcula tamanho da tela
 window.addEventListener("resize", () => {
   width = canvas.width = window.innerWidth;
   height = canvas.height = window.innerHeight;
-});
+});*/
