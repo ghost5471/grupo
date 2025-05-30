@@ -88,21 +88,20 @@
     }
 
     & .links {
-      position: relative;
-      width: 120%;
-      height: auto;
-      max-width: 16.25rem;
-      margin: 2vh auto 0;
-      display: flex;
-      justify-content: space-between;
-      padding: 1vh;
-      font-size: 0.7rem;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       gap: 0.5vh;
+       width: 100%;
+       text-align: center;
+       margin-top: 1vh;
 
-      p {
+     & p {
         font-size: .625rem;
         margin-top: 3vh;
 
-        a {
+       & a {
           text-decoration: none;
           font-size: .625rem;
           margin-top: 3vh;
@@ -110,7 +109,7 @@
         }
       }
 
-      a {
+     & a {
         margin-top: 3vh;
         text-decoration: none;
         font-size: .625rem;
@@ -120,7 +119,11 @@
 
     & .buttons {
       display: flex;
-      justify-content: space-between;
+      flex-direction: row;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1vh;
+
       & #reset {
         width: 40%;
         padding: 1.5vh 0;
@@ -146,25 +149,24 @@
         font-weight: bold;
         cursor: pointer;
       }
-
-    }
-    & .darkTheme {
-     position: fixed;
-     top: 20px;
-     right: 20px;
-     padding: 10px 15px;
-     font-size: 1rem;
-     border: none;
-     border-radius: 5px;
-     cursor: pointer;
-     z-index: 10;
-     background: #ffffffaa;
-     color: #000;
-     transition: all 0.3s ease-in-out;
     }
   }
 
-
+  .darkTheme {
+     position: fixed;
+     top: 1rem;
+     right: 1rem;
+     padding: 4px 8px;
+     font-size: 0.75rem;
+     z-index: 1000;
+     border-radius: 6px;
+     cursor: pointer;
+     background: #ffffffaa;
+     color: #000;
+     transition: all 0.3s ease-in-out;
+     border: none;
+    }
+    
   /*estilizando a ancora*/
   a:hover {
     color: #043a63;
@@ -255,17 +257,46 @@
 
   @media (max-width: 480px) {
     .links {
+      display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-top: 1vh;
+      gap: 0.5vh;
+      text-align: center;
     }
 
-    #formLog {
-      gap: 1vh;
-    }
-
-    .buttons {
-      flex-direction: row;
-      gap: 1vh;
-    }
-
+  .links p,
+  .links a {
+    font-size: 0.5rem;
+    line-height: 1;
   }
+
+  #formLog {
+    gap: 1vh;
+    justify-content: center;
+    align-items: center;
+    font-size: 4px;
+  }
+
+  .buttons {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+   .buttons button {
+    font-size: 0.6rem;
+    padding: 0.4rem 0.8rem;
+    flex: 1 1 40%; /* deixa eles ocuparem espaço proporcional */
+    max-width: 100px;
+  }
+
+  .darkTheme {
+    font-size: 0.5rem;
+    padding: 5px 10px;
+    top: 10px;
+    right: 10px;
+    border: none;
+  }
+}
