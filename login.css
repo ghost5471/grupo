@@ -46,8 +46,8 @@
     position: absolute;
     margin: -75px auto 20px;
     bottom: 65%;
-    left: auto;
-    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
     display: block;
     border-radius: 100px;
     width: 130px;
