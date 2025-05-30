@@ -46,7 +46,8 @@
     position: absolute;
     margin: -75px auto 20px;
     bottom: 65%;
-    left: 44.5%;
+    left: auto;
+    right: auto;
     display: block;
     border-radius: 100px;
     width: 130px;

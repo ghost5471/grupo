@@ -37,6 +37,6 @@ function togglePassword(inputId) {
         button.textContent = '🔒';
     } else {
         input.type = 'password';
-        button.textContent = '👁️';
+        button.textContent = '🔓';
     }
 }

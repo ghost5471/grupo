@@ -1,0 +1,25 @@
+/* Define estilos para o canvas de fundo animado */
+canvas#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+  }
+  
+  /* Tema claro (inicia como padrão) */
+  body {
+    --bg-color: #ffffff;
+    --particle-color: rgba(0, 0, 0, 0.3);
+    background-color: var(--bg-color);
+  }
+  
+  /* Tema escuro (ativável por classe) */
+  body.dark {
+    --bg-color: #0d1b2a;
+    --particle-color: rgba(255, 255, 255, 0.3);
+    background-color: var(--bg-color);
+  }
+  
