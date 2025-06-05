@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4Players</title>
+    <link rel="stylesheet" href="gamepagestyle.css">
+    
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">4Players</div>
+  <div class="search-bar">
+    <input type="text" id="search-input" placeholder="Search products...">
+  </div>
+  <div class="cart-icon" id="cart-icon">
+    🛒 <span class="cart-count" id="cart-count">0</span>
+  </div>
+</header>
+
+<main class="main-content container">
+  <div class="product-grid" id="product-grid">
+    <!-- Produtos carregados -->
+    <div class="product">
+      <img src="games_nintendo/bomberman-generation-17334.jpg" alt="Bomberman">
+      <h3 class="name">Bomberman</h3>
+      <div class="price">R$ 420.00</div>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="games_nintendo/Earthworm_Jim_Super.jpg" alt="Earthworm">
+      <h3 class="name">Earthworm</h3>
+      <div class="price">R$ 449.99</div>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="games_nintendo/Final_Fight.jpg" alt="Final Fight">
+      <h3 class="name">Final Fight</h3>
+      <div class="price">R$ 139.99</div>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="games_nintendo/Legend_of_Zelda_Breath_of_the_Wild_capa.png" alt="Legend of Zelda">
+      <h3 class="name">Legend of Zelda</h3>
+      <div class="price">R$ 299.99</div>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="games_nintendo/Super_Mario_64.jpg" alt="Super Mario 64">
+      <h3 class="name">Super Mario 64</h3>
+      <div class="price">R$ 150.99</div>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="games_nintendo/Super_Mario_Allstar.jpg" alt="Super Mario allstar">
+      <h3 class="name">Super Mario Allstar</h3>
+      <div class="price">R$ 349.99</div>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="games_nintendo/Super_Mario_Party.png" alt="Mario Party">
+      <h3 class="name">Mario Party</h3>
+      <div class="price">R$ 340.00</div>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+    
+    <!-- 
+    Base dos produtos
+    <div class="product">
+      <img src="" alt="">
+      <h3>Bulb</h3>
+      <div class="price">$9.99</div>
+      <button>Add to Cart</button>
+    </div> -->
+  </div>
+</main>
+<aside class="cart-sidebar" id="cart-sidebar">
+        <h2>Your Cart</h2> <button class="close-btn" id="close-cart">&times;</button> <div class="cart-items-container" id="cart-items-container">
+            </div>
+        <button class="checkout-btn" id="checkout-btn">Checkout</button> 
+    </aside>
+
+<!-- <aside class="cart-sidebar" id="cart-sidebar">
+  <h2>Your Cart</h2>
+  <button class="close-btn" id="close-cart">&times;</button>
+  <div id="cart-items-container">
+     Itens do carrinho serão carregados aqui 
+  </div>
+  <button class="checkout-btn" id="checkout-btn">Checkout</button>
+</aside> -->
+
+<script>
+  const cartIcon = document.getElementById('cart-icon');
+  const cartSidebar = document.getElementById('cart-sidebar');
+  const closeCart = document.getElementById('close-cart');
+  const cartItemsContainer = document.getElementById('cart-items-container');
+  const cartCount = document.getElementById('cart-count');
+
+  let cart = [];
+
+  // Função para extrair nome e preço do produto
+  function getProductInfo(productElem) {
+    const name = productElem.querySelector('.name').textContent;
+    const price = productElem.querySelector('.price').textContent;
+    return { name, price };
+  }
+
+  // Adiciona evento aos botões Add to Cart
+  const addBtns = document.querySelectorAll('.add-btn');
+  addBtns.forEach((btn, idx) => {
+    btn.addEventListener('click', (e) => {
+      const productElem = btn.closest('.product');
+      const product = getProductInfo(productElem);
+      addToCart(product);
+    });
+  });
+
+  function addToCart(product) {
+    cart.push(product);
+    updateCartDisplay();
+  }
+
+  function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCartDisplay();
+  }
+
+  function updateCartDisplay() {
+    cartItemsContainer.innerHTML = '';
+    let total = 0;
+    cart.forEach((item, idx) => {
+      const div = document.createElement('div');
+      div.className = 'cart-item';
+      div.innerHTML = `<span>${item.name} - ${item.price}</span> <button class="remove-btn" data-idx="${idx}">Remove</button>`;
+      cartItemsContainer.appendChild(div);
+      // Extrai valor numérico do preço
+      const priceNum = parseFloat(item.price.replace(/[^0-9,\.]/g, '').replace(',', '.'));
+      if (!isNaN(priceNum)) total += priceNum;
+    });
+    // Exibe total
+    const totalDiv = document.createElement('div');
+    totalDiv.className = 'cart-total';
+    totalDiv.innerHTML = `<strong>Total: R$ ${total.toFixed(2)}</strong>`;
+    cartItemsContainer.appendChild(totalDiv);
+    // Atualiza contador
+    cartCount.textContent = cart.length;
+    // Eventos de remover
+    document.querySelectorAll('.remove-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const idx = parseInt(btn.getAttribute('data-idx'));
+        removeFromCart(idx);
+      });
+    });
+  }
+
+  // Evento do botão Checkout
+  const checkoutBtn = document.getElementById('checkout-btn');
+  checkoutBtn.addEventListener('click', () => {
+    if (cart.length === 0) {
+      alert('Seu carrinho está vazio!');
+      return;
+    }
+    alert('Compra finalizada! Obrigado.');
+    cart = [];
+    updateCartDisplay();
+    cartSidebar.classList.remove('open');
+  });
+
+  cartIcon.addEventListener('click', () => {
+    cartSidebar.classList.add('open');
+  });
+
+  closeCart.addEventListener('click', () => {
+    cartSidebar.classList.remove('open');
+  });
+</script>
+
+    
+</body>
+</html>

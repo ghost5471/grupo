@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja de Jogos</title>
+  <link rel="stylesheet" href="./homePage.css">
+  <link rel="stylesheet" href="/Components/Background.css">
+  <link rel="stylesheet" href="gamepagestyle.css">
+</head>
+<body>
+  <!-- Cabeçalho com logo, menu e usuário -->
+  <header>
+    <div class="logo"><img src="./img/logoProjeto.png" alt="Logo"></div>
+
+    <!-- Menu padrão (visível apenas em telas grandes) -->
+    <nav class="main-menu">
+      <ul>
+        <li><a href="homePage.html">Início</a></li>
+        <li><a href="#">Lançamentos</a></li>
+        <li><a href="#">Promoções</a></li>
+        <li><a href="#">Contato</a></li>
+        <li><a href="Playstation.html"><img src="./img/LogoPS.png" alt="PlayStation" width="20"> PlayStation</a></li>
+        <li><a href="Xbox.html"><img src="./img/logoXbox.png" alt="Xbox" width="20"> Xbox</a></li>
+        <li><a href="Nintendo.html"><img src="./img/LogoNintendo.png" alt="Nintendo" width="20"> Nintendo</a></li>
+      </ul>
+    </nav>
+
+    <div class="user-info">
+      <span>Usuário</span>
+      <img src="./img/user.png" alt="Avatar" class="avatar">
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  </header>
+
+  <!-- Menu flutuante para mobile -->
+  <div id="floating-menu" class="floating-menu">
+    <ul>
+      <li><a href="homePage.html">Início</a></li>
+      <li><a href="#">Lançamentos</a></li>
+      <li><a href="#">Promoções</a></li>
+      <li><a href="#">Contato</a></li>
+      <li><a href="Playstation.html"><img src="./img/LogoPS.png" alt="PlayStation" width="20"> PlayStation</a></li>
+      <li><a href="Xbox.html"><img src="./img/logoXbox.png" alt="Xbox" width="20"> Xbox</a></li>
+      <li><a href="Nintendo.html"><img src="./img/LogoNintendo.png" alt="Nintendo" width="20"> Nintendo</a></li>
+    </ul>
+  </div>
+
+<!--  Grid dos jogos  -->
+  <main class="main-content container">
+        <div class="product-grid" id="product-grid">
+                      
+            <div class="product-card">
+              <img src="games_x-box/SunsetO.jpg" alt="Sunset Overdrive">
+              <div class="product-info">
+                  <h3>Sunset Overdrive</h3>
+                  <p class="price">R$ 190.00</p>
+                  <button class="add-to-cart-btn" data-id="9">Add to Cart</button>
+              </div>
+            </div>
+            
+            <div class="product-card">
+              <img src="games_x-box/Avo.jpg" alt="Avowed">
+              <div class="product-info">
+                  <h3>Avowed</h3>
+                  <p class="price">R$ 300.00</p>
+                  <button class="add-to-cart-btn" data-id="10">Add to Cart</button>
+              </div>
+            </div>
+            
+            <div class="product-card">
+              <img src="games_x-box/Doom.jpg" alt="Doom">
+              <div class="product-info">
+                  <h3>Doom</h3>
+                  <p class="price">R$ 120.00</p>
+                  <button class="add-to-cart-btn" data-id="11">Add to Cart</button>
+              </div>
+            </div>
+            
+            <div class="product-card">
+              <img src="games_x-box/Forza Motorsport 6.jpg" alt="Forza Motorsport 6">
+              <div class="product-info">
+                  <h3>Forza Motorsport 6</h3>
+                  <p class="price">R$ 250.00</p>
+                  <button class="add-to-cart-btn" data-id="12">Add to Cart</button>
+              </div>
+            </div>
+            
+            <div class="product-card">
+              <img src="games_x-box/Dishonored 2.jpg" alt="Dishonored 2">
+              <div class="product-info">
+                  <h3>Dishonored 2</h3>
+                  <p class="price">R$ 200.00</p>
+                  <button class="add-to-cart-btn" data-id="13">Add to Cart</button>
+              </div>
+            </div>
+            
+            <div class="product-card">
+              <img src="games_x-box/Halo.jpg" alt="Halo">
+              <div class="product-info">
+                  <h3>Halo</h3>
+                  <p class="price">R$ 199.99</p>
+                  <button class="add-to-cart-btn" data-id="14">Add to Cart</button>
+              </div>
+            </div>
+            
+            <div class="product-card">
+              <img src="games_x-box/Sea-Of-Thieves-Emblema.jpg" alt="Sea of Thieves">
+              <div class="product-info">
+                  <h3>Sea of Thieves</h3>
+                  <p class="price">R$ 79.99</p>
+                  <button class="add-to-cart-btn" data-id="15">Add to Cart</button>
+              </div>
+            </div>
+          
+          </div>
+    </main>
+
+  <footer>
+    <p>&copy; 2025 GameStore - Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="./homePage.js"></script>
+  <script src="/Components/Background.js"></script>
+</body>
+</html>

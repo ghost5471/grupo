@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja de Jogos</title>
+  <link rel="stylesheet" href="./homePage.css">
+  <link rel="stylesheet" href="/Components/Background.css">
+  <link rel="stylesheet" href="gamepagestyle.css">
+</head>
+<body>
+  <!-- Cabeçalho com logo, menu e usuário -->
+  <header>
+    <div class="logo"><img src="./img/logoProjeto.png" alt="Logo"></div>
+
+    <!-- Menu padrão (visível apenas em telas grandes) -->
+    <nav class="main-menu">
+      <ul>
+        <li><a href="homePage.html">Início</a></li>
+        <li><a href="#">Lançamentos</a></li>
+        <li><a href="#">Promoções</a></li>
+        <li><a href="#">Contato</a></li>
+        <li><a href="Playstation.html"><img src="./img/LogoPS.png" alt="PlayStation" width="20"> PlayStation</a></li>
+        <li><a href="Xbox.html"><img src="./img/logoXbox.png" alt="Xbox" width="20"> Xbox</a></li>
+        <li><a href="Nintendo.html"><img src="./img/LogoNintendo.png" alt="Nintendo" width="20"> Nintendo</a></li>
+      </ul>
+    </nav>
+
+    <div class="user-info">
+      <span>Usuário</span>
+      <img src="./img/user.png" alt="Avatar" class="avatar">
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  </header>
+
+  <!-- Menu flutuante para mobile -->
+  <div id="floating-menu" class="floating-menu">
+    <ul>
+      <li><a href="homePage.html">Início</a></li>
+      <li><a href="#">Lançamentos</a></li>
+      <li><a href="#">Promoções</a></li>
+      <li><a href="#">Contato</a></li>
+      <li><a href="Playstation.html"><img src="./img/LogoPS.png" alt="PlayStation" width="20"> PlayStation</a></li>
+      <li><a href="Xbox.html"><img src="./img/logoXbox.png" alt="Xbox" width="20"> Xbox</a></li>
+      <li><a href="Nintendo.html"><img src="./img/LogoNintendo.png" alt="Nintendo" width="20"> Nintendo</a></li>
+    </ul>
+  </div>
+
+<!--  Grid dos jogos  -->
+  <main class="main-content container">
+        <div class="product-grid" id="product-grid">
+          <div class="product-card">
+            <img src="games_nintendo/bomberman-generation-17334.jpg" alt="Bomberman">
+            <div class="product-info">
+              <h3>Bomberman</h3>
+              <p class="price">R$ 420.00</p>
+              <button class="add-to-cart-btn" data-id="1">Add to Cart</button>
+            </div>
+          </div>
+          
+          <div class="product-card">
+            <img src="games_nintendo/Earthworm_Jim_Super.jpg" alt="Earthworm">
+              <div class="product-info">
+                <h3>Earthworm</h3>
+                <p class="price">R$ 449.99</p>
+                <button class="add-to-cart-btn" data-id="2">Add to Cart</button>
+              </div>
+            </div>
+            
+            <div class="product-card">
+              <img src="games_nintendo/Final_Fight.jpg" alt="Final Fight">
+              <div class="product-info">
+                <h3>Final Fight</h3>
+                  <p class="price">R$ 139.99</p>
+                  <button class="add-to-cart-btn" data-id="3">Add to Cart</button>
+              </div>
+            </div>
+            
+            <div class="product-card">
+              <img src="games_nintendo/Final_Fight.jpg" alt="Final Fight">
+              <div class="product-info">
+                  <h3>Final Fight</h3>
+                  <p class="price">R$ 449.99</p>
+                  <button class="add-to-cart-btn" data-id="4">Add to Cart</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <img src="games_nintendo/Legend_of_Zelda_Breath_of_the_Wild_capa.png" alt="Legend of Zelda">
+              <div class="product-info">
+                  <h3>Legend of Zelda</h3>
+                  <p class="price">R$ 299.99</p>
+                  <button class="add-to-cart-btn" data-id="5">Add to Cart</button>
+              </div>
+            </div>
+            
+            <div class="product-card">
+              <img src="games_nintendo/Super_Mario_64.jpg" alt="Super Mario 64">
+              <div class="product-info">
+                  <h3>Super Mario 64</h3>
+                  <p class="price">R$ 150.99</p>
+                  <button class="add-to-cart-btn" data-id="6">Add to Cart</button>
+              </div>
+            </div>
+            
+            <div class="product-card">
+              <img src="games_nintendo/Super_Mario_Allstar.jpg" alt="Super Mario allstar">
+              <div class="product-info">
+                  <h3>Super Mario allstar</h3>
+                  <p class="price">R$ 349.99</p>
+                  <button class="add-to-cart-btn" data-id="7">Add to Cart</button>
+              </div>
+            </div>
+            
+            <div class="product-card">
+              <img src="games_nintendo/Super_Mario_Party.png" alt="Mario Party">
+              <div class="product-info">
+                  <h3>Mario Party</h3>
+                  <p class="price">R$ 349.99</p>
+                  <button class="add-to-cart-btn" data-id="8">Add to Cart</button>
+              </div>
+            </div>
+            
+            
+          
+          </div>
+    </main>
+
+  <footer>
+    <p>&copy; 2025 GameStore - Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="./homePage.js"></script>
+  <script src="/Components/Background.js"></script>
+</body>
+</html>

@@ -15,19 +15,22 @@
     <!-- Menu padrão (visível apenas em telas grandes) -->
     <nav class="main-menu">
       <ul>
-        <li><a href="#">Início</a></li>
+        <li><a href="homePage.html">Início</a></li>
         <li><a href="#">Lançamentos</a></li>
         <li><a href="#">Promoções</a></li>
         <li><a href="#">Contato</a></li>
-        <li><a href="#playstation"><img src="./img/LogoPS.png" alt="PlayStation" width="20"> PlayStation</a></li>
-        <li><a href="#xbox"><img src="./img/logoXbox.png" alt="Xbox" width="20"> Xbox</a></li>
-        <li><a href="#nintendo"><img src="./img/LogoNintendo.png" alt="Nintendo" width="20"> Nintendo</a></li>
+        <li><a href="Playstation.html"><img src="./img/LogoPS.png" alt="PlayStation" width="20"> PlayStation</a></li>
+        <li><a href="Xbox.html"><img src="./img/logoXbox.png" alt="Xbox" width="20"> Xbox</a></li>
+        <li><a href="Nintendo.html"><img src="./img/LogoNintendo.png" alt="Nintendo" width="20"> Nintendo</a></li>
       </ul>
     </nav>
 
     <div class="user-info">
-      <span>Usuário</span>
       <img src="./img/user.png" alt="Avatar" class="avatar">
+      <span>Usuário</span>
+    </div>
+    <div class="cart-icon" id="cart-icon"> <a href="Nintendo.html" class="car">🛒</a> 
+      <span class="cart-count" id="cart-count">0</span>
     </div>
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
   </header>
@@ -35,15 +38,22 @@
   <!-- Menu flutuante para mobile -->
   <div id="floating-menu" class="floating-menu">
     <ul>
-      <li><a href="#">Início</a></li>
+      <li><a href="homePage.html">Início</a></li>
       <li><a href="#">Lançamentos</a></li>
       <li><a href="#">Promoções</a></li>
       <li><a href="#">Contato</a></li>
-      <li><a href="#playstation"><img src="./img/LogoPS.png" alt="PlayStation" width="20"> PlayStation</a></li>
-      <li><a href="#xbox"><img src="./img/logoXbox.png" alt="Xbox" width="20"> Xbox</a></li>
-      <li><a href="#nintendo"><img src="./img/LogoNintendo.png" alt="Nintendo" width="20"> Nintendo</a></li>
+      <li><a href="Playstation.html"><img src="./img/LogoPS.png" alt="PlayStation" width="20"> PlayStation</a></li>
+      <li><a href="Xbox.html"><img src="./img/logoXbox.png" alt="Xbox" width="20"> Xbox</a></li>
+      <li><a href="Nintendo.html"><img src="./img/LogoNintendo.png" alt="Nintendo" width="20"> Nintendo</a></li>
     </ul>
+    <div class="cart-icon" id="cart-icon">
+    🛒 <span class="cart-count" id="cart-count">0</span>
   </div>
+  </div>
+
+  <!-- Seção do carrinho -->
+   
+  
 
   <!-- Seção principal de destaque -->
   <section class="hero">
@@ -113,5 +123,6 @@
 
   <script src="./homePage.js"></script>
   <script src="/Components/Background.js"></script>
+  
 </body>
 </html>
