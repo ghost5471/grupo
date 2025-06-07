@@ -20,44 +20,35 @@
     <!-- Menu padrão (visível apenas em telas grandes) -->
     <nav class="main-menu">
       <ul>
-        <li><a href="homePage.html">Início</a></li>
-        <li><a href="#">Lançamentos</a></li>
-        <li><a href="#">Promoções</a></li>
-        <li><a href="#">Contato</a></li>
-        <li><a href="Playstation.html"><img src="./img/LogoPS.png" alt="PlayStation" width="20"> PlayStation</a></li>
-        <li><a href="Xbox.html"><img src="./img/logoXbox.png" alt="Xbox" width="20"> Xbox</a></li>
-        <li><a href="Nintendo.html"><img src="./img/LogoNintendo.png" alt="Nintendo" width="20"> Nintendo</a></li>
+        <li><a href="Xbox.html"><img src="./img/logoXbox.png" alt="Xbox" width="30"> <h2>Xbox</h2></a></li>
+        <li><a href="Nintendo.html"><img src="./img/LogoNintendo.png" alt="Nintendo" width="35"> <h2>Nintendo</h2></a></li>
+        <li><a href="Playstation.html"><img src="./img/LogoPS.png" alt="PlayStation" width="30"> <h2>PlayStation</h2> </a></li>
       </ul>
     </nav>
 
     <div class="user-info">
       <img src="./img/user.png" alt="Avatar" class="avatar">
       <span>Usuário</span>
+
+      <div class="cart-icon" id="cart-icon"><a href="Cart.html">🛒</a>
+         <span class="cart-count" id="cart-count"></span>
+      </div>
     </div>
-    <div class="cart-icon" id="cart-icon"> <a href="Nintendo.html" class="car">🛒</a> 
-      <span class="cart-count" id="cart-count">0</span>
-    </div>
+
+    
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
   </header>
 
   <!-- Menu flutuante para mobile -->
   <div id="floating-menu" class="floating-menu">
     <ul>
-      <li><a href="homePage.html">Início</a></li>
-      <li><a href="#">Lançamentos</a></li>
-      <li><a href="#">Promoções</a></li>
-      <li><a href="#">Contato</a></li>
-      <li><a href="Playstation.html"><img src="./img/LogoPS.png" alt="PlayStation" width="20"> PlayStation</a></li>
       <li><a href="Xbox.html"><img src="./img/logoXbox.png" alt="Xbox" width="20"> Xbox</a></li>
       <li><a href="Nintendo.html"><img src="./img/LogoNintendo.png" alt="Nintendo" width="20"> Nintendo</a></li>
+      <li><a href="Playstation.html"><img src="./img/LogoPS.png" alt="PlayStation" width="20"> PlayStation</a></li>
     </ul>
-    <div class="cart-icon" id="cart-icon">
-    🛒 <span class="cart-count" id="cart-count">0</span>
-  </div>
   </div>
 
-  <!-- Seção do carrinho -->
-   
+  
   
 
   <!-- Seção Banner -->
@@ -128,13 +119,13 @@
         <img src="./img/ghost-of-yotei-game-3840x2160-19048.jpg" alt="PS Jogo 1">
         <h3>Ghost Of Yotei</h3>
         <p>R$ 199,90</p>
-        <button class="add-to-cart-btn">Comprar</button>
+        <button class="add-to-cart-btn" onclick="CartCount()">Comprar</button>
       </div>
       <div class="jogo">
         <img src="./img/marvels-spider-man-2-3840x2160-11609.jpg" alt="PS Jogo 2">
         <h3>Assasin's Creed Shadows</h3>
         <p>R$ 149,90</p>
-        <button class="add-to-cart-btn">Comprar</button>
+        <button class="add-to-cart-btn" onclick="CartCount()">Comprar</button>
       </div>
     </div>
   </section>
@@ -146,13 +137,13 @@
         <img src="./img/xboxCapa1.png" alt="Xbox Jogo 1">
         <h3>Gears of War: E-Day</h3>
         <p>R$ 159,90</p>
-        <button class="add-to-cart-btn">Comprar</button>
+        <button class="add-to-cart-btn" onclick="CartCount()">Comprar</button>
       </div>
       <div class="jogo">
         <img src="./img/halo-infinite-2021-games-master-chief-xbox-series-x-and-3840x2160-6805.jpg" alt="Xbox Jogo 2">
         <h3>Halo Infinite</h3>
         <p>R$ 139,90</p>
-        <button class="add-to-cart-btn">Comprar</button>
+        <button class="add-to-cart-btn" onclick="CartCount()">Comprar</button>
       </div>
     </div>
   </section>
@@ -164,13 +155,13 @@
         <img src="./img/capaNint.jpg" alt="Nintendo Jogo 1">
         <h3>Zelda: Tears of the Kingdom</h3>
         <p>R$ 249,90</p>
-        <button class="add-to-cart-btn">Comprar</button>
+        <button class="add-to-cart-btn" onclick="CartCount()">Comprar</button>
       </div>
       <div class="jogo">
         <img src="./img/capaNint2.jpg" alt="Nintendo Jogo 2">
         <h3>MarioKart 8 Deluxe</h3>
         <p>R$ 199,90</p>
-        <button class="add-to-cart-btn">Comprar</button>
+        <button class="add-to-cart-btn" onclick="CartCount()">Comprar</button>
       </div>
     </div>
   </section>
@@ -181,6 +172,7 @@
 
   <script src="./homePage.js"></script>
   <script src="/Components/Background.js"></script>
-  
+  <script src="/grupo/HomePage/Cart.js"></script>
+  <script src="/grupo/HomePage/Cart.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
- * {
+* {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -8,10 +8,17 @@
       font-family: 'Segoe UI', sans-serif;
       background-color: #121212;
       color: white;
+      padding-top: 110px; /* ajuste conforme a altura do header */
     }
 
     header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      z-index: 1000;
       background-color: #1f1f1f;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
       padding: 15px 20px;
       display: flex;
       justify-content: space-between;
@@ -85,16 +92,6 @@
       text-align: center;
     }
 
-    .hero button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #00bcd4;
-      border: none;
-      color: white;
-      font-size: 1em;
-      cursor: pointer;
-    }
-
 .jogos {
     padding: 40px 20px;
     text-align: center;
@@ -129,7 +126,7 @@
   border-radius: 10px;
   display: block;
 }
-.product-card .product-info .add-to-cart-btn {
+.jogos .grid .jogo .add-to-cart-btn {
     background-color: #28a745; /* Cor de fundo verde para o botão "Add to Cart" */
     color: white; /* Cor do texto do botão */
     border: none; /* Remove a borda do botão */
@@ -141,7 +138,7 @@
     width: 100%; /* Botão ocupa 100% da largura disponível */
 }
 
-.product-card .product-info .add-to-cart-btn:hover {
+.jogos .grid .jogo .add-to-cart-btn:hover {
     background-color: #218838; /* Cor de fundo mais escura ao passar o mouse no botão */
 }
 

@@ -1,0 +1,24 @@
+section {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+}
+.product-grid {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    background-color: #28a745; /* Cor de fundo verde para o botão "Add to Cart" */
+    color: white; /* Cor do texto do botão */
+    border: none; /* Remove a borda do botão */
+    padding: 10px 15px; /* Preenchimento interno do botão */
+    border-radius: 5px; /* Bordas arredondadas para o botão */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    font-size: 1em; /* Tamanho da fonte do botão */
+    transition: background-color 0.2s ease-in-out; /* Transição suave na mudança de cor */
+    width: 20%;
+}
+.btn:hover {
+    background-color: #218838; /* Cor de fundo mais escura ao passar o mouse no botão */
+}

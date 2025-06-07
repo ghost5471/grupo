@@ -16,37 +16,28 @@
         <img src="./img/logoProjeto.png" alt="Logo GameStore">
       </a>
     </div>
-
-    <!-- Menu padrão (visível apenas em telas grandes) -->
     <nav class="main-menu">
       <ul>
-        <li><a href="homePage.html">Início</a></li>
-        <li><a href="#">Lançamentos</a></li>
-        <li><a href="#">Promoções</a></li>
-        <li><a href="#">Contato</a></li>
-        <li><a href="Playstation.html"><img src="./img/LogoPS.png" alt="PlayStation" width="20"> PlayStation</a></li>
-        <li><a href="Xbox.html"><img src="./img/logoXbox.png" alt="Xbox" width="20"> Xbox</a></li>
-        <li><a href="Nintendo.html"><img src="./img/LogoNintendo.png" alt="Nintendo" width="20"> Nintendo</a></li>
+        <li><a href="Xbox.html"><img src="./img/logoXbox.png" alt="Xbox" width="30"> <h2>Xbox</h2></a></li>
+        <li><a href="Nintendo.html"><img src="./img/LogoNintendo.png" alt="Nintendo" width="35"> <h2>Nintendo</h2></a></li>
+        <li><a href="Playstation.html"><img src="./img/LogoPS.png" alt="PlayStation" width="30"> <h2>PlayStation</h2> </a></li>
       </ul>
     </nav>
-
     <div class="user-info">
-      <span>Usuário</span>
       <img src="./img/user.png" alt="Avatar" class="avatar">
+      <span>Usuário</span>
+      <div class="cart-icon" id="cart-icon"><a href="Cart.html">🛒</a>
+         <span class="cart-count" id="cart-count"></span>
+      </div>
     </div>
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
   </header>
-
   <!-- Menu flutuante para mobile -->
   <div id="floating-menu" class="floating-menu">
     <ul>
-      <li><a href="homePage.html">Início</a></li>
-      <li><a href="#">Lançamentos</a></li>
-      <li><a href="#">Promoções</a></li>
-      <li><a href="#">Contato</a></li>
-      <li><a href="Playstation.html"><img src="./img/LogoPS.png" alt="PlayStation" width="20"> PlayStation</a></li>
       <li><a href="Xbox.html"><img src="./img/logoXbox.png" alt="Xbox" width="20"> Xbox</a></li>
       <li><a href="Nintendo.html"><img src="./img/LogoNintendo.png" alt="Nintendo" width="20"> Nintendo</a></li>
+      <li><a href="Playstation.html"><img src="./img/LogoPS.png" alt="PlayStation" width="20"> PlayStation</a></li>
     </ul>
   </div>
 
@@ -58,7 +49,7 @@
             <div class="product-info">
               <h3>Nome do jogo</h3>
               <p class="price">R$ 420.00</p>
-              <button class="add-to-cart-btn" data-id="16">Comprar</button>
+              <button class="add-to-cart-btn" onclick="CartCount()">Comprar</button>
             </div>
           </div>
           <div class="product-card">
@@ -66,7 +57,7 @@
             <div class="product-info">
               <h3>Nome do jogo</h3>
               <p class="price">R$ 420.00</p>
-              <button class="add-to-cart-btn" data-id="17">Comprar</button>
+              <button class="add-to-cart-btn" onclick="CartCount()">Comprar</button>
             </div>
           </div>
           <div class="product-card">
@@ -74,7 +65,7 @@
             <div class="product-info">
               <h3>Nome do jogo</h3>
               <p class="price">R$ 420.00</p>
-              <button class="add-to-cart-btn" data-id="3">Comprar</button>
+              <button class="add-to-cart-btn" onclick="CartCount()">Comprar</button>
             </div>
           </div>
           <div class="product-card">
@@ -82,7 +73,7 @@
             <div class="product-info">
               <h3>Nome do jogo</h3>
               <p class="price">R$ 420.00</p>
-              <button class="add-to-cart-btn" data-id="4">Comprar</button>
+              <button class="add-to-cart-btn" onclick="CartCount()">Comprar</button>
             </div>
           </div>
           <div class="product-card">
@@ -90,7 +81,7 @@
             <div class="product-info">
               <h3>Nome do jogo</h3>
               <p class="price">R$ 420.00</p>
-              <button class="add-to-cart-btn" data-id="5">Comprar</button>
+              <button class="add-to-cart-btn" onclick="CartCount()">Comprar</button>
             </div>
           </div>
           <div class="product-card">
@@ -98,7 +89,7 @@
             <div class="product-info">
               <h3>Nome do jogo</h3>
               <p class="price">R$ 420.00</p>
-              <button class="add-to-cart-btn" data-id="6">Comprar</button>
+              <button class="add-to-cart-btn" onclick="CartCount()">Comprar</button>
             </div>
           </div>
           <div class="product-card">
@@ -106,7 +97,7 @@
             <div class="product-info">
               <h3>Nome do jogo</h3>
               <p class="price">R$ 420.00</p>
-              <button class="add-to-cart-btn" data-id="7">Comprar</button>
+              <button class="add-to-cart-btn" onclick="CartCount()">Comprar</button>
             </div>
           </div>
           <div class="product-card">
@@ -114,7 +105,7 @@
             <div class="product-info">
               <h3>Nome do jogo</h3>
               <p class="price">R$ 420.00</p>
-              <button class="add-to-cart-btn" data-id="8">Comprar</button>
+              <button class="add-to-cart-btn" onclick="CartCount()">Comprar</button>
             </div>
           </div>
         </div>
@@ -126,5 +117,6 @@
 
   <script src="./homePage.js"></script>
   <script src="/Components/Background.js"></script>
+  <script src="/grupo/HomePage/Cart.js"></script>
 </body>
 </html>
