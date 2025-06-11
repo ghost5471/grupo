@@ -86,6 +86,10 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      
+      & a{    
+        color: var(--text-color-light);
+      }
     }
 
     .avatar {
