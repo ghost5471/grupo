@@ -44,13 +44,13 @@
     font-size: 1.2em; /* Tamanho da fonte do nome do produto */
 }
 
-.jogos .grid .jogo .price {
+.product-grid .product-card .price {
     font-size: 1.1em; /* Tamanho da fonte do preço */
     color: red; /* Cor azul para o preço */
     margin-bottom: 10px; /* Margem inferior para separar do botão */
 }
 
-.Jogos .grdi .add-to-cart-btn {
+.product-grid .product-card .add-to-cart-btn {
     background-color: #28a745; /* Cor de fundo verde para o botão "Add to Cart" */
     color: white; /* Cor do texto do botão */
     border: none; /* Remove a borda do botão */
@@ -62,7 +62,7 @@
     width: 100%; /* Botão ocupa 100% da largura disponível */
 }
 
-.Jogos .grid .add-to-cart-btn:hover {
+.product-grid .product-card .add-to-cart-btn:hover {
     background-color: #218838; /* Cor de fundo mais escura ao passar o mouse no botão */
 }
 
