@@ -1,125 +1,120 @@
 * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #121212;
-      color: white;
-      padding-top: 110px; /* ajuste conforme a altura do header */
-    }
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #ffffff; /* branco para claro */
+  color: #121212; /* texto escuro */
+  padding-top: 110px; /* ajuste conforme a altura do header */
+}
 
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      z-index: 1000;
-      background-color: #1f1f1f;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
+  background-color: #f0f0f0; /* cinza claro */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* sombra leve */
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
-    a {
-      cursor: pointer;
-      text-decoration: none;
-      color: white;
-    }
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #121212; /* links escuros */
+}
 
-    .logo{
-        width: auto;
-        height: auto;
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
 
-        & img {
-            width: 6.25rem;
-            height: 6.25rem;
-            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
-        }
+/* img dentro da logo, mantido igual */
+.logo img {
+  width: 6.25rem;
+  height: 6.25rem;
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2)); /* sombra preta suave para logo */
+}
 
-    }
+.main-menu {
+  display: flex;
+}
 
-    .logo {
-      font-size: 1.5em;
-      font-weight: bold;
-    }
+.main-menu ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
 
-    .main-menu {
-      display: flex;
-    }
+.main-menu li a {
+  color: #121212; /* link escuro */
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 
-    .main-menu ul {
-      display: flex;
-      list-style: none;
-      gap: 20px;
-    }
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-    .main-menu li a {
-      color: white;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
 
-    
-    .user-info {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+.car {
+  text-decoration: none;
+}
 
-    .avatar {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-    }
-    .car {
-      text-decoration: none;      
-    }
+.menu-toggle {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #121212; /* ícone do menu claro */
+  cursor: pointer;
+  display: none;
+}
 
-    .menu-toggle {
-      font-size: 24px;
-      background: none;
-      border: none;
-      color: white;
-      cursor: pointer;
-      display: none;
-    }
-
-    .hero {
-      background: linear-gradient(135deg, #272727, #1a1a1a);
-      padding: 60px 20px;
-      text-align: center;
-    }
+.hero {
+  background: linear-gradient(135deg, #e0e0e0, #cfcfcf); /* degrade claro */
+  padding: 60px 20px;
+  text-align: center;
+}
 
 .jogos {
-    padding: 40px 20px;
-    text-align: center;
-    margin: 10px 10px;
-    
+  padding: 40px 20px;
+  text-align: center;
+  margin: 10px 10px;
 }
 
 .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
 }
 
 .jogo {
-  background-color: #1f1f1f;
+  background-color: #fafafa; /* fundo quase branco */
   padding: 15px;
   border-radius: 10px;
   text-align: center;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* sombra leve */
   transition: transform 0.3s;
+  color: #121212; /* texto escuro */
 }
 
 .jogo:hover {
@@ -128,70 +123,67 @@
 
 .jogo img {
   width: 100%;
-  height: 200px; /* Altura fixa para uniformidade */
-  object-fit: cover; /* Garante que a imagem preencha a área sem distorcer */
+  height: 200px;
+  object-fit: cover;
   border-radius: 10px;
   display: block;
 }
+
 .jogos .grid .jogo .add-to-cart-btn {
-    background-color: #28a745; /* Cor de fundo verde para o botão "Add to Cart" */
-    color: white; /* Cor do texto do botão */
-    border: none; /* Remove a borda do botão */
-    padding: 10px 15px; /* Preenchimento interno do botão */
-    border-radius: 5px; /* Bordas arredondadas para o botão */
-    cursor: pointer; /* Muda o cursor para indicar que é clicável */
-    font-size: 1em; /* Tamanho da fonte do botão */
-    transition: background-color 0.2s ease-in-out; /* Transição suave na mudança de cor */
-    width: 100%; /* Botão ocupa 100% da largura disponível */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.2s ease-in-out;
+  width: 100%;
 }
 
-.jogos .grid .jogo .add-to-cart-btn:hover {
-    background-color: #218838; /* Cor de fundo mais escura ao passar o mouse no botão */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f0f0f0; /* cinza claro */
+  color: #121212;
 }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #1f1f1f;
-    }
+.floating-menu {
+  display: none;
+  position: fixed;
+  top: 70px;
+  right: 10px;
+  background-color: #f0f0f0; /* cinza claro */
+  border: 1px solid #ccc; /* borda cinza clara */
+  border-radius: 10px;
+  padding: 15px;
+  z-index: 9999;
+  width: 200px;
+}
 
-    .floating-menu {
-      display: none;
-      position: fixed;
-      top: 70px;
-      right: 10px;
-      background-color: #1f1f1f;
-      border: 1px solid #333;
-      border-radius: 10px;
-      padding: 15px;
-      z-index: 9999;
-      width: 200px;
-    }
+.floating-menu.active {
+  display: block;
+}
 
-    .floating-menu.active {
-      display: block;
-    }
+.floating-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
-    .floating-menu ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+.floating-menu a {
+  color: #121212; /* links escuros */
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 
-    .floating-menu a {
-      color: white;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    @media (max-width: 768px) {
-      .main-menu {
-        display: none;
-      }
-      .menu-toggle {
-        display: block;
-      }
-    }
+@media (max-width: 768px) {
+  .main-menu {
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
