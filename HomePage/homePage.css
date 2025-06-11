@@ -1,3 +1,23 @@
+/* Variáveis para o Tema Escuro */
+:root {
+    --bg-color-light: #333333; /* Fundo escuro */
+    --text-color-light: #030303; /* Texto claro */
+    --header-bg-light: #222222; /* Header mais escuro */
+    --header-text-light: #ffffff;
+    --box-bg-light: #444444; /* Caixas mais escuras */
+    --link-color-light: #ffffff; /* Links em azul claro */
+}
+
+/* Variáveis CSS padrão (valores iniciais - Tema Claro) */
+ body.theme-light{
+    --bg-color-light: #ffffff;
+    --text-color-light: #333333;
+    --header-bg-light: #414242;
+    --header-text-light: #ffffff;
+    --box-bg-light: #868686; /* Um cinza claro para as caixas */
+    --link-color-light: #000000;
+}
+
 * {
       margin: 0;
       padding: 0;
@@ -6,8 +26,8 @@
 
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #121212;
-      color: white;
+      background-color: var(--bg-color-light);
+      color: var(--text-color-light);
       padding-top: 110px; /* ajuste conforme a altura do header */
     }
 
@@ -17,8 +37,8 @@
       left: 0;
       width: 100vw;
       z-index: 1000;
-      background-color: #1f1f1f;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      background-color: var(--bg-color-light);
+      box-shadow: var(--box-bg-light);
       padding: 15px 20px;
       display: flex;
       justify-content: space-between;
@@ -54,7 +74,7 @@
     }
 
     .main-menu li a {
-      color: white;
+      color: var(--text-color-light);
       text-decoration: none;
       display: flex;
       align-items: center;
@@ -81,7 +101,7 @@
       font-size: 24px;
       background: none;
       border: none;
-      color: white;
+      color: var(--text-color-light);
       cursor: pointer;
       display: none;
     }
@@ -106,12 +126,12 @@
 }
 
 .jogo {
-  background-color: #1f1f1f;
+  background-color: var(--bg-color-light);
   padding: 15px;
   border-radius: 10px;
   text-align: center;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--box-bg-light);
   transition: transform 0.3s;
 }
 
@@ -128,7 +148,7 @@
 }
 .jogos .grid .jogo .add-to-cart-btn {
     background-color: #28a745; /* Cor de fundo verde para o botão "Add to Cart" */
-    color: white; /* Cor do texto do botão */
+    color: var(--text-color-light); /* Cor do texto do botão */
     border: none; /* Remove a borda do botão */
     padding: 10px 15px; /* Preenchimento interno do botão */
     border-radius: 5px; /* Bordas arredondadas para o botão */
@@ -145,7 +165,7 @@
     footer {
       text-align: center;
       padding: 20px;
-      background-color: #1f1f1f;
+      background-color: var(--bg-color-light);
     }
 
     .floating-menu {
@@ -153,7 +173,7 @@
       position: fixed;
       top: 70px;
       right: 10px;
-      background-color: #1f1f1f;
+      background-color: var(--bg-color-light);
       border: 1px solid #333;
       border-radius: 10px;
       padding: 15px;
@@ -173,7 +193,7 @@
     }
 
     .floating-menu a {
-      color: white;
+      color: var(--text-color-light);
       text-decoration: none;
       display: flex;
       align-items: center;
