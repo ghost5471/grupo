@@ -26,6 +26,12 @@
       flex-wrap: wrap;
     }
 
+    a {
+      cursor: pointer;
+      text-decoration: none;
+      color: white;
+    }
+
     .logo{
         width: auto;
         height: auto;
@@ -96,6 +102,7 @@
     padding: 40px 20px;
     text-align: center;
     margin: 10px 10px;
+    
 }
 
 .grid {
