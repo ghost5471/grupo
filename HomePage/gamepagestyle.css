@@ -1,4 +1,24 @@
-    .main-content {
+/* Variáveis para o Tema Escuro */
+:root {
+    --bg-color-light: #333333; /* Fundo escuro */
+    --text-color-light: #eeeeee; /* Texto claro */
+    --div-bg-light: #222222; /* Header mais escuro */
+    --div-text-light: #ffffff;
+    --box-bg-light: #444444; /* Caixas mais escuras */
+    --link-color-light: #ffffff; /* Links em azul claro */
+}
+
+/* Variáveis CSS padrão (valores iniciais - Tema Claro) */
+ body.theme-light{
+    --bg-color-light: #ffffff;
+    --text-color-light: #333333;
+    --div-bg-light: #aaaaaa;
+    --div-text-light: #ffffff;
+    --box-bg-light: #868686; /* Um cinza claro para as caixas */
+    --link-color-light: #000000;
+}
+
+ .main-content {
     padding: 20px; /* Preenchimento interno do conteúdo principal */
     margin-top: 20px; /* Margem superior para separar do cabeçalho */
   }
@@ -12,8 +32,8 @@
 
 
 .product-card {
-    background-color: #1f1f1f; /* Fundo branco para os cards de produtos */
-    color: #ffffff; /* Texto escuro para os cards de produtos */
+    background-color: var(--div-bg-light); /* Fundo branco para os cards de produtos */
+    color: var(--bg-text-light); /* Texto escuro para os cards de produtos */
     text-decoration: none;
     border-radius: 15px; /* Bordas arredondadas para os cards */
     text-align: center;
@@ -48,6 +68,7 @@
     font-size: 1.1em; /* Tamanho da fonte do preço */
     color: red; /* Cor azul para o preço */
     margin-bottom: 10px; /* Margem inferior para separar do botão */
+    
 }
 
 .product-grid .product-card .add-to-cart-btn {

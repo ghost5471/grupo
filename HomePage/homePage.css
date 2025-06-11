@@ -1,3 +1,23 @@
+/* Variáveis para o Tema Escuro */
+:root {
+    --bg-color-light: #333 ; /* Fundo escuro */
+    --text-color-light: #ffffff; /* Texto claro */
+    --div-bg-light: #1d1c1c; /* Header mais escuro */
+    --div-text-light: #ffffff;
+    --box-bg-light: #444444; /* Caixas mais escuras */
+    --link-color-light: #ffffff; /* Links em azul claro */
+}
+
+/* Variáveis CSS padrão (valores iniciais - Tema Claro) */
+ body.theme-light{
+    --bg-color-light: #ffffff;
+    --text-color-light: #333333;
+    --div-bg-light: #aaaaaa;
+    --div-text-light: #ffffff;
+    --box-bg-light: #868686; /* Um cinza claro para as caixas */
+    --link-color-light: #000000;
+}
+
 * {
       margin: 0;
       padding: 0;
@@ -6,8 +26,8 @@
 
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #121212;
-      color: white;
+      background-color: var(--bg-color-light);
+      color: var(--text-color-light);
       padding-top: 110px; /* ajuste conforme a altura do header */
     }
 
@@ -17,8 +37,8 @@
       left: 0;
       width: 100vw;
       z-index: 1000;
-      background-color: #1f1f1f;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      background-color: var(--div-bg-light);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
       padding: 15px 20px;
       display: flex;
       justify-content: space-between;
@@ -54,7 +74,7 @@
     }
 
     .main-menu li a {
-      color: white;
+      color: var(--div-text-light);
       text-decoration: none;
       display: flex;
       align-items: center;
@@ -66,6 +86,13 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      background-color: var(--box-bg-light);
+      border-radius: 7px;
+      padding: 10px;
+      
+      & a{    
+        color: var(--div-text-light);
+      }
     }
 
     .avatar {
@@ -81,7 +108,7 @@
       font-size: 24px;
       background: none;
       border: none;
-      color: white;
+      color: var(--div-text-light);
       cursor: pointer;
       display: none;
     }
@@ -106,12 +133,12 @@
 }
 
 .jogo {
-  background-color: #1f1f1f;
+  background-color: var(--div-bg-light);
   padding: 15px;
   border-radius: 10px;
   text-align: center;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s;
 }
 
@@ -128,7 +155,7 @@
 }
 .jogos .grid .jogo .add-to-cart-btn {
     background-color: #28a745; /* Cor de fundo verde para o botão "Add to Cart" */
-    color: white; /* Cor do texto do botão */
+    color: var(--div-text-light); /* Cor do texto do botão */
     border: none; /* Remove a borda do botão */
     padding: 10px 15px; /* Preenchimento interno do botão */
     border-radius: 5px; /* Bordas arredondadas para o botão */
@@ -142,10 +169,31 @@
     background-color: #218838; /* Cor de fundo mais escura ao passar o mouse no botão */
 }
 
+.main-content .product-card .product-info .add-to-cart-btn {
+    background-color: #28a745; /* Cor de fundo verde para o botão "Add to Cart" */
+    color: var(--text-color-light); /* Cor do texto do botão */
+    border: none; /* Remove a borda do botão */
+    padding: 10px 15px; /* Preenchimento interno do botão */
+    border-radius: 5px; /* Bordas arredondadas para o botão */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    font-size: 1em; /* Tamanho da fonte do botão */
+    transition: background-color 0.2s ease-in-out; /* Transição suave na mudança de cor */
+    width: 100%; /* Botão ocupa 100% da largura disponível */
+}
+
+.main-content .product-card .product-info .add-to-cart-btn:hover {
+    background-color: #218838; /* Cor de fundo mais escura ao passar o mouse no botão */
+}
+
+
     footer {
       text-align: center;
       padding: 20px;
-      background-color: #1f1f1f;
+      background-color: var(--div-bg-light);
+      
+      & p{
+        color: var(--div-text-light);
+      }
     }
 
     .floating-menu {
@@ -153,7 +201,7 @@
       position: fixed;
       top: 70px;
       right: 10px;
-      background-color: #1f1f1f;
+      background-color: var(--div-text-light);
       border: 1px solid #333;
       border-radius: 10px;
       padding: 15px;
@@ -173,7 +221,7 @@
     }
 
     .floating-menu a {
-      color: white;
+      color: var(--text-color-light);
       text-decoration: none;
       display: flex;
       align-items: center;
