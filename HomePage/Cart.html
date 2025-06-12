@@ -30,7 +30,7 @@
 
     <div class="user-info">
       <img src="./img/user.png" alt="Avatar" class="avatar">
-      <span>Usuário</span>
+      <a href="../HomePage/user.html"><span id="user-name">Usuário</span></a>
     </div>
     
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
@@ -51,7 +51,7 @@
     </div>
     <div>
       <button class="btn">Finalizar Compra</button>
-    <button class="btn" id="remover" onclick="Remover()">Remover ítens</button>
+    <button class="btn" id="remover" onclick="removerUmItemCarrinho()">Remover ítens</button>
     </div>
 </div>
 
@@ -65,49 +65,30 @@
   </footer>
 </div>
   <script src="../homePage.js"></script>
-  <script src="/Cart.js"></script>
+  <script src="../HomePage/Cart.js"></script>
 
-  <script>
-    // Exibe os jogos do carrinho na página Cart.html
-    function renderizarCarrinhoJogos() {
-      const grid = document.getElementById('product-grid');
-      if (!grid) return;
+   <script>
+    // Exibe nome do usuário no header ou "Usuário" se não logado
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const user = users[users.length - 1];
+    const userNameSpan = document.getElementById('user-name');
+    if (user && user.usuario) {
+      userNameSpan.textContent = user.usuario;
+    } else {
+      userNameSpan.textContent = "Usuário";
+    }
 
-      const carrinhoJogos = JSON.parse(localStorage.getItem('carrinhoJogos')) || [];
-      grid.innerHTML = "";
-
-      if (carrinhoJogos.length === 0) {
-        grid.innerHTML = "<h1>Seu carrinho está vazio!</h1>";
-        return;
+    // Redireciona para a tela de usuário e exibe dados conforme login
+    document.querySelector('a[href="HomePage/user.html"]').addEventListener('click', function(e) {
+      e.preventDefault();
+      // Salva flag para a tela de usuário saber se está logado ou não
+      if (user && user.usuario) {
+        sessionStorage.setItem('userView', 'logged');
+      } else {
+        sessionStorage.setItem('userView', 'not-logged');
       }
-
-      carrinhoJogos.forEach(jogo => {
-        // jogo = [nome, preco, imagem]
-        const div = document.createElement('div');
-        div.className = "produto-carrinho";
-        div.style.position = "relative";
-        div.innerHTML = `
-          <div style="position:relative; border:1px solid #ccc; border-radius:10px; margin:10px; padding:10px; display:flex; align-items:center; gap:20px;">
-            <img src="${jogo[2]}" width="100" alt="${jogo[0]}">
-            <div style="flex:1;">
-              <h3 style="margin:0;">${jogo[0]}</h3>
-              <p style="margin:5px 0;">Preço: ${jogo[1]}</p>
-            </div>
-          </div>
-        `;
-        grid.appendChild(div);
-      });
-    }
-
-    // Só executa na página do carrinho
-    if (window.location.pathname.toLowerCase().includes('cart.html')) {
-      document.addEventListener('DOMContentLoaded', renderizarCarrinhoJogos);
-    }
-
-    // Para exibir os jogos na página do carrinho, basta ler carrinhoJogos do localStorage
-    // e criar as divs dinamicamente conforme necessário.
-
+      window.open('HomePage/user.html');
+    });
   </script>
-
 </body>
 </html>

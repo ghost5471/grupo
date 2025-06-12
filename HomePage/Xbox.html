@@ -24,7 +24,7 @@
     </nav>
     <div class="user-info">
       <img src="./img/user.png" alt="Avatar" class="avatar">
-      <span>Usuário</span>
+      <a href="../HomePage/user.html"><span id="user-name">Usuário</span></a>
       <div class="cart-icon" id="cart-icon">
         <a href="Cart.html">🛒</a>
         <span class="cart-count" id="cart-count">0</span>
@@ -121,6 +121,30 @@
       const carrinhoJogos = JSON.parse(localStorage.getItem('carrinhoJogos')) || [];
       const contador = document.getElementById('cart-count');
       if (contador) contador.textContent = carrinhoJogos.length;
+    });
+  </script>
+
+  <script>
+    // Exibe nome do usuário no header ou "Usuário" se não logado
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const user = users[users.length - 1];
+    const userNameSpan = document.getElementById('user-name');
+    if (user && user.usuario) {
+      userNameSpan.textContent = user.usuario;
+    } else {
+      userNameSpan.textContent = "Usuário";
+    }
+
+    // Redireciona para a tela de usuário e exibe dados conforme login
+    document.querySelector('a[href="HomePage/user.html"]').addEventListener('click', function(e) {
+      e.preventDefault();
+      // Salva flag para a tela de usuário saber se está logado ou não
+      if (user && user.usuario) {
+        sessionStorage.setItem('userView', 'logged');
+      } else {
+        sessionStorage.setItem('userView', 'not-logged');
+      }
+      window.open('HomePage/user.html');
     });
   </script>
 </body>
