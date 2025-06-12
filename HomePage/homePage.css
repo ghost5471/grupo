@@ -24,7 +24,6 @@
   box-sizing: border-box;
 }
 
-<<<<<<< HEAD
 body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #ffffff; /* branco para claro */
@@ -46,29 +45,6 @@ header {
   align-items: center;
   flex-wrap: wrap;
 }
-=======
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: var(--bg-color-light);
-      color: var(--text-color-light);
-      padding-top: 110px; /* ajuste conforme a altura do header */
-    }
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      z-index: 1000;
-      background-color: var(--div-bg-light);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
->>>>>>> Thiago
 
 a {
   cursor: pointer;
@@ -106,7 +82,6 @@ a {
   gap: 5px;
 }
 
-<<<<<<< HEAD
 .user-info {
   display: flex;
   align-items: center;
@@ -118,35 +93,11 @@ a {
   height: 30px;
   border-radius: 50%;
 }
-=======
-    .main-menu li a {
-      color: var(--div-text-light);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    
-    .user-info {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background-color: var(--box-bg-light);
-      border-radius: 7px;
-      padding: 10px;
-      
-      & a{    
-        color: var(--div-text-light);
-      }
-    }
->>>>>>> Thiago
 
 .car {
   text-decoration: none;
 }
 
-<<<<<<< HEAD
 .menu-toggle {
   font-size: 24px;
   background: none;
@@ -155,16 +106,6 @@ a {
   cursor: pointer;
   display: none;
 }
-=======
-    .menu-toggle {
-      font-size: 24px;
-      background: none;
-      border: none;
-      color: var(--div-text-light);
-      cursor: pointer;
-      display: none;
-    }
->>>>>>> Thiago
 
 .hero {
   background: linear-gradient(135deg, #e0e0e0, #cfcfcf); /* degrade claro */
@@ -186,20 +127,12 @@ a {
 }
 
 .jogo {
-<<<<<<< HEAD
   background-color: #fafafa; /* fundo quase branco */
-=======
-  background-color: var(--div-bg-light);
->>>>>>> Thiago
   padding: 15px;
   border-radius: 10px;
   text-align: center;
   overflow: hidden;
-<<<<<<< HEAD
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* sombra leve */
-=======
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
->>>>>>> Thiago
   transition: transform 0.3s;
   color: #121212; /* texto escuro */
 }
@@ -217,7 +150,6 @@ a {
 }
 
 .jogos .grid .jogo .add-to-cart-btn {
-<<<<<<< HEAD
   color: white;
   border: none;
   padding: 10px 15px;
@@ -226,17 +158,6 @@ a {
   font-size: 1em;
   transition: background-color 0.2s ease-in-out;
   width: 100%;
-=======
-    background-color: #28a745; /* Cor de fundo verde para o botão "Add to Cart" */
-    color: var(--div-text-light); /* Cor do texto do botão */
-    border: none; /* Remove a borda do botão */
-    padding: 10px 15px; /* Preenchimento interno do botão */
-    border-radius: 5px; /* Bordas arredondadas para o botão */
-    cursor: pointer; /* Muda o cursor para indicar que é clicável */
-    font-size: 1em; /* Tamanho da fonte do botão */
-    transition: background-color 0.2s ease-in-out; /* Transição suave na mudança de cor */
-    width: 100%; /* Botão ocupa 100% da largura disponível */
->>>>>>> Thiago
 }
 
 footer {
@@ -246,7 +167,6 @@ footer {
   color: #121212;
 }
 
-<<<<<<< HEAD
 .floating-menu {
   display: none;
   position: fixed;
@@ -263,47 +183,6 @@ footer {
 .floating-menu.active {
   display: block;
 }
-=======
-.main-content .product-card .product-info .add-to-cart-btn {
-    background-color: #28a745; /* Cor de fundo verde para o botão "Add to Cart" */
-    color: var(--text-color-light); /* Cor do texto do botão */
-    border: none; /* Remove a borda do botão */
-    padding: 10px 15px; /* Preenchimento interno do botão */
-    border-radius: 5px; /* Bordas arredondadas para o botão */
-    cursor: pointer; /* Muda o cursor para indicar que é clicável */
-    font-size: 1em; /* Tamanho da fonte do botão */
-    transition: background-color 0.2s ease-in-out; /* Transição suave na mudança de cor */
-    width: 100%; /* Botão ocupa 100% da largura disponível */
-}
-
-.main-content .product-card .product-info .add-to-cart-btn:hover {
-    background-color: #218838; /* Cor de fundo mais escura ao passar o mouse no botão */
-}
-
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: var(--div-bg-light);
-      
-      & p{
-        color: var(--div-text-light);
-      }
-    }
-
-    .floating-menu {
-      display: none;
-      position: fixed;
-      top: 70px;
-      right: 10px;
-      background-color: var(--div-text-light);
-      border: 1px solid #333;
-      border-radius: 10px;
-      padding: 15px;
-      z-index: 9999;
-      width: 200px;
-    }
->>>>>>> Thiago
 
 .floating-menu ul {
   list-style: none;
@@ -320,7 +199,6 @@ footer {
   gap: 5px;
 }
 
-<<<<<<< HEAD
 @media (max-width: 768px) {
   .main-menu {
     display: none;
@@ -329,21 +207,3 @@ footer {
     display: block;
   }
 }
-=======
-    .floating-menu a {
-      color: var(--text-color-light);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    @media (max-width: 768px) {
-      .main-menu {
-        display: none;
-      }
-      .menu-toggle {
-        display: block;
-      }
-    }
->>>>>>> Thiago
