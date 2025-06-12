@@ -87,7 +87,7 @@
       document.getElementById('email').textContent = user.email;
       document.getElementById('senha').textContent = user.senha;
     } else {
-      document.querySelector('.container').innerHTML = "<p>Nenhum usuário encontrado.</p>";
+      window.location.href='../Login/login.html';
     }
 
     const body = document.body;

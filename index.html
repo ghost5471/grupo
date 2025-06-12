@@ -1,57 +1,190 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./utils/jQuery-3.7.1.min.js"></script>
-  <link rel="stylesheet" href="login.css">
-  <link rel="stylesheet" href="./Components/Background.css">
-  <link rel="website icon" type="png" href="./img/iconGame.png">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="./homePage.css">
+  <link rel="stylesheet" href="testemenu.css">
+  <link rel="stylesheet" href="../Components/Background.css">
+</head>
+<body>
+  <!-- Cabeçalho com logo, menu e usuário -->
+  <header>
+    <div class="logo">
+      <a href="homePage.html" aria-label="Página inicial">
+        <img src="./img/logoProjeto.png" alt="Logo GameStore">
+      </a>
+    </div>
+
+    <!-- Menu padrão (visível apenas em telas grandes) -->
+    <nav class="main-menu">
+      <ul>
+        <li><a href="Xbox.html"><img src="./img/logoXbox.png" alt="Xbox" width="30"> <h2>Xbox</h2></a></li>
+        <li><a href="Nintendo.html"><img src="./img/LogoNintendo.png" alt="Nintendo" width="35"> <h2>Nintendo</h2></a></li>
+        <li><a href="Playstation.html"><img src="./img/LogoPS.png" alt="PlayStation" width="30"> <h2>PlayStation</h2> </a></li>
+      </ul>
+    </nav>
+
+    <div class="user-info">
+     <img src="./img/user.png" alt="Avatar" class="avatar">
+     <a href="./user.html" target="_blank"><span id="user-name">Usuário</span></a>
+
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  </header>
+
+  <!-- Menu flutuante para mobile -->
+  <div id="floating-menu" class="floating-menu">
+    <ul>
+      <li><a href="Xbox.html"><img src="./img/logoXbox.png" alt="Xbox" width="20"> Xbox</a></li>
+      <li><a href="Nintendo.html"><img src="./img/LogoNintendo.png" alt="Nintendo" width="20"> Nintendo</a></li>
+      <li><a href="Playstation.html"><img src="./img/LogoPS.png" alt="PlayStation" width="20"> PlayStation</a></li>
+    </ul>
+  </div>
+
+  <!-- Seção Banner -->
+  <section class="hero slider" style="height: 350px; width: 100vw; max-width: 100%; overflow: hidden; padding: 0; margin: 0 auto;">
+    <div class="slide-track" style="height: 100%;">
+      <div class="slide">
+        <img class="img" src="/grupo/HomePage/Banner/Banner-Nintendo-Studios.jpg" alt="Banner Nintendo Studios">
+      </div>
+      <div class="slide">
+        <img class="img" src="/grupo/HomePage/Banner/Banner-PS-Studios.jpg" alt="Banner PS Studios">
+      </div>
+      <div class="slide">
+        <img class="img" src="/grupo/HomePage/Banner/Banner-xbox-Studios.jpg" alt="Banner Xbox Studios">
+      </div>
+      <div class="slide">
+        <img class="img" src="/grupo/HomePage/Banner/Banner-Nintendo-Studios.jpg" alt="Banner Nintendo Studios">
+      </div>
+      <div class="slide">
+        <img class="img" src="/grupo/HomePage/Banner/Banner-PS-Studios.jpg" alt="Banner PS Studios">
+      </div>
+      <div class="slide">
+        <img class="img" src="/grupo/HomePage/Banner/Banner-xbox-Studios.jpg" alt="Banner Xbox Studios">
+      </div>
+      <div class="slide">
+        <img class="img" src="/grupo/HomePage/Banner/Banner-Nintendo-Studios.jpg" alt="Banner Nintendo Studios">
+      </div>
+      <div class="slide">
+        <img class="img" src="/grupo/HomePage/Banner/Banner-PS-Studios.jpg" alt="Banner PS Studios">
+      </div>
+      <div class="slide">
+        <img class="img" src="/grupo/HomePage/Banner/Banner-xbox-Studios.jpg" alt="Banner Xbox Studios">
+      </div>
+      <div class="slide">
+        <img class="img" src="/grupo/HomePage/Banner/Banner-Nintendo-Studios.jpg" alt="Banner Nintendo Studios">
+      </div>
+      <div class="slide">
+        <img class="img" src="/grupo/HomePage/Banner/Banner-PS-Studios.jpg" alt="Banner PS Studios">
+      </div>
+      <div class="slide">
+        <img class="img" src="/grupo/HomePage/Banner/Banner-xbox-Studios.jpg" alt="Banner Xbox Studios">
+      </div>
+      <div class="slide">
+        <img class="img" src="/grupo/HomePage/Banner/Banner-Nintendo-Studios.jpg" alt="Banner Nintendo Studios">
+      </div>
+      <div class="slide">
+        <img class="img" src="/grupo/HomePage/Banner/Banner-PS-Studios.jpg" alt="Banner PS Studios">
+      </div>
+      <div class="slide">
+        <img class="img" src="/grupo/HomePage/Banner/Banner-xbox-Studios.jpg" alt="Banner Xbox Studios">
+      </div>
+      <div class="slide">
+        <img class="img" src="/grupo/HomePage/Banner/Banner-Nintendo-Studios.jpg" alt="Banner Nintendo Studios">
+      </div>
+      <div class="slide">
+        <img class="img" src="/grupo/HomePage/Banner/Banner-PS-Studios.jpg" alt="Banner PS Studios">
+      </div>
+      <div class="slide">
+        <img class="img" src="/grupo/HomePage/Banner/Banner-xbox-Studios.jpg" alt="Banner Xbox Studios">
+      </div>
+    </div>
+  </section>
+
+  <!-- Grid de jogos em destaque -->
+  <section class="jogos" id="playstation">
+    <h2>PlayStation</h2>
+    <a href="./Playstation.html" target="_blank">
+    <div class="grid">
+      <div class="jogo">
+        <img src="./img/ghost-of-yotei-game-3840x2160-19048.jpg" alt="Ghost Of Yotei">
+        <h3>Ghost Of Yotei</h3>
+        <p>R$ 199,90</p>
+      </div>
+      <div class="jogo">
+        <img src="./img/marvels-spider-man-2-3840x2160-11609.jpg" alt="Assasin's Creed Shadows">
+        <h3>Assasin's Creed Shadows</h3>
+        <p>R$ 149,90</p>
+      </div>
+    </div>
+  </a>
+  </section>
+
+  <section class="jogos" id="xbox">
+    <h2>Xbox</h2>
+    <a href="./Xbox.html" target="_blank">
+    <div class="grid">
+      <div class="jogo">
+        <img src="./img/xboxCapa1.png" alt="Gears of War: E-Day">
+        <h3>Gears of War: E-Day</h3>
+        <p>R$ 159,90</p>
+      </div>
+      <div class="jogo">
+        <img src="./img/halo-infinite-2021-games-master-chief-xbox-series-x-and-3840x2160-6805.jpg" alt="Halo Infinite">
+        <h3>Halo Infinite</h3>
+        <p>R$ 139,90</p>
+      </div>
+    </div>
+    </a>
+  </section>
+
+  <section class="jogos" id="nintendo">
+    <h2>Nintendo</h2>
+    <a href="./Nintendo.html" target="_blank">
+    <div class="grid">
+      <div class="jogo">
+        <img src="./img/capaNint.jpg" alt="Zelda: Tears of the Kingdom">
+        <h3>Zelda: Tears of the Kingdom</h3>
+        <p>R$ 249,90</p>
+      </div>
+      <div class="jogo">
+        <img src="./img/capaNint2.jpg" alt="MarioKart 8 Deluxe">
+        <h3>MarioKart 8 Deluxe</h3>
+        <p>R$ 199,90</p>
+      </div>
+    </div>
+    </a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 4Players - Todos os direitos reservados. <br> <br>
+      Bruno Washington<br><br>
+      Carlos Eduardo<br><br>
+      Thiago Rocha<br><br>
+      Yago Menezes
+    </p>
+  </footer>
+
   <script>
-    $(document).ready(function () {
-      $("#toggleTheme").click(() => {
-       document.body.classList.toggle("dark");
-      });
-    });
+    // Aplica tema salvo
+    const userTheme = localStorage.getItem('user-theme') || 'light';
+    if (userTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+    }
   </script>
 
-  
-    <title>4Players - Login</title>
-  
-  </head>
-  <body>
-    <div class="form-container">
-      <form id="formLog">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" id = "logo" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-      </svg>
-      
-        <div class="input-field">
-          <input type="email" id="email" name="email" placeholder="E-mail" required>
-        </div>
 
-        <div class="password-field">
-          <input type="password" id="senha" name="senha" placeholder="Password" required>
-          <button type="button" class="toggle-password" onclick="togglePassword('senha')">🔓</button>        
-        </div>
-      
-        <div class="links">
-          <p><a href="./Cadastro/cadastro.html" target="_blank"> Register </a></p>
-          <a href="./Login/forgotPassword/forgotPassword.html" target="_blank">Forgot Password?</a>
-        </div>
-        <div class="buttons">
-          <button type="reset" id="reset">Limpar</button>
-          <button type="submit" id="submit">Enviar</button>
-        </div>
-      </form>
-    <button id="toggleTheme" class="darkTheme">Alternar Tema</button>
-   </div>
-  
-    
-
-    <script src="./login.js"></script>
-    <script src="./utils/utils.js"></script>
-    <script src="./Components/Background.js"></script>
-  </body>
+  <script>
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const user = users[users.length - 1];
+    if (user) {
+      document.getElementById('user-name').textContent = user.usuario;
+    }
+  </script>
+  <script src="./homePage.js"></script>
+  <script src="/grupo/HomePage/Cart.js"></script>
+  <script src="/grupo/HomePage/Cart.js"></script>
+  <script src="settings/settings.js"></script>
+</body>
 </html>
