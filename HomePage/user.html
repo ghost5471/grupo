@@ -65,6 +65,7 @@
     <p><strong>Usuário:</strong> <span id="username"></span></p>
     <p><strong>E-mail:</strong> <span id="email"></span></p>
     <p><strong>Senha:</strong> <span id="senha"></span></p>
+    <div id="user-actions" style="text-align:center; margin: 20px 0;"></div>
 
     <div class="settings">
       <h2>Acessibilidade</h2>
@@ -89,13 +90,28 @@
     // Busca usuário do localStorage
     const users = JSON.parse(localStorage.getItem('users')) || [];
     const user = users[users.length - 1];
+    const userView = sessionStorage.getItem('userView');
+    const usernameSpan = document.getElementById('username');
+    const emailSpan = document.getElementById('email');
+    const senhaSpan = document.getElementById('senha');
+    const actionsDiv = document.getElementById('user-actions');
 
-    if (user) {
-      document.getElementById('username').textContent = user.usuario || '';
-      document.getElementById('email').textContent = user.email || '';
-      document.getElementById('senha').textContent = user.senha || '';
+    if (userView === 'not-logged' || !user) {
+      usernameSpan.textContent = "nome não encontrado";
+      emailSpan.textContent = "email não encontrado";
+      senhaSpan.textContent = "senha não encontrada";
+      actionsDiv.innerHTML = `
+        <a href="../Cadastro/cadastro.html">Realizar cadastro</a> |
+        <a href="../Login/login.html">Logar</a> |
+        <a href="../Login/forgotPassword/forgotPassword.html">Mudar senha</a>
+      `;
     } else {
-      window.location.href = '../Login/login.html';
+      usernameSpan.textContent = user.usuario || '';
+      emailSpan.textContent = user.email || '';
+      senhaSpan.textContent = user.senha || '';
+      actionsDiv.innerHTML = `
+        <a href="../Login/forgotPassword/forgotPassword.html">Trocar senha</a>
+      `;
     }
 
     // Preferências de tema e fonte

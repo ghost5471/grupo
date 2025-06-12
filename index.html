@@ -11,7 +11,7 @@
   <!-- Cabeçalho com logo, menu e usuário -->
   <header>
     <div class="logo">
-      <a href="homePage.html" aria-label="Página inicial">
+      <a href="#" aria-label="Página inicial">
         <img src="HomePage/img/logoProjeto.png" alt="Logo GameStore">
       </a>
     </div>
@@ -27,7 +27,7 @@
 
     <div class="user-info">
      <img src="img/user.png" alt="Avatar" class="avatar">
-     <a href="HomePage/user.html" target="_blank"><span id="user-name">Usuário</span></a>
+     <a href="HomePage/user.html"><span id="user-name">Usuário</span></a>
 
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
   </header>
@@ -104,7 +104,7 @@
   <!-- Grid de jogos em destaque -->
   <section class="jogos" id="playstation">
     <h2>PlayStation</h2>
-    <a href="HomePage/Playstation.html" target="_blank">
+    <a href="HomePage/Playstation.html">
     <div class="grid">
       <div class="jogo">
         <img src="HomePage/img/ghost-of-yotei-game-3840x2160-19048.jpg" alt="Ghost Of Yotei">
@@ -112,7 +112,7 @@
         <p>R$ 199,90</p>
       </div>
       <div class="jogo">
-        <img src="HomePage/img/marvels-spider-man-2-3840x2160-11609.jpg" alt="">
+        <img src="HomePage/img/marvels-spider-man-2-3840x2160-11609.jpg" alt="Spiderman 2">
         <h3>Spiderman 2</h3>
         <p>R$ 149,90</p>
       </div>
@@ -122,7 +122,7 @@
 
   <section class="jogos" id="xbox">
     <h2>Xbox</h2>
-    <a href="HomePage/Xbox.html" target="_blank">
+    <a href="HomePage/Xbox.html">
     <div class="grid">
       <div class="jogo">
         <img src="HomePage/img/xboxCapa1.png" alt="Gears of War: E-Day">
@@ -140,7 +140,7 @@
 
   <section class="jogos" id="nintendo">
     <h2>Nintendo</h2>
-    <a href="HomePage/Nintendo.html" target="_blank">
+    <a href="HomePage/Nintendo.html">
     <div class="grid">
       <div class="jogo">
         <img src="HomePage/img/capaNint.jpg" alt="Zelda: Tears of the Kingdom">
@@ -165,21 +165,30 @@
     </p>
   </footer>
 
+  <!-- Substitua os scripts abaixo por este: -->
+  <script src="utils/theme.js"></script>
   <script>
-    // Aplica tema salvo
-    const userTheme = localStorage.getItem('user-theme') || 'light';
-    if (userTheme === 'dark') {
-      document.body.classList.add('dark-mode');
-    }
-  </script>
-
-
-  <script>
+    // Exibe nome do usuário no header ou "Usuário" se não logado
     const users = JSON.parse(localStorage.getItem('users')) || [];
     const user = users[users.length - 1];
-    if (user) {
-      document.getElementById('user-name').textContent = user.usuario;
+    const userNameSpan = document.getElementById('user-name');
+    if (user && user.usuario) {
+      userNameSpan.textContent = user.usuario;
+    } else {
+      userNameSpan.textContent = "Usuário";
     }
+
+    // Redireciona para a tela de usuário e exibe dados conforme login
+    document.querySelector('a[href="HomePage/user.html"]').addEventListener('click', function(e) {
+      e.preventDefault();
+      // Salva flag para a tela de usuário saber se está logado ou não
+      if (user && user.usuario) {
+        sessionStorage.setItem('userView', 'logged');
+      } else {
+        sessionStorage.setItem('userView', 'not-logged');
+      }
+      window.open('HomePage/user.html');
+    });
   </script>
   <script src="homePage.js"></script>
 </body>

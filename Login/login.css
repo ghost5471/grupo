@@ -5,7 +5,11 @@
     box-sizing: border-box;
     animation: fadeIn 1s ease-in-out;
   }
-  
+  h2 {
+    text-align: center;
+    margin-block: 3rem;
+    color: white;
+  }
   /* Estilizando o corpo da página */
   body {
     font-family: Arial, sans-serif;
@@ -16,179 +20,115 @@
     margin: 0;
     background-color: #232323;
     color: #f1f1f1;
+    min-height: 100vh;
   }
   
   /* Estilizando o contêiner do formulário */
   .form-container {
-    position: relative;
-    z-index: 1;
-    width: 60vw;
-    max-width: 40rem;
-    padding: 3vw 5vh;
-    margin: 10vh auto;
-    border-radius: 2vh;
-    background-color: #1d1c1c;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.347);
+    box-shadow: rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #fff;
+    border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    text-align: center;
-
-    & #formLog {
+    padding: 32px 24px;
+    max-width: 350px;
+    margin: 40px auto;
+  }
+  
+  /* Estilizando o formulário */
+  form {
     display: flex;
     flex-direction: column;
-    gap: 1vh;
-
-      & #logo {
-        display: flex;
-        flex-direction: column;
-        gap: 2vh;
-        display: block;
-        margin: 0 auto 2vh;
-        width: 15vw;
-        max-width: 8.125rem;
-        height: auto;
-        border: none;
-        fill: rgba(62, 164, 154, 0.835); /* cor fosca */
-        stroke: none;
-      }
-
-      & .input-field {
-        & #email {
-          left: 50%;
-          width: 90%;
-          padding: 1.5vh;
-          margin-bottom: 2vh;
-          border: none;
-          border-radius: 1vh;
-          background-color: rgba(255, 255, 255, 0.4);
-          color: rgb(0, 0, 0);
-          font-size: 1.2rem;
-        }
-      }
-
-      & .password-field {
-        & #senha {
-          width: 90%;
-          padding: 1.5vh;
-          margin-bottom: 2vh;
-          border: none;
-          border-radius: 1vh;
-          background-color: rgba(255, 255, 255, 0.4);
-          color: rgb(12, 12, 12);
-          font-size: 1.2rem;
-        }
-        & .toggle-password {
-          right: 5%;
-          top: 35%;
-          transform: translateY(-50%);
-          cursor: pointer;
-          position: absolute;
-          font-size: 1.2rem;
-        }
-      }
-    }
-
-    & .links {
-       display: flex;
-       flex-direction: column;
-       align-items: center;
-       justify-content: center;
-       gap: 0.5vh;
-       width: 100%;
-       text-align: center;
-       margin-top: 1vh;
-
-     & p {
-        font-size: .625rem;
-        margin-top: 3vh;
-
-       & a {
-          text-decoration: none;
-          font-size: .625rem;
-          margin-top: 3vh;
-
-        }
-      }
-
-     & a {
-        margin-top: 3vh;
-        text-decoration: none;
-        font-size: .625rem;
-      }
-
-    }
-
-    & .buttons {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1vh;
-
-      & #reset {
-        width: 40%;
-        padding: 1.5vh 0;
-        margin: 2vh 5%;
-        border: none;
-        border-radius: 1vh;
-        background: linear-gradient(45deg, #023cc4, #01aff3);
-        color: white;
-        font-size: 1.2rem;
-        font-weight: bold;
-        cursor: pointer;
-      }
-
-      & #submit {
-        width: 40%;
-        padding: 1.5vh 0;
-        margin: 2vh 5%;
-        border: none;
-        border-radius: 1vh;
-        background: linear-gradient(45deg, #023cc4, #01aff3);
-        color: white;
-        font-size: 1.2rem;
-        font-weight: bold;
-        cursor: pointer;
-      }
-    }
+    width: 100%;
+  }
+    
+  /* Estilizando os rótulos */
+  label {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #fff9f9;
+  }
+  
+  /* Estilizando os campos de entrada */
+  input[type="email"],
+  input[type="password"] {
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    background-color: #333;
+    border: none;
+    color: #fff;
   }
 
-  /* Botões Limpar e Enviar com cor roxa igual ao cadastro */
-  .buttons #reset,
-  .buttons #submit,
+  
+  
+  /* Estilizando o botão de envio */
+  button,
   button[type="reset"],
   button[type="submit"] {
-    background-color: #bd0af4;
+    padding: 12px;
+    background-color:#28a745;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-    padding: 12px;
-    width: 100px;
     transition: background-color 0.3s;
+    width: 100px;
   }
-
-  .buttons #reset:hover,
-  .buttons #submit:hover,
+  
+  button:hover,
   button[type="reset"]:hover,
   button[type="submit"]:hover {
-    background-color: #60056a;
+    background-color: #218838;
   }
 
+  
   #reset:active, #submit:active {
     transform: scale(1.05);
   }
+  
+  .user-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 20px;    
+  }
 
-  /* Remove botão de alternar tema */
-  .darkTheme {
-    display: none !important;
+  .troca{
+    position: relative;
   }
   
-  /*estilizando a ancora*/
-  a:hover {
-    color: #043a63;
+  .volta{
+    color: white;
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 40px;
+    
   }
-
+  
+  .btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   
   /*Estilo da página de erro*/
   .popup {
@@ -206,11 +146,11 @@
     text-align: center;
     z-index: 1000;
   }
-
+  
   .popup h3{
     color: #721c24;
   }
-
+  
   .popup button {
     background-color: #dc3545;
     color: white;
@@ -219,11 +159,11 @@
     border-radius: 4px;
     cursor: pointer;
   }
-
+  
   .popup button:hover {
     background-color: #c82333;
   }
-
+  
   /*alterações do botão de exibir/ocultar senha*/
   .password-field {
     position: relative;
@@ -232,7 +172,7 @@
   .toggle-password {
     position: absolute;
     right: 10px;
-    top: 40%;
+    top: 50%;
     transform: translateY(-50%);
     background: none !important;
     border: none;
@@ -246,24 +186,9 @@
     opacity: 0.7;
     background: none !important;
   }
-
-  .links {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 260px;
-    padding: 10px;
-    bottom: 20px;
-
-    p, a {
-      font-size: 8px;
-      letter-spacing: 1px;
-    }
-  }
-
+  
   /*animação de fade no site*/
-
+  
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -272,88 +197,61 @@
       opacity: 1;
     }
   }
-
-  /* Botões sempre lado a lado */
-.buttons {
-  display: flex;
-  flex-direction: row !important;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-.buttons button,
-.buttons #reset,
-.buttons #submit {
-  flex: 1 1 0;
-  min-width: 90px;
-  max-width: 180px;
-}
-
-@media (max-width: 480px) {
-    .links {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      margin-top: 1vh;
-      gap: 0.5vh;
-      text-align: center;
+  
+  /* Scrollbar customizado igual ao cadastro */
+  .form-container::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .form-container::-webkit-scrollbar-thumb {
+    background-color: #88888870;
+    border-radius: 4px;
+  }
+  
+  .form-container::-webkit-scrollbar-thumb:active {
+    background-color: #555555;
+  }
+  
+  /* Responsivo igual cadastro */
+  @media (max-width: 600px) {
+    .form-container {
+      max-width: 95vw;
+      padding: 10px;
+      margin: 10px auto;
     }
-
-  .links p,
-  .links a {
-    font-size: 0.5rem;
-    line-height: 1;
+    input[type="email"], input[type="password"] {
+      font-size: 14px;
+      padding: 8px;
+    }
+    .butao {
+      flex-direction: column;
+      gap: 10px;
+    }
+    .butao button {
+      width: 100%;
+      font-size: 1em;
+      padding: 10px;
+    }
   }
 
-  #formLog {
-    gap: 1vh;
-    justify-content: center;
+  /*estilizando a ancora*/
+  
+  .login-links {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    font-size: 4px;
-  }
-
-  .buttons {
-    gap: 0.5rem;
-    flex-wrap: wrap;
-  }
-
-   .buttons button {
-    font-size: 0.6rem;
-    padding: 0.4rem 0.8rem;
-    flex: 1 1 40%; /* deixa eles ocuparem espaço proporcional */
-    max-width: 100px;
-  }
-
-  .darkTheme {
-    font-size: 0.5rem;
-    padding: 5px 10px;
-    top: 10px;
-    right: 10px;
-    border: none;
-  }
+    width: 100%;
+  margin-bottom: 18px;
+  margin-top: -5px;
 }
 
-@media (max-width: 600px) {
-  .form-container {
-    max-width: 95vw;
-    padding: 10px;
-    margin: 10px auto;
-  }
-  input[type="email"], input[type="password"] {
-    font-size: 14px;
-    padding: 8px;
-  }
-  .buttons {
-    flex-direction: row !important;
-    gap: 10px;
-  }
-  .buttons button {
-    width: 100%;
-    font-size: 1em;
-    padding: 10px;
-    min-width: 90px;
-    max-width: 180px;
-  }
+.login-links a {
+  color: #bd0af4;
+  text-decoration: none;
+  font-size: auto;
+  transition: color 0.2s;
+}
+
+.login-links a:hover {
+  color: #60056a;
 }

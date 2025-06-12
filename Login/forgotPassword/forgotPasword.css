@@ -20,6 +20,8 @@
     margin: 0;
     background-size: cover;
     background-repeat: no-repeat;
+    background-color: #232323;
+    color: #f1f1f1;
   }
   
   /* Estilizando o contêiner do formulário */
@@ -36,6 +38,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    padding: 32px 24px;
+    max-width: 350px;
+    margin: 40px auto;
   }
   
   /* Estilizando o formulário */
@@ -74,6 +82,8 @@
     width: 100%;
     background-color: #333;
     border: none;
+    background: #444;
+    color: #fff;
   }
 
   /*estilizando a ancora*/
@@ -96,7 +106,7 @@
   button[type="reset"],
   button[type="submit"] {
     padding: 12px;
-    background-color: #bd0af4;
+    background-color: #28a745;
     color: white;
     border: none;
     border-radius: 4px;
@@ -104,12 +114,21 @@
     font-size: 16px;
     transition: background-color 0.3s;
     width: 100px;
+    background: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.2s;
   }
   
   button:hover,
   button[type="reset"]:hover,
   button[type="submit"]:hover {
-    background-color: #60056a;
+    background-color: #218838;
+    background: #218838;
   }
 
   
@@ -136,6 +155,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 10px;
   }
 
   /*Estilo da página de erro*/
@@ -189,6 +209,15 @@
     width: auto;
     height: auto;
     color: inherit;
+    background: #444;
+    color: #fff;
+    border: none;
+    margin-left: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.2s;
   }
   .toggle-password:hover {
     opacity: 0.7;

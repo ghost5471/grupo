@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="website icon" type="png" href="img/error.png">
-    <title>Error</title>
+
+    <title>Erro</title>
 
     <style>
         
@@ -17,43 +18,57 @@
             background-size: cover;
         }
 
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
         .box {
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
+            gap: 6.25rem;
             flex-direction: column;
-            transform: translateY(50%);
-            background: #fff;
+            background: #eecdcd;
             padding: 1.25rem;
             border: .0625rem solid #900;
             border-radius: .3125rem;
-            max-width: 31.25rem;
             margin: auto;
-            width: 18.75rem;
-            height: 31.25rem;
+            width: 25rem;
+            height: 25rem;
+        }
+
+        h1, p, a {
+            margin: 0;
+            text-align: center;
         }
 
     </style>
-
+<script src="./utils/theme.js"></script>
 </head>
 <body>
-    
-    <div class="box">
-        <h1>Error</h1>
-        <p id="msgErro">Carregando mensagem...</p>
-        <a href="javascript:history.back()">⬅ Voltar</a>
+    <div class="container">
+        <div class="box">
+            <h1>Erro</h1>
+            <p id="msgErro">Carregando mensagem...</p>
+            <a href="javascript:history.back()">⬅ Voltar</a>
+        </div>
     </div>
-
     <script>
-
-        const box = document.createElement('div');
-        box.classList.add('box');
-
+        // Busca a mensagem de erro do sessionStorage (conforme utils.js)
         const msg = sessionStorage.getItem('Erro');
-        document.getElementById('msgErro').textContent = msg || 'Erro desconhecido';
-        sessionStorage.removeItem('Erro'); // Limpa para não repetir a mensagem
-        document.body.appendChild(box);
+        const msgElem = document.getElementById('msgErro');
+        if (msgElem) {
+            msgElem.textContent = msg || 'Erro desconhecido';
+        }
+        sessionStorage.removeItem('Erro');
     </script>
 
 </body>
