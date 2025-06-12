@@ -40,6 +40,11 @@
       font-size: 1.2em;
     }
 
+    /* Fonte pequena */
+    .small-font {
+      font-size: 0.8em;
+    }
+
     .settings {
       margin-top: 30px;
       border-top: 1px solid #ccc;
@@ -73,6 +78,7 @@
 
       <label for="font-select">Tamanho da fonte:</label>
       <select id="font-select">
+        <option value="small">Pequena</option>
         <option value="normal">Normal</option>
         <option value="large">Grande</option>
       </select>
@@ -80,17 +86,19 @@
   </div>
 
   <script>
-   const users = JSON.parse(localStorage.getItem('users')) || [];
+    // Busca usuário do localStorage
+    const users = JSON.parse(localStorage.getItem('users')) || [];
     const user = users[users.length - 1];
-/**
-    if (user) {
-      document.getElementById('username').textContent = user.usuario;
-      document.getElementById('email').textContent = user.email;
-      document.getElementById('senha').textContent = user.senha;
-    } else {
-      window.location.href='../Login/login.html';
-    }*/ 
 
+    if (user) {
+      document.getElementById('username').textContent = user.usuario || '';
+      document.getElementById('email').textContent = user.email || '';
+      document.getElementById('senha').textContent = user.senha || '';
+    } else {
+      window.location.href = '../Login/login.html';
+    }
+
+    // Preferências de tema e fonte
     const body = document.body;
     const container = document.getElementById('config-container');
     const themeSelect = document.getElementById('theme-select');
@@ -129,11 +137,16 @@
     }
 
     function applyFontSize(size) {
+      body.classList.remove('large-font', 'small-font');
+      container.classList.remove('large-font', 'small-font');
       if (size === 'large') {
+        body.classList.add('large-font');
         container.classList.add('large-font');
-      } else {
-        container.classList.remove('large-font');
+      } else if (size === 'small') {
+        body.classList.add('small-font');
+        container.classList.add('small-font');
       }
+      // normal: nenhuma classe extra
     }
   </script>
 </body>

@@ -14,6 +14,8 @@
     align-items: center;
     height: 100vh;
     margin: 0;
+    background-color: #232323;
+    color: #f1f1f1;
   }
   
   /* Estilizando o contêiner do formulário */
@@ -25,11 +27,9 @@
     padding: 3vw 5vh;
     margin: 10vh auto;
     border-radius: 2vh;
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(1.5vh);
-    -webkit-backdrop-filter: blur(1.5vh);
-    box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.3);
-    color: white;
+    background-color: #1d1c1c;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     text-align: center;
 
     & #formLog {
@@ -152,21 +152,38 @@
     }
   }
 
+  /* Botões Limpar e Enviar com cor roxa igual ao cadastro */
+  .buttons #reset,
+  .buttons #submit,
+  button[type="reset"],
+  button[type="submit"] {
+    background-color: #bd0af4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 12px;
+    width: 100px;
+    transition: background-color 0.3s;
+  }
+
+  .buttons #reset:hover,
+  .buttons #submit:hover,
+  button[type="reset"]:hover,
+  button[type="submit"]:hover {
+    background-color: #60056a;
+  }
+
+  #reset:active, #submit:active {
+    transform: scale(1.05);
+  }
+
+  /* Remove botão de alternar tema */
   .darkTheme {
-     position: fixed;
-     top: 1rem;
-     right: 1rem;
-     padding: 4px 8px;
-     font-size: 0.75rem;
-     z-index: 1000;
-     border-radius: 6px;
-     cursor: pointer;
-     background: #ffffffaa;
-     color: #000;
-     transition: all 0.3s ease-in-out;
-     border: none;
-    }
-    
+    display: none !important;
+  }
+  
   /*estilizando a ancora*/
   a:hover {
     color: #043a63;
@@ -217,16 +234,17 @@
     right: 10px;
     top: 40%;
     transform: translateY(-50%);
-    background: none;
+    background: none !important;
     border: none;
     cursor: pointer;
     padding: 0;
     width: auto;
     height: auto;
+    color: inherit;
   }
   .toggle-password:hover {
     opacity: 0.7;
-    background: none;
+    background: none !important;
   }
 
   .links {
@@ -255,7 +273,23 @@
     }
   }
 
-  @media (max-width: 480px) {
+  /* Botões sempre lado a lado */
+.buttons {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.buttons button,
+.buttons #reset,
+.buttons #submit {
+  flex: 1 1 0;
+  min-width: 90px;
+  max-width: 180px;
+}
+
+@media (max-width: 480px) {
     .links {
       display: flex;
       flex-direction: column;
@@ -298,5 +332,28 @@
     top: 10px;
     right: 10px;
     border: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-container {
+    max-width: 95vw;
+    padding: 10px;
+    margin: 10px auto;
+  }
+  input[type="email"], input[type="password"] {
+    font-size: 14px;
+    padding: 8px;
+  }
+  .buttons {
+    flex-direction: row !important;
+    gap: 10px;
+  }
+  .buttons button {
+    width: 100%;
+    font-size: 1em;
+    padding: 10px;
+    min-width: 90px;
+    max-width: 180px;
   }
 }

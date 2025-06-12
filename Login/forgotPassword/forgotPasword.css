@@ -92,9 +92,11 @@
   }
 
   /* Estilizando o botão de envio */
-  button {
+  button,
+  button[type="reset"],
+  button[type="submit"] {
     padding: 12px;
-    background-color: #007bff;
+    background-color: #bd0af4;
     color: white;
     border: none;
     border-radius: 4px;
@@ -102,10 +104,11 @@
     font-size: 16px;
     transition: background-color 0.3s;
     width: 100px;
-    background-color: #bd0af4;
   }
   
-  button:hover {
+  button:hover,
+  button[type="reset"]:hover,
+  button[type="submit"]:hover {
     background-color: #60056a;
   }
 
@@ -179,16 +182,17 @@
     right: 10px;
     top: 40%;
     transform: translateY(-50%);
-    background: none;
+    background: none !important;
     border: none;
     cursor: pointer;
     padding: 0;
     width: auto;
     height: auto;
+    color: inherit;
   }
   .toggle-password:hover {
     opacity: 0.7;
-    background: none;
+    background: none !important;
   }
 
   /*animação de fade no site*/
@@ -201,3 +205,39 @@
       opacity: 1;
     }
   }
+
+  /* Scrollbar customizado igual ao cadastro */
+.form-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.form-container::-webkit-scrollbar-thumb {
+  background-color: #88888870;
+  border-radius: 4px;
+}
+
+.form-container::-webkit-scrollbar-thumb:active {
+  background-color: #555555;
+}
+
+/* Responsivo igual cadastro */
+@media (max-width: 600px) {
+  .form-container {
+    max-width: 95vw;
+    padding: 10px;
+    margin: 10px auto;
+  }
+  input[type="email"], input[type="password"] {
+    font-size: 14px;
+    padding: 8px;
+  }
+  .butao {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .butao button {
+    width: 100%;
+    font-size: 1em;
+    padding: 10px;
+  }
+}
