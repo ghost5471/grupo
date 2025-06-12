@@ -1,8 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 section {
     height: 70vh;
     display: flex;
     align-items: center;
 }
+
+.container {
+    width: 98vw;
+    height: 98vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .product-grid {
     display: flex;
     justify-content: center;
@@ -17,7 +33,7 @@ section {
     cursor: pointer; /* Muda o cursor para indicar que é clicável */
     font-size: 1em; /* Tamanho da fonte do botão */
     transition: background-color 0.2s ease-in-out; /* Transição suave na mudança de cor */
-    width: 20%;
+    width: auto;
 }
 .btn:hover {
     background-color: #218838; /* Cor de fundo mais escura ao passar o mouse no botão */
