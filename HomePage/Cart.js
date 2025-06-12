@@ -16,3 +16,34 @@ function Remover() {
     localStorage.setItem("carrinho", cartCount);
     document.getElementById('cart-count').textContent = cartCount;
 }
+
+window.onload = function() {
+  let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+  let grid = document.getElementById('product-grid');
+  grid.innerHTML = ""; // Limpa o conteúdo
+
+  if (carrinho.length === 0) {
+    grid.innerHTML = "<h1>Seu carrinho está vazio!</h1>";
+  } else {
+    carrinho.forEach(produto => {
+      let div = document.createElement('div');
+      div.className = "produto-carrinho";
+      div.innerHTML = `
+        <h3>${produto.nome}</h3>
+        <p>Preço: R$ ${produto.preco}</p>
+        <img src="${produto.imagem}" width="100">
+      `;
+      grid.appendChild(div);
+    });
+  }
+
+  // Atualiza o contador do carrinho
+  let contador = document.getElementById('cart-count');
+  if (contador) contador.textContent = carrinho.length;
+};
+
+// Função para remover todos os itens do carrinho
+function Remover() {
+  localStorage.removeItem('carrinho');
+  window.location.reload();
+}
