@@ -46,9 +46,8 @@
     }
 
     .settings {
-      margin-top: 30px;
-      border-top: 1px solid #ccc;
-      padding-top: 20px;
+      margin-top: auto;
+      padding-top: auto;
     }
 
     select {
@@ -56,6 +55,31 @@
       padding: 8px;
       margin-top: 5px;
       border-radius: 5px;
+    }
+
+    .user-actions-btns {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    .user-actions-btns a {
+      flex: 1;
+      text-decoration: none;
+    }
+    .user-actions-btns button {
+      width: 100%;
+      background: #28a745;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 0;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .user-actions-btns button:hover {
+      background: #218838;
     }
   </style>
 </head>
@@ -65,24 +89,28 @@
     <p><strong>Usuário:</strong> <span id="username"></span></p>
     <p><strong>E-mail:</strong> <span id="email"></span></p>
     <p><strong>Senha:</strong> <span id="senha"></span></p>
-    <div id="user-actions" style="text-align:center; margin: 20px 0;"></div>
-
+    <div id="user-actions"></div>
+    <hr>
     <div class="settings">
       <h2>Acessibilidade</h2>
-      <a href="../index.html" class="settings">Voltar</a>
-
-      <label for="theme-select">Tema:</label>
-      <select id="theme-select">
-        <option value="light">Claro</option>
-        <option value="dark">Escuro</option>
-      </select>
-
-      <label for="font-select">Tamanho da fonte:</label>
+    <hr>
+    
+    <label for="theme-select">Tema:</label>
+    <select id="theme-select">
+      <option value="light">Claro</option>
+      <option value="dark">Escuro</option>
+    </select>
+    
+    <label for="font-select">Tamanho da fonte:</label>
       <select id="font-select">
         <option value="small">Pequena</option>
         <option value="normal">Normal</option>
         <option value="large">Grande</option>
       </select>
+      <div class="user-actions-btns">
+        <!-- Botão para voltar -->
+      <a href="../index.html" class="settings"><button>Voltar</button></a>
+      </div>
     </div>
   </div>
 
@@ -101,16 +129,20 @@
       emailSpan.textContent = "email não encontrado";
       senhaSpan.textContent = "senha não encontrada";
       actionsDiv.innerHTML = `
-        <a href="../Cadastro/cadastro.html">Realizar cadastro</a> |
-        <a href="../Login/login.html">Logar</a> |
-        <a href="../Login/forgotPassword/forgotPassword.html">Mudar senha</a>
+        <div class="user-actions-btns">
+          <a href="../Cadastro/cadastro.html"><button type="button">Realizar cadastro</button></a>
+          <a href="../Login/login.html"><button type="button">Logar</button></a>
+          <a href="../Login/forgotPassword/forgotPassword.html"><button type="button">Mudar senha</button></a>
+        </div>
       `;
     } else {
       usernameSpan.textContent = user.usuario || '';
       emailSpan.textContent = user.email || '';
       senhaSpan.textContent = user.senha || '';
       actionsDiv.innerHTML = `
-        <a href="../Login/forgotPassword/forgotPassword.html">Trocar senha</a>
+        <div class="user-actions-btns">
+          <a href="../Login/forgotPassword/forgotPassword.html"><button type="button">Trocar senha</button></a>
+        </div>
       `;
     }
 
