@@ -11,6 +11,7 @@
 </head>
 <body>
   <!-- Cabeçalho com logo, menu e usuário -->
+  <div class="container">
   <header>
     <div class="logo">
       <a href="../index.html" aria-label="Página inicial">
@@ -30,10 +31,6 @@
     <div class="user-info">
       <img src="./img/user.png" alt="Avatar" class="avatar">
       <span>Usuário</span>
-
-      <div class="cart-icon" id="cart-icon">
-        🛒 <span class="cart-count" id="cart-count">0</span>
-      </div>
     </div>
     
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
@@ -50,7 +47,6 @@
 
  <div class="main-content container">
     <div class="product-grid" id="product-grid">
-      <h1>Aqui apareceriam os jogos adicionados</h1>
       <br><br><br>           
     </div>
     <div>
@@ -58,6 +54,7 @@
     <button class="btn" id="remover" onclick="Remover()">Remover ítens</button>
     </div>
 </div>
+
    <footer>
     <p>&copy; 2025 4Players - Todos os direitos reservados. <br> <br>
       Bruno Washington<br><br>
@@ -66,8 +63,51 @@
       Yago Menezes
     </p>
   </footer>
-
+</div>
   <script src="../homePage.js"></script>
   <script src="/Cart.js"></script>
+
+  <script>
+    // Exibe os jogos do carrinho na página Cart.html
+    function renderizarCarrinhoJogos() {
+      const grid = document.getElementById('product-grid');
+      if (!grid) return;
+
+      const carrinhoJogos = JSON.parse(localStorage.getItem('carrinhoJogos')) || [];
+      grid.innerHTML = "";
+
+      if (carrinhoJogos.length === 0) {
+        grid.innerHTML = "<h1>Seu carrinho está vazio!</h1>";
+        return;
+      }
+
+      carrinhoJogos.forEach(jogo => {
+        // jogo = [nome, preco, imagem]
+        const div = document.createElement('div');
+        div.className = "produto-carrinho";
+        div.style.position = "relative";
+        div.innerHTML = `
+          <div style="position:relative; border:1px solid #ccc; border-radius:10px; margin:10px; padding:10px; display:flex; align-items:center; gap:20px;">
+            <img src="${jogo[2]}" width="100" alt="${jogo[0]}">
+            <div style="flex:1;">
+              <h3 style="margin:0;">${jogo[0]}</h3>
+              <p style="margin:5px 0;">Preço: ${jogo[1]}</p>
+            </div>
+          </div>
+        `;
+        grid.appendChild(div);
+      });
+    }
+
+    // Só executa na página do carrinho
+    if (window.location.pathname.toLowerCase().includes('cart.html')) {
+      document.addEventListener('DOMContentLoaded', renderizarCarrinhoJogos);
+    }
+
+    // Para exibir os jogos na página do carrinho, basta ler carrinhoJogos do localStorage
+    // e criar as divs dinamicamente conforme necessário.
+
+  </script>
+
 </body>
 </html>

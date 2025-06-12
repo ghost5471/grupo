@@ -51,7 +51,7 @@
             <div class="product-info">
               <h3 id="nome">Ghost Of Yotei</h3>
               <p id="preco" class="price">R$ 199.00</p>
-              <button class="add-to-cart-btn" onclick="adicionarAoCarrinho('Ghost Of Yotei', 'R$ 199.00', 'games_playstation/ghost-of-yotei-game-3840x2160-19048.jpg')">Comprar</button>
+              <button class="add-to-cart-btn">Comprar</button>
             </div>
           </div>
           <div class="product-card">
@@ -59,7 +59,7 @@
             <div class="product-info">
               <h3 id="nome">Spider Man 2</h3>
               <p id="preco" class="price">R$ 149.99</p>
-              <button class="add-to-cart-btn" onclick="adicionarAoCarrinho('Spider Man 2', 'R$ 149.99', 'games_playstation/marvels-spider-man-2-3840x2160-11609.jpg')">Comprar</button>
+              <button class="add-to-cart-btn">Comprar</button>
             </div>
           </div>
           <div class="product-card">
@@ -67,7 +67,7 @@
             <div class="product-info">
               <h3 id="nome">God of War</h3>
               <p id="preco" class="price">R$ 229.99</p>
-              <button class="add-to-cart-btn" onclick="adicionarAoCarrinho('God of War', 'R$ 229.99', 'games_playstation/GodofWar.jpg')">Comprar</button>
+              <button class="add-to-cart-btn">Comprar</button>
             </div>
           </div>
           <div class="product-card">
@@ -75,7 +75,7 @@
             <div class="product-info">
               <h3 id="nome">Fallout 76</h3>
               <p id="preco" class="price">R$ 129.99</p>
-              <button class="add-to-cart-btn" onclick="adicionarAoCarrinho('Fallout 76', 'R$ 129.99', 'games_playstation/Fallout76.jpg')">Comprar</button>
+              <button class="add-to-cart-btn">Comprar</button>
             </div>
           </div>
           <div class="product-card">
@@ -83,7 +83,7 @@
             <div class="product-info">
               <h3 id="nome">Until Dawn</h3>
               <p id="preco" class="price">R$ 199.99</p>
-              <button class="add-to-cart-btn" onclick="adicionarAoCarrinho('Until Dawn', 'R$ 199.99', 'games_playstation/UntilDawn.jpg')">Comprar</button>
+              <button class="add-to-cart-btn">Comprar</button>
             </div>
           </div>
           <div class="product-card">
@@ -91,7 +91,7 @@
             <div class="product-info">
               <h3 id="nome">Wild Arms</h3>
               <p id="preco" class="price">R$ 99.99</p>
-              <button class="add-to-cart-btn" onclick="adicionarAoCarrinho('Wild Arms', 'R$ 99.99', 'games_playstation/Wildarms.jpg')">Comprar</button>
+              <button class="add-to-cart-btn">Comprar</button>
             </div>
           </div>
           <div class="product-card">
@@ -99,7 +99,7 @@
             <div class="product-info">
               <h3 id="nome">Dino Crisis</h3>
               <p id="preco" class="price">R$ 189.99</p>
-              <button class="add-to-cart-btn" onclick="adicionarAoCarrinho('Dino Crisis', 'R$ 189.99', 'games_playstation/dinocrisis.jpg')">Comprar</button>
+              <button class="add-to-cart-btn">Comprar</button>
             </div>
           </div>
           <div class="product-card">
@@ -107,7 +107,7 @@
             <div class="product-info">
               <h3 id="nome">Lego Star Wars</h3>
               <p id="preco" class="price">R$ 89.99</p>
-              <button class="add-to-cart-btn" onclick="adicionarAoCarrinho('Lego Star Wars', 'R$ 89.99', 'games_playstation/starwars.jpg')">Comprar</button>
+              <button class="add-to-cart-btn">Comprar</button>
             </div>
           </div>
         </div>
@@ -125,23 +125,12 @@
   <script src="../homePage.js"></script>
   <script src="Cart.js"></script>
   <script>
-    function atualizarContadorCarrinho() {
-      const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+    // Atualiza o contador do carrinho ao carregar a página
+    document.addEventListener('DOMContentLoaded', function() {
+      const carrinhoJogos = JSON.parse(localStorage.getItem('carrinhoJogos')) || [];
       const contador = document.getElementById('cart-count');
-      if (contador) contador.textContent = carrinho.reduce((acc, item) => acc + item.quantidade, 0);
-    }
-    atualizarContadorCarrinho();
-    window.adicionarAoCarrinho = function(nome, preco, imagem) {
-      let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-      const index = carrinho.findIndex(item => item.nome === nome && item.imagem === imagem);
-      if (index !== -1) {
-        carrinho[index].quantidade += 1;
-      } else {
-        carrinho.push({ nome, preco, imagem, quantidade: 1 });
-      }
-      localStorage.setItem('carrinho', JSON.stringify(carrinho));
-      atualizarContadorCarrinho();
-    }
+      if (contador) contador.textContent = carrinhoJogos.length;
+    });
   </script>
 </body>
 </html>

@@ -1,84 +1,58 @@
-// Lógica do carrinho de compras: adiciona, remove e exibe produtos no carrinho usando localStorage
+// Lógica do carrinho: adiciona cada jogo como array [nome, preco, imagem] em uma array de arrays
 
-// Renderiza o carrinho na tela, mostrando nome, preço, imagem e quantidade de cada produto
-function renderCarrinho() {
-  const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-  const grid = document.getElementById('product-grid');
-  grid.innerHTML = ""; // Limpa o conteúdo
+// Array de arrays: cada elemento é [nome, preco, imagem]
+let carrinhoJogos = JSON.parse(localStorage.getItem('carrinhoJogos')) || [];
 
-  if (carrinho.length === 0) {
-    grid.innerHTML = "<h1>Seu carrinho está vazio!</h1>";
-  } else {
-    carrinho.forEach(produto => {
-      let div = document.createElement('div');
-      div.className = "produto-carrinho";
-      div.innerHTML = `
-        <h3>${produto.nome} ${produto.quantidade > 1 ? `<span style="color:red;">x${produto.quantidade}</span>` : ""}</h3>
-        <p>Preço: ${produto.preco}</p>
-        <img src="${produto.imagem}" width="100">
-        <button onclick="removerItem('${produto.nome}', '${produto.imagem}')">Remover</button>
-      `;
-      grid.appendChild(div);
-    });
-  }
+// Função para adicionar um jogo ao carrinho
+function adicionarAoCarrinhoPorId(cardDiv) {
+  // Busca os elementos pelo id dentro da div do card
+  const nome = cardDiv.querySelector('#nome')?.textContent || '';
+  const preco = cardDiv.querySelector('#preco')?.textContent || '';
+  const imagem = cardDiv.querySelector('#imagem')?.getAttribute('src') || '';
 
-  // Atualiza o contador do carrinho no ícone
-  let contador = document.getElementById('cart-count');
-  if (contador) contador.textContent = carrinho.reduce((acc, item) => acc + item.quantidade, 0);
+  // Adiciona o jogo como array [nome, preco, imagem]
+  carrinhoJogos.push([nome, preco, imagem]);
+  localStorage.setItem('carrinhoJogos', JSON.stringify(carrinhoJogos));
 }
 
-// Adiciona um item ao carrinho ou incrementa a quantidade se já existir
-function adicionarAoCarrinho(nome, preco, imagem) {
-  let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-  const index = carrinho.findIndex(item => item.nome === nome && item.imagem === imagem);
-
-  if (index !== -1) {
-    carrinho[index].quantidade += 1;
-  } else {
-    carrinho.push({ nome, preco, imagem, quantidade: 1 });
-  }
-  localStorage.setItem('carrinho', JSON.stringify(carrinho));
-  atualizarContadorCarrinho();
-}
-
-// Remove uma unidade do item ou remove o item se quantidade = 1
-function removerItem(nome, imagem) {
-  let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-  const index = carrinho.findIndex(item => item.nome === nome && item.imagem === imagem);
-
-  if (index !== -1) {
-    if (carrinho[index].quantidade > 1) {
-      carrinho[index].quantidade -= 1;
-    } else {
-      carrinho.splice(index, 1);
-    }
-    localStorage.setItem('carrinho', JSON.stringify(carrinho));
-    renderCarrinho();
-    atualizarContadorCarrinho();
-  }
-}
-
-// Remove todos os itens do carrinho
-function Remover() {
-  localStorage.removeItem('carrinho');
-  renderCarrinho();
-  atualizarContadorCarrinho();
-}
-
-// Atualiza o contador do carrinho em todas as páginas
-function atualizarContadorCarrinho() {
-  const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+// Função para atualizar o contador do carrinho em todas as páginas de jogos
+function atualizarContadorCarrinhoJogos() {
+  const carrinhoJogos = JSON.parse(localStorage.getItem('carrinhoJogos')) || [];
   const contador = document.getElementById('cart-count');
-  if (contador) contador.textContent = carrinho.reduce((acc, item) => acc + item.quantidade, 0);
+  if (contador) contador.textContent = carrinhoJogos.length;
 }
 
-// Inicializa o carrinho ao carregar a página do carrinho
-if (window.location.pathname.toLowerCase().includes('cart.html')) {
-  window.onload = renderCarrinho;
-} else {
-  atualizarContadorCarrinho();
+// Função para remover -1 item do carrinhoJogos a cada clique
+function removerUmItemCarrinho() {
+  let carrinhoJogos = JSON.parse(localStorage.getItem('carrinhoJogos')) || [];
+  if (carrinhoJogos.length > 0) {
+    carrinhoJogos.pop(); // Remove o último item
+    localStorage.setItem('carrinhoJogos', JSON.stringify(carrinhoJogos));
+    renderizarCarrinhoJogos();
+    // Atualiza contador se existir
+    const contador = document.getElementById('cart-count');
+    if (contador) contador.textContent = carrinhoJogos.length;
+  }
 }
 
-// Para adicionar ao carrinho em outras páginas, chame adicionarAoCarrinho(nome, preco, imagem);
+// Atualiza o contador ao carregar a página
+document.addEventListener('DOMContentLoaded', function() {
+  atualizarContadorCarrinhoJogos();
 
+  // Seleciona todos os cards de produto
+  const cards = document.querySelectorAll('.product-card');
+  cards.forEach(card => {
+    const btn = card.querySelector('.add-to-cart-btn');
+    if (btn) {
+      btn.addEventListener('click', function() {
+        adicionarAoCarrinhoPorId(card);
+      });
+    }
+  });
 
+  // Adiciona o evento ao botão "Remover ítens" se existir na página
+  const btnRemover = document.getElementById('remover');
+  if (btnRemover) {
+    btnRemover.addEventListener('click', removerUmItemCarrinho);
+  }
+});
