@@ -1,17 +1,19 @@
-/* Resetando margens e preenchimentos */
+/* CSS da tela de recuperação de senha (forgot password)
+   - Layout centralizado, formulário responsivo, barra de rolagem customizada
+   - Não fixa cor de fundo/texto para permitir tema dinâmico via theme.js
+   - Estiliza campos, botões, labels, scrollbar e animação de fade
+*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     animation: fadeIn 1s ease-in-out;
-  }
-  h2 {
+}
+h2 {
     text-align: center;
     margin-block: 3rem;
-    /* color: white; */
-  }
-  /* Estilizando o corpo da página */
-  body {
+}
+body {
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
@@ -21,11 +23,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
-    /* Removido: background-color, color */
-  }
-  
-  /* Estilizando o contêiner do formulário */
-  .form-container {
+}
+.form-container {
     width: 100%;
     max-width: 400px;
     height: 60vh;
@@ -42,17 +41,12 @@
     padding: 32px 24px;
     max-width: 350px;
     margin: 40px auto;
-    /* Removido: background-color, color */
-  }
-  
-  /* Estilizando o formulário */
-  form {
+}
+form {
     display: flex;
     flex-direction: column;
-  }
-  
-  /* Estilizando os títulos */
-  img {
+}
+img {
     position: absolute;
     margin: -75px auto 20px;
     bottom: 65%;
@@ -61,17 +55,13 @@
     border-radius: 100px;
     width: 130px;
     height: 130px;
-  }
-  
-  /* Estilizando os rótulos */
-  label {
+}
+label {
     margin-top: 10px;
     font-weight: bold;
     color: #fff9f9;
-  }
-  
-  /* Estilizando os campos de entrada */
-  input {
+}
+input {
     padding: 10px;
     margin-top: 5px;
     margin-bottom: 15px;
@@ -80,11 +70,8 @@
     font-size: 16px;
     width: 100%;
     border: none;
-    /* Removido: background, color */
-  }
-
-  /*estilizando a ancora*/
-  a {
+}
+a {
     position: relative;
     margin-bottom: 10px;
     text-decoration: none;
@@ -92,16 +79,13 @@
     left: 25%;
     font-size: 14px;
     transition: all 0.3s ease;
-  }
-
-  a:hover {
+}
+a:hover {
     color: #043a63;
-  }
-
-  /* Estilizando o botão de envio */
-  button,
-  button[type="reset"],
-  button[type="submit"] {
+}
+button,
+button[type="reset"],
+button[type="submit"] {
     padding: 12px;
     border: none;
     border-radius: 4px;
@@ -115,44 +99,34 @@
     cursor: pointer;
     font-size: 1em;
     transition: background 0.2s;
-  }
-  
-  button:hover,
-  button[type="reset"]:hover,
-  button[type="submit"]:hover {
+}
+button:hover,
+button[type="reset"]:hover,
+button[type="submit"]:hover {
     background-color: #218838;
     background: #218838;
-  }
-
-  
-  #reset:active, #submit:active {
+}
+#reset:active, #submit:active {
     transform: scale(1.05);
-  }
-
-
-  .troca{
+}
+.troca{
     position: relative;
-  }
-
-  .volta{
+}
+.volta{
     color: white;
     display: flex;
     position: absolute;
     left: 0;
     top: 0;
     padding: 40px;
-
-  }
-
-  .butao{
+}
+.butao{
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
-  }
-
-  /*Estilo da página de erro*/
-  .popup {
+}
+.popup {
     display: none;
     position: fixed;
     top: 50%;
@@ -166,31 +140,26 @@
     width: 400px;
     text-align: center;
     z-index: 1000;
-  }
-
-  .popup h3{
+}
+.popup h3{
     color: #721c24;
-  }
-
-  .popup button {
+}
+.popup button {
     background-color: #dc3545;
     color: white;
     padding: 10px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
-
-  .popup button:hover {
+}
+.popup button:hover {
     background-color: #c82333;
-  }
-
-  /*alterações do botão de exibir/ocultar senha*/
-  .password-field {
+}
+.password-field {
     position: relative;
     width: 100%;
-  }
-  .toggle-password {
+}
+.toggle-password {
     position: absolute;
     right: 10px;
     top: 40%;
@@ -211,38 +180,29 @@
     cursor: pointer;
     font-size: 1em;
     transition: background 0.2s;
-  }
-  .toggle-password:hover {
+}
+.toggle-password:hover {
     opacity: 0.7;
     background: none !important;
-  }
-
-  /*animação de fade no site*/
-
-  @keyframes fadeIn {
+}
+@keyframes fadeIn {
     from {
       opacity: 0;
     }
     to {
       opacity: 1;
     }
-  }
-
-  /* Scrollbar customizado igual ao cadastro */
+}
 .form-container::-webkit-scrollbar {
   width: 8px;
 }
-
 .form-container::-webkit-scrollbar-thumb {
   background-color: #88888870;
   border-radius: 4px;
 }
-
 .form-container::-webkit-scrollbar-thumb:active {
   background-color: #555555;
 }
-
-/* Responsivo igual cadastro */
 @media (max-width: 600px) {
   .form-container {
     max-width: 95vw;
@@ -262,77 +222,4 @@
     font-size: 1em;
     padding: 10px;
   }
-}
-
-/* Remova o bloco abaixo para não forçar fundo escuro e permitir o theme.js controlar */
-body {
-  /* background-color: #232323; */
-  /* color: #f1f1f1; */
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Segoe UI', Arial, sans-serif;
-}
-
-/* Remova também o bloco abaixo para não forçar fundo escuro na .form-container */
-.form-container {
-  /* background-color: #1d1c1c; */
-  /* color: #fff; */
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  padding: 32px 24px;
-  max-width: 350px;
-  width: 100%;
-  margin: 40px auto;
-}
-
-.form-container h2 {
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.input-box, .password-field {
-  margin-bottom: 18px;
-}
-
-input[type="email"], input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
-  /* background: #444; */
-  /* color: #fff; */
-  margin-top: 5px;
-}
-
-.butao {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-button, .toggle-password {
-  /* background: #28a745; */
-  /* color: #fff; */
-  border: none;
-  border-radius: 5px;
-  padding: 10px 15px;
-  cursor: pointer;
-  font-size: 1em;
-  transition: background 0.2s;
-}
-
-
-
-.toggle-password {
-  /* background: #444; */
-  /* color: #fff; */
-  border: none;
-  margin-left: 5px;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1em;
-  transition: background 0.2s;
 }

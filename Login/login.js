@@ -1,13 +1,11 @@
-// função para validação de login 
-document.getElementById('formLog').addEventListener('submit', function(event)
-{
-    event.preventDefault(); // impede o envio do formulário
+// Lógica de login: valida usuário e senha, redireciona em caso de erro ou sucesso
+document.getElementById('formLog').addEventListener('submit', function(event) {
+    event.preventDefault();
 
     const email = document.getElementById('email').value;
     const senha = document.getElementById('senha').value;
 
     const users = JSON.parse(localStorage.getItem('users')) || [];
-
     const validUser = users.find(user => user.email === email && user.senha === senha);
 
     if(!validUser) {
@@ -16,16 +14,13 @@ document.getElementById('formLog').addEventListener('submit', function(event)
     }
 
     alert('Login bem-sucedido!');
-
     window.location.href = '../index.html';
-
 });
 
-// Função para alternar a visibilidade da senha
+// Alterna a visibilidade da senha
 function togglePassword(inputId) {
     const input = document.getElementById(inputId);
     const button = input.nextElementSibling;
-    
     if (input.type === 'password') {
         input.type = 'text';
         button.textContent = '🔓';

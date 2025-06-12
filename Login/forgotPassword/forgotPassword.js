@@ -1,4 +1,6 @@
-document.getElementById('formRecuperar').addEventListener('submit', function(event){
+// Lógica de recuperação de senha: valida campos, altera senha no localStorage, redireciona em caso de erro ou sucesso
+
+document.getElementById('formRecuperar').addEventListener('submit', function(event) {
     event.preventDefault();
 
     const email = document.getElementById('email').value;
@@ -11,7 +13,6 @@ document.getElementById('formRecuperar').addEventListener('submit', function(eve
     }
 
     let users = JSON.parse(localStorage.getItem('users')) || [];
-
     const index = users.findIndex(u => u.email === email);
 
     if (index === -1) {
@@ -24,14 +25,12 @@ document.getElementById('formRecuperar').addEventListener('submit', function(eve
 
     alert("Senha redefinida com sucesso.");
     window.location.href = '/grupo/Login/login.html';
-
 });
-       
-// Função para alternar a visibilidade da senha
+
+// Alterna a visibilidade da senha
 function togglePassword(inputId) {
     const input = document.getElementById(inputId);
     const button = input.nextElementSibling;
-    
     if (input.type === 'password') {
         input.type = 'text';
         button.textContent = '🔓';

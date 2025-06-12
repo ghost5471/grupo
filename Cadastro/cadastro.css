@@ -1,3 +1,8 @@
+/* CSS da tela de cadastro
+   - Layout centralizado, formulário responsivo, barra de rolagem customizada
+   - Não fixa cor de fundo/texto para permitir tema dinâmico via theme.js
+   - Estiliza campos, botões, labels, scrollbar e animação de fade
+*/
 /* Resetando margens e preenchimentos */
 * {
     margin: 0;
