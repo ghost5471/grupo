@@ -8,7 +8,6 @@
   h2 {
     text-align: center;
     margin-block: 3rem;
-    color: white;
   }
   /* Estilizando o corpo da página */
   body {
@@ -18,8 +17,6 @@
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #232323;
-    color: #f1f1f1;
     min-height: 100vh;
   }
   
@@ -30,14 +27,11 @@
     height: auto;
     overflow-y: auto;
     padding: 20px;
-    background-color: white;
     border-radius: 20px;
-    background: rgba(0, 0, 0, 0.347);
     box-shadow: rgba(0, 0, 0, .5);
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     padding: 32px 24px;
@@ -56,7 +50,6 @@
   label {
     margin-top: 10px;
     font-weight: bold;
-    color: #fff9f9;
   }
   
   /* Estilizando os campos de entrada */
@@ -69,9 +62,7 @@
     border-radius: 4px;
     font-size: 16px;
     width: 100%;
-    background-color: #333;
     border: none;
-    color: #fff;
   }
 
   
@@ -81,8 +72,6 @@
   button[type="reset"],
   button[type="submit"] {
     padding: 12px;
-    background-color:#28a745;
-    color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -91,12 +80,6 @@
     width: 100px;
   }
   
-  button:hover,
-  button[type="reset"]:hover,
-  button[type="submit"]:hover {
-    background-color: #218838;
-  }
-
   
   #reset:active, #submit:active {
     transform: scale(1.05);
@@ -172,7 +155,7 @@
   .toggle-password {
     position: absolute;
     right: 10px;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
     background: none !important;
     border: none;
