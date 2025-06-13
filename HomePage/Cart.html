@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Loja de Jogos</title>
-  <link rel="stylesheet" href="/grupo/homePage.css">
-  <link rel="stylesheet" href="/grupo/Components/Background.css">
+  <link rel="stylesheet" href="/homePage.css">
   <link rel="stylesheet" href="gamepagestyle.css">
   
 </head>
@@ -13,7 +12,7 @@
   <!-- Cabeçalho com logo, menu e usuário -->
   <header>
     <div class="logo">
-      <a href="/grupo/index.html" aria-label="Página inicial">
+      <a href="/index.html" aria-label="Página inicial">
         <img src="./img/logoProjeto.png" alt="Logo GameStore">
       </a>
     </div>
@@ -21,21 +20,20 @@
     <!-- Menu padrão (visível apenas em telas grandes) -->
     <nav class="main-menu">
       <ul>
-        <li><a href="Playstation.html"><img src="./img/LogoPS.png" alt="PlayStation" width="30"> <h2>PlayStation</h2> </a></li>
         <li><a href="Xbox.html"><img src="./img/logoXbox.png" alt="Xbox" width="30"> <h2>Xbox</h2></a></li>
         <li><a href="Nintendo.html"><img src="./img/LogoNintendo.png" alt="Nintendo" width="30"> <h2>Nintendo</h2></a></li>
+        <li><a href="Playstation.html"><img src="./img/LogoPS.png" alt="PlayStation" width="30"> <h2>PlayStation</h2> </a></li>
       </ul>
     </nav>
 
     <div class="user-info">
       <img src="./img/user.png" alt="Avatar" class="avatar">
-      <a href="settings.html"><span>Usuário</span></a>
-      
+      <span>Usuário</span>
+
       <div class="cart-icon" id="cart-icon">
         🛒 <span class="cart-count" id="cart-count">0</span>
       </div>
     </div>
-
     
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
   </header>
@@ -51,7 +49,7 @@
 
  
     <div class="product-grid" id="product-grid">
-      <h1>Adicione um jogo</h1>
+      <h1>Aqui apareceriam os jogos adicionados</h1>
       <br><br><br>           
     </div>
     <div>
@@ -61,14 +59,10 @@
   
 
   <footer>
-    <p>&copy; 2025 4Players - Todos os direitos reservados. <br> <br>
-      Bruno Washington<br><br>
-      Carlos Eduardo<br><br>
-      Thiago Rocha<br><br>
-      Yago Menezes</p>
+    <p>&copy; 2025 GameStore - Todos os direitos reservados.</p>
   </footer>
 
-  <script src="/grupo/homePage.js"></script>
-  <script src="/Cart.js"></script>
+  <script src="/homePage.js"></script>
+  <script src="Cart.js"></script>
 </body>
 </html>
