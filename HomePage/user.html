@@ -63,6 +63,7 @@
 
     <div class="settings">
       <h2>Acessibilidade</h2>
+      <a href="../index.html" class="settings">Voltar</a>
 
       <label for="theme-select">Tema:</label>
       <select id="theme-select">
@@ -79,16 +80,16 @@
   </div>
 
   <script>
-    const users = JSON.parse(localStorage.getItem('users')) || [];
+   const users = JSON.parse(localStorage.getItem('users')) || [];
     const user = users[users.length - 1];
-
+/**
     if (user) {
       document.getElementById('username').textContent = user.usuario;
       document.getElementById('email').textContent = user.email;
       document.getElementById('senha').textContent = user.senha;
     } else {
       window.location.href='../Login/login.html';
-    }
+    }*/ 
 
     const body = document.body;
     const container = document.getElementById('config-container');

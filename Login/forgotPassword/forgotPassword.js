@@ -23,10 +23,10 @@ document.getElementById('formRecuperar').addEventListener('submit', function(eve
     localStorage.setItem('users', JSON.stringify(users));
 
     alert("Senha redefinida com sucesso.");
-    window.location.href = '../login.html';
+    window.location.href = '/grupo/Login/login.html';
 
 });
-
+       
 // Função para alternar a visibilidade da senha
 function togglePassword(inputId) {
     const input = document.getElementById(inputId);
@@ -34,9 +34,9 @@ function togglePassword(inputId) {
     
     if (input.type === 'password') {
         input.type = 'text';
-        button.textContent = '🔒';
+        button.textContent = '🔓';
     } else {
         input.type = 'password';
-        button.textContent = '🔓';
+        button.textContent = '🔒';
     }
 }
