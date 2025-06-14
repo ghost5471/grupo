@@ -1,3 +1,13 @@
+// Pega os elementos pelo id
+const nome = document.getElementById('nome')?.textContent || '';
+const preco = document.getElementById('preco')?.textContent || '';
+const imagem = document.getElementById('imagem')?.getAttribute('src') || '';
+
+// Cria o array carrinho com o produto
+let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+carrinho.push({ nome, preco, imagem });
+localStorage.setItem('carrinho', JSON.stringify(carrinho));
+
 // Inicializa o contador a partir do localStorage, se existir
 let cartCount = parseInt(localStorage.getItem("carrinho")) || 0;
 
@@ -43,3 +53,5 @@ function Remover() {
   localStorage.removeItem('carrinho');
   window.location.reload();
 }
+
+
