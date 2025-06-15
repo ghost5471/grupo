@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="HomePageBStyle.css">
+  <script src="./js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="/HomePage/img/logoProjeto.png" width="100px" alt="Logo"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link fs-4" href="#"><img src="/Bootstrap5_project/img/LogoPS.png" style="width: 20px; margin-right: 10px;" alt="" srcset="">PlayStation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-4" href="#"><img src="/Bootstrap5_project/img/logoXbox.png" style="width: 20px; margin-right: 10px;" alt="" srcset="">X-box</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-4" href="#"><img src="/Bootstrap5_project/img/download.png" style="width: 25px; margin-right: 10px;" alt="" srcset="">Nintendo</a>
+        </li>
+        <li>
+          <a class="nav-link fs-4" href="#"><img src="/Bootstrap5_project/img/user.png" style="width: 25px; margin-right: 10px;" alt="" srcset="">User</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Carousel -->
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+  
+  <!-- The slideshow/carousel -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="./Banner/Banner-Nintendo-Studios.jpg" alt="Nintendo" class="d-block w-100">
+    </div>
+    <div class="carousel-item">
+      <img src="./Banner/Banner-PS-Studios.jpg" alt="Playstation" class="d-block w-100">
+    </div>
+    <div class="carousel-item">
+      <img src="./Banner/Banner-xbox-Studios.jpg" alt="x box" class="d-block w-100">
+    </div>
+  </div>
+
+  <Section class="row grid">
+    <h2>Playstation</h2>
+    <div class="jogo col-md-6">
+        <img src="./img/capaNint.jpg" alt="Nintendo Jogo 1">
+        <h3>Zelda: Tears of the Kingdom</h3>
+        <p>R$ 249,90</p>
+        <button class="add-to-cart-btn">Comprar</button>
+      </div>
+      <div class="jogo col-md-6">
+        <img src="./img/capaNint2.jpg" alt="Nintendo Jogo 2">
+        <h3>MarioKart 8 Deluxe</h3>
+        <p>R$ 199,90</p>
+        <button class="add-to-cart-btn">Comprar</button>
+      </div>
+  </Section>
+  
+</div>
+
+<footer class="container-fluid bg-dark">
+    <p> <br> &copy; 2025 4Players - Todos os direitos reservados. <br> <br>
+      Desenvolvido por <br>
+      Bruno Washington da Silva Nunes <br>
+      Carlos Eduardo Claudino Gomes <br>
+      Thiago <br>
+      Yago Zi Li Ten Menezes
+    </p>
+  </footer>
+
+<script>
+  const myCarouselElement = document.querySelector('#demo')
+
+const carousel = new bootstrap.Carousel(myCarouselElement, {
+  interval: 2000,
+  touch: false
+})
+</script>
+
+</body>
+</html>
+
+

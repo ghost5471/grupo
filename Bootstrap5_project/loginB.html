@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <title>Exemplo Bootstrap</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <style>
+    .password-container {
+      position: relative;
+    }
+    .toggle-password {
+      position: absolute;
+      top: 50%;
+      right: 1px;
+      transform: translateY(-55%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+<div class="d-flex p-2 justify-content-center align-items-center vh-100">
+  <div class="p-5 bg-light border rounded shadow d-flex flex-column justify-content-center align-items-center">
+    <form action="/action_page.php" class="d-flex flex-column align-items-center" id="formLog">
+      <img src="./img/user.png" class="img-fluid mx-auto" alt="ícone de usuário" width="100px">
+      
+      <div class="mb-3 mt-3 w-100">
+        <input type="email" class="form-control" id="email" placeholder="Digite seu email" name="email">
+      </div>
+
+      <!-- Campo de senha com botão dentro -->
+      <div class="mb-3 w-100 password-container">
+        <input type="password" class="form-control" id="pwd inputId" placeholder="Digite sua senha" name="pswd">
+        <button type="button" class="toggle-password" onclick="togglePassword()">🔓</button>
+      </div>
+
+      <div class="form-check mb-3">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" name="remember"> <span>Lembrar de mim</span>
+        </label>
+      </div>
+
+      <div class="d-flex justify-content-evenly gap-4">
+        <button type="submit" class="btn btn-secondary">Voltar</button>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  // Função para alternar a visibilidade da senha
+function togglePassword(inputId) {
+    const input = document.getElementById(inputId);
+    const button = input.nextElementSibling;
+    
+    if (input.type === 'password') {
+        input.type = 'text';
+        button.textContent = '🔒';
+    } else {
+        input.type = 'password';
+        button.textContent = '🔓';
+    }
+}
+</script>
+</body>
+</html>
