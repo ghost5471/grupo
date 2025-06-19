@@ -36,9 +36,8 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  border: 1px solid #ccc; /* borda cinza clara */
   width: 100vw;
-  height: 80px; /* altura do header */
+  height: 20vh; /* altura do header */
   z-index: 1000;
   background-color: #f0f0f0; /* cinza claro */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* sombra leve */
@@ -66,9 +65,14 @@ a {
 
 /* img dentro da logo, mantido igual */
 .logo img {
-  width: 3.75rem;
-  height: 3.75rem;
+  width: 100px;
+  height: 100px;
   filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2)); /* sombra preta suave para logo */
+}
+
+.logo:hover img {
+  filter: drop-shadow(0 0 12px rgba(244, 244, 244, 0.114)); /* sombra mais intensa ao passar o mouse */
+  transform: scale(1.05); /* leve aumento de tamanho ao passar o mouse */
 }
 
 .main-menu {
