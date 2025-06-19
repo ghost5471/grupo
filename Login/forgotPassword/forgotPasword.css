@@ -90,17 +90,6 @@ body.small-font {
     border: none;
   }
 
-  /*estilizando a ancora*/
-  a {
-    position: relative;
-    margin-bottom: 10px;
-    text-decoration: none;
-    color: #f3f2f2;
-    left: 25%;
-    font-size: 14px;
-    transition: all 0.3s ease;
-  }
-
   a:hover {
     color: #043a63;
   }
@@ -147,7 +136,7 @@ body.small-font {
   .butao{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
 
   /*Estilo da página de erro*/
@@ -189,6 +178,7 @@ body.small-font {
     position: relative;
     width: 100%;
   }
+
   .toggle-password {
     position: absolute;
     right: 10px;
@@ -201,6 +191,7 @@ body.small-font {
     width: auto;
     height: auto;
   }
+
   .toggle-password:hover {
     opacity: 0.7;
     background: none;

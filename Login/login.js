@@ -5,7 +5,6 @@ document.getElementById('formLog').addEventListener('submit', function(event)
 
     const email = document.getElementById('email').value;
     const senha = document.getElementById('senha').value;
-    const userName = document.getElementById('user-name').value;
 
     const users = JSON.parse(localStorage.getItem('users')) || [];
 

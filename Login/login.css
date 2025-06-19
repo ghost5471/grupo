@@ -133,18 +133,19 @@ body.small-font {
     }
 
     & .links {
+      position: relative;
        display: flex;
        flex-direction: row;
        align-items: center;
-       justify-content: space-evenly;
+       justify-content: center;
        width: 100%;
        text-align: center;
+       gap: 50%;
 
      & a {
         text-decoration: none;
-        font-size: .9375rem;
+        font-size: .75rem;
       }
-
     }
   }
 
@@ -197,7 +198,7 @@ body.small-font {
   .butao{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
 
@@ -247,9 +248,9 @@ body.small-font {
   @media (max-width: 480px) {
     .links {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
       width: 100%;
       margin-top: 1vh;
       gap: 0.5vh;
@@ -258,7 +259,7 @@ body.small-font {
 
   .links p,
   .links a {
-    font-size: 0.5rem;
+    font-size: .3125rem;
     line-height: 1;
   }
 
@@ -271,13 +272,14 @@ body.small-font {
 
   .buttons {
     gap: 0.5rem;
-    flex-wrap: wrap;
+    flex-wrap: no-wrap;
   }
 
    .buttons button {
     font-size: 0.6rem;
     padding: 0.4rem 0.8rem;
     flex: 1 1 40%; /* deixa eles ocuparem espaço proporcional */
-    max-width: 100px;
+    max-width: 80px;
+    max-height: 30px;
   }
 }
