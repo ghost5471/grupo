@@ -25,10 +25,10 @@
     </nav>
     <div class="user-info">
       <img src="img/user.png" alt="Avatar" class="avatar">
-      <a href="../HomePage/user.html"><span id="user-name">Usuário</span></a>
-      <div class="cart-icon" id="cart-icon">
-        <a href="Cart.html">🛒</a>
-        <span class="cart-count" id="cart-count">0</span>
+      <a href=""><span>Usuário</span></a>
+      
+      <div class="cart-icon" id="cart-icon"><a href="Cart.html">🛒</a>
+         <span class="cart-count" id="cart-count"></span>
       </div>
     </div>
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
@@ -50,7 +50,7 @@
             <div class="product-info">
               <h3 id="nome">Bomberman</h3>
               <p id="preco" class="price">R$ 420.00</p>
-              <button class="add-to-cart-btn">Comprar</button>
+              <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
             </div>
           </div>
           <div class="product-card">
@@ -74,8 +74,65 @@
             <div class="product-info">
                 <h3 id="nome">Final Fight</h3>
                 <p id="preco" class="price">R$ 449.99</p>
-                <button class="add-to-cart-btn">Comprar</button>
+                <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
+              </div>
             </div>
+            
+            <div class="product-card">
+              <img id="imagem" src="games_nintendo/castlevania_dracula_x.jpg" alt="Castlevania Drácula X">
+              <div class="product-info">
+                <h3 id="nome">Castlevania - Drácula X</h3>
+                  <p id="preco" class="price">R$ 139.99</p>
+                  <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
+              </div>
+            </div>
+            
+            <div class="product-card">
+              <img id="imagem" src="games_nintendo/Final_Fight.jpg" alt="Final Fight">
+              <div class="product-info">
+                  <h3 id="nome">Final Fight</h3>
+                  <p id="preco" class="price">R$ 449.99</p>
+                  <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <img id="imagem" src="games_nintendo/Legend_of_Zelda_Breath_of_the_Wild_capa.png" alt="Legend of Zelda">
+              <div class="product-info">
+                  <h3 id="nome">Legend of Zelda</h3>
+                  <p id="preco" class="price">R$ 299.99</p>
+                  <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
+              </div>
+            </div>
+            
+            <div class="product-card">
+              <img id="imagem" src="games_nintendo/Super_Mario_64.jpg" alt="Super Mario 64">
+              <div class="product-info">
+                  <h3 id="nome">Super Mario 64</h3>
+                  <p id="preco" class="price">R$ 150.99</p>
+                  <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
+              </div>
+            </div>
+            
+            <div class="product-card">
+              <img id="imagem" src="games_nintendo/Super_Mario_Allstar.jpg" alt="Super Mario allstar">
+              <div class="product-info">
+                  <h3 id="nome">Super Mario allstar</h3>
+                  <p id="preco" class="price">R$ 349.99</p>
+                  <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
+              </div>
+            </div>
+            
+            <div class="product-card">
+              <img id="imagem" src="games_nintendo/Super_Mario_Party.png" alt="Mario Party">
+              <div class="product-info">
+                  <h3 id="nome">Mario Party</h3>
+                  <p id="preco" class="price">R$ 349.99</p>
+                  <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
+              </div>
+            </div>
+            
+            
+          
           </div>
           <div class="product-card">
             <img id="imagem" src="games_nintendo/Legend_of_Zelda_Breath_of_the_Wild_capa.png" alt="Legend of Zelda">
@@ -117,6 +174,19 @@
       Bruno Washington<br><br>
       Carlos Eduardo<br><br>
       Thiago Rocha<br><br>
+      Yago Menezes</p>
+  </footer>
+
+  <script src="../homePage.js"></script>
+  <script src="../utils/utils.js"></script>
+  <script src="./Cart.js"></script>
+</body>
+</html>
+    <p>&copy; 2025 4Players - Todos os direitos reservados. <br> <br>
+      Bruno Washington<br><br>
+      Carlos Eduardo<br><br>
+      Thiago Rocha<br><br>
+<<<<<<< HEAD
       Yago Menezes
     </p>  </footer>
 
@@ -154,5 +224,13 @@
       window.open('HomePage/user.html');
     });
   </script>
+=======
+      Yago Menezes</p>
+  </footer>
+
+  <script src="../homePage.js"></script>
+  <script src="../utils/utils.js"></script>
+  <script src="./Cart.js"></script>
+>>>>>>> Thiago2.0
 </body>
 </html>

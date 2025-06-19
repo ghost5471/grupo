@@ -249,3 +249,29 @@ body.small-font,
     display: block;
   }
 }
+
+body.dark-mode {
+  background-color: #121212 !important;
+  color: #f1f1f1 !important;
+}
+body.dark-mode header,
+body.dark-mode .floating-menu,
+body.dark-mode footer {
+  background-color: #232323 !important;
+  color: #f1f1f1 !important;
+}
+body.dark-mode .jogo {
+  background-color: #232323 !important;
+  color: #f1f1f1 !important;
+}
+body.dark-mode a,
+body.dark-mode .main-menu li a,
+body.dark-mode .floating-menu a {
+  color: #f1f1f1 !important;
+}
+body.large-font {
+  font-size: 1.2em !important;
+}
+body.small-font {
+  font-size: 0.8em !important;
+}

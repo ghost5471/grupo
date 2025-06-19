@@ -87,6 +87,41 @@
     background-color: #218838; /* Cor de fundo mais escura ao passar o mouse no botão */
 }
 
+.product-grid .product-card .remove-btn {
+    background-color: #28a745; /* Cor de fundo verde para o botão "Add to Cart" */
+    color: white; /* Cor do texto do botão */
+    border: none; /* Remove a borda do botão */
+    padding: 10px 15px; /* Preenchimento interno do botão */
+    border-radius: 5px; /* Bordas arredondadas para o botão */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    font-size: 1em; /* Tamanho da fonte do botão */
+    transition: background-color 0.2s ease-in-out; /* Transição suave na mudança de cor */
+    width: 100%; /* Botão ocupa 100% da largura disponível */
+}
+
+.product-grid .product-card .remove-btn:hover {
+    background-color: #218838; /* Cor de fundo mais escura ao passar o mouse no botão */
+}
+
+.container .btn-finalizar {
+    background-color: #28a745; /* Cor de fundo verde para o botão "Add to Cart" */
+    margin-top: 20px;
+    color: white; /* Cor do texto do botão */
+    border: none; /* Remove a borda do botão */
+    padding: 10px 15px; /* Preenchimento interno do botão */
+    border-radius: 5px; /* Bordas arredondadas para o botão */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    font-size: 1em; /* Tamanho da fonte do botão */
+    transition: background-color 0.2s ease-in-out; /* Transição suave na mudança de cor */
+    width: 250px; /* Botão ocupa 100% da largura disponível */
+    display: block;
+    margin: 30px auto 0 auto;
+}
+
+.container .btn-finalizar:hover {
+    background-color: #218838; /* Cor de fundo mais escura ao passar o mouse no botão */
+}
+
     
     .product {
       border: 1px solid #ccc;
@@ -112,4 +147,13 @@
       border-radius: 20px;
       cursor: pointer;
     }
-    
+
+    .carrinho-vazio {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40vh;
+      font-size: 2em;
+      color: #888;
+      text-align: center;
+    }

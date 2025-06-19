@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Loja de Jogos</title>
+  <title>Carrinho</title>
   <link rel="stylesheet" href="../homePage.css">
   <link rel="stylesheet" href="gamepagestyle.css">
-  <link rel="stylesheet" href="../HomePage/Cart.css">
-  <script src="../utils/theme.js"></script>
+    
 </head>
 <body>
   <!-- Cabeçalho com logo, menu e usuário -->
@@ -30,8 +29,13 @@
 
     <div class="user-info">
       <img src="./img/user.png" alt="Avatar" class="avatar">
-      <a href="../HomePage/user.html"><span id="user-name">Usuário</span></a>
+      <a href="/HomePage/user.html"><span>Usuário</span></a>
+      
+      <div class="cart-icon" id="cart-icon">
+        🛒 <span class="cart-count" id="cart-count">0</span>
+      </div>
     </div>
+
     
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
   </header>
@@ -39,34 +43,67 @@
   <!-- Menu flutuante para mobile -->
   <div id="floating-menu" class="floating-menu">
     <ul>
-      <li><a href="Playstation.html"><img src="./img/LogoPS.png" alt="PlayStation" width="20"> PlayStation</a></li>
       <li><a href="Xbox.html"><img src="./img/logoXbox.png" alt="Xbox" width="20"> Xbox</a></li>
       <li><a href="Nintendo.html"><img src="./img/LogoNintendo.png" alt="Nintendo" width="20"> Nintendo</a></li>
+      <li><a href="Playstation.html"><img src="./img/LogoPS.png" alt="PlayStation" width="20"> PlayStation</a></li>
     </ul>
   </div>
 
- <div class="main-content container">
-    <div class="product-grid" id="product-grid">
-      <br><br><br>           
-    </div>
-    <div>
-      <button class="btn">Finalizar Compra</button>
-    <button class="btn" id="remover" onclick="removerUmItemCarrinho()">Remover ítens</button>
-    </div>
-</div>
+ 
+    <main class="main-content container">
+      <div class="product-grid" id="product-grid">
+                
+      </div>
+      <div class="finalizar">
+        <button class="btn-finalizar">Finalizar Compra</button>
+        
+      </div>
+  </main>
+  
 
-   <footer>
+  <footer>
     <p>&copy; 2025 4Players - Todos os direitos reservados. <br> <br>
       Bruno Washington<br><br>
       Carlos Eduardo<br><br>
       Thiago Rocha<br><br>
+      Yago Menezes</p>
+  </footer>
+</div>
+  <script src="../homePage.js"></script>
+  <script src="../HomePage/Cart.js"></script>
+  <script src="../homePage.js"></script>
+  <script src="Cart.js"></script>
+  <script src="../utils/utils.js"></script>
+</body>
+</html>
+</html>
+                
+      </div>
+      <div class="finalizar">
+        <button class="btn-finalizar">Finalizar Compra</button>
+        
+      </div>
+  </main>
+  
+
+  <footer>
+>>>>>>> Thiago2.0
+    <p>&copy; 2025 4Players - Todos os direitos reservados. <br> <br>
+      Bruno Washington<br><br>
+      Carlos Eduardo<br><br>
+      Thiago Rocha<br><br>
+<<<<<<< HEAD
       Yago Menezes
     </p>
+=======
+      Yago Menezes</p>
+>>>>>>> Thiago2.0
   </footer>
 </div>
   <script src="../homePage.js"></script>
   <script src="../HomePage/Cart.js"></script>
 
+<<<<<<< HEAD
    <script>
     // Exibe nome do usuário no header ou "Usuário" se não logado
     const users = JSON.parse(localStorage.getItem('users')) || [];
@@ -90,5 +127,10 @@
       window.open('HomePage/user.html');
     });
   </script>
+=======
+  <script src="../homePage.js"></script>
+  <script src="Cart.js"></script>
+  <script src="../utils/utils.js"></script>
+>>>>>>> Thiago2.0
 </body>
 </html>

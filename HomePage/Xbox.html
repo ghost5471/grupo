@@ -24,10 +24,10 @@
     </nav>
     <div class="user-info">
       <img src="./img/user.png" alt="Avatar" class="avatar">
-      <a href="../HomePage/user.html"><span id="user-name">Usuário</span></a>
-      <div class="cart-icon" id="cart-icon">
-        <a href="Cart.html">🛒</a>
-        <span class="cart-count" id="cart-count">0</span>
+      <a href="user.html"><span>Usuário</span></a>
+      
+      <div class="cart-icon" id="cart-icon"><a href="Cart.html">🛒</a>
+         <span class="cart-count" id="cart-count"></span>
       </div>
     </div>
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
@@ -43,71 +43,150 @@
   
   <!--  Grid dos jogos  -->
   <main class="main-content container">
-    <div class="product-grid" id="product-grid">
-      <div class="product-card">
-        <img id="imagem" src="games_x-box/SunsetO.jpg" alt="Sunset Overdrive">
-        <div class="product-info">
-          <h3 id="nome">Sunset Overdrive</h3>
-          <p id="preco" class="price">R$ 190.00</p>
-          <button class="add-to-cart-btn">Comprar</button>
-        </div>
-      </div>
-      <div class="product-card">
-        <img id="imagem" src="games_x-box/Avo.jpg" alt="Avowed">
-        <div class="product-info">
-          <h3 id="nome">Avowed</h3>
-          <p id="preco" class="price">R$ 300.00</p>
-          <button class="add-to-cart-btn">Comprar</button>
-        </div>
-      </div>
-      <div class="product-card">
-        <img id="imagem" src="games_x-box/Doom.jpg" alt="Doom">
-        <div class="product-info">
-          <h3 id="nome">Doom</h3>
-          <p id="preco" class="price">R$ 120.00</p>
-          <button class="add-to-cart-btn">Comprar</button>
-        </div>
-      </div>
-      <div class="product-card">
-        <img id="imagem" src="games_x-box/Forza Motorsport 6.jpg" alt="Forza Motorsport 6">
-        <div class="product-info">
-          <h3 id="nome">Forza Motorsport 6</h3>
-          <p id="preco" class="price">R$ 250.00</p>
-          <button class="add-to-cart-btn">Comprar</button>
-        </div>
-      </div>
-      <div class="product-card">
-        <img id="imagem" src="games_x-box/Dishonored 2.jpg" alt="Dishonored 2">
-        <div class="product-info">
-          <h3 id="nome">Dishonored 2</h3>
-          <p id="preco" class="price">R$ 200.00</p>
-          <button class="add-to-cart-btn">Comprar</button>
-        </div>
-      </div>
-      <div class="product-card">
-        <img id="imagem" src="games_x-box/Halo.jpg" alt="Halo">
-        <div class="product-info">
-          <h3 id="nome">Halo</h3>
-          <p id="preco" class="price">R$ 199.99</p>
-          <button class="add-to-cart-btn">Comprar</button>
-        </div>
-      </div>
-      <div class="product-card">
-        <img id="imagem" src="games_x-box/Sea-Of-Thieves-Emblema.jpg" alt="Sea of Thieves">
-        <div class="product-info">
-          <h3 id="nome">Sea of Thieves</h3>
-          <p id="preco" class="price">R$ 79.99</p>
-          <button class="add-to-cart-btn">Comprar</button>
-        </div>
-      </div>
-    </div>
-  </main>
-  
+        <div class="product-grid" id="product-grid">
+                      
+            <div class="product-card">
+              <img id="imagem" src="games_x-box/SunsetO.jpg" alt="Sunset Overdrive">
+              <div class="product-info">
+                  <h3 id="nome">Sunset Overdrive</h3>
+                  <p id="preco" class="price">R$ 190.00</p>
+                  <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
+              </div>
+            </div>
+            
+            <div class="product-card">
+              <img id="imagem" src="games_x-box/Avo.jpg" alt="Avowed">
+              <div class="product-info">
+                  <h3 id="nome">Avowed</h3>
+                  <p id="preco" class="price">R$ 300.00</p>
+                  <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
+              </div>
+            </div>
+            
+            <div class="product-card">
+              <img id="imagem" src="games_x-box/Doom.jpg" alt="Doom">
+              <div class="product-info">
+                  <h3 id="nome">Doom</h3>
+                  <p id="preco" class="price">R$ 120.00</p>
+                  <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
+              </div>
+            </div>
+            
+            <div class="product-card">
+              <img id="imagem" src="games_x-box/Forza Motorsport 6.jpg" alt="Forza Motorsport 6">
+              <div class="product-info">
+                  <h3 id="nome">Forza Motorsport 6</h3>
+                  <p id="preco" class="price">R$ 250.00</p>
+                  <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
+              </div>
+            </div>
+            
+            <div class="product-card">
+              <img id="imagem" src="games_x-box/Dishonored 2.jpg" alt="Dishonored 2">
+              <div class="product-info">
+                  <h3 id="nome">Dishonored 2</h3>
+                  <p id="preco" class="price">R$ 200.00</p>
+                  <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
+              </div>
+            </div>
+            
+            <div class="product-card">
+              <img id="imagem" src="games_x-box/Halo.jpg" alt="Halo">
+              <div class="product-info">
+                  <h3 id="nome">Halo</h3>
+                  <p id="preco" class="price">R$ 199.99</p>
+                  <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
+              </div>
+            </div>
+            
+            <div class="product-card">
+              <img id="imagem" src="games_x-box/Sea-Of-Thieves-Emblema.jpg" alt="Sea of Thieves">
+              <div class="product-info">
+                  <h3 id="nome">Sea of Thieves</h3>
+                  <p id="preco" class="price">R$ 79.99</p>
+                  <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
+              </div>
+            </div>
+          
+          </div>
+    </main>
+
   <footer>
     <p>&copy; 2025 4Players - Todos os direitos reservados. <br> <br>
       Bruno Washington<br><br>
       Carlos Eduardo<br><br>
       Thiago Rocha<br><br>
+      Yago Menezes</p>
+  </footer>
+
+  <script src="../homePage.js"></script>
+  <script src="../utils/utils.js"></script>
+  <script src="./Cart.js"></script>
+</body>
+</html>
+              <img id="imagem" src="games_x-box/Avo.jpg" alt="Avowed">
+              <div class="product-info">
+                  <h3 id="nome">Avowed</h3>
+                  <p id="preco" class="price">R$ 300.00</p>
+                  <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
+              </div>
+            </div>
+            
+            <div class="product-card">
+              <img id="imagem" src="games_x-box/Doom.jpg" alt="Doom">
+              <div class="product-info">
+                  <h3 id="nome">Doom</h3>
+                  <p id="preco" class="price">R$ 120.00</p>
+                  <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
+              </div>
+            </div>
+            
+            <div class="product-card">
+              <img id="imagem" src="games_x-box/Forza Motorsport 6.jpg" alt="Forza Motorsport 6">
+              <div class="product-info">
+                  <h3 id="nome">Forza Motorsport 6</h3>
+                  <p id="preco" class="price">R$ 250.00</p>
+                  <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
+              </div>
+            </div>
+            
+            <div class="product-card">
+              <img id="imagem" src="games_x-box/Dishonored 2.jpg" alt="Dishonored 2">
+              <div class="product-info">
+                  <h3 id="nome">Dishonored 2</h3>
+                  <p id="preco" class="price">R$ 200.00</p>
+                  <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
+              </div>
+            </div>
+            
+            <div class="product-card">
+              <img id="imagem" src="games_x-box/Halo.jpg" alt="Halo">
+              <div class="product-info">
+                  <h3 id="nome">Halo</h3>
+                  <p id="preco" class="price">R$ 199.99</p>
+                  <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
+              </div>
+            </div>
+            
+            <div class="product-card">
+              <img id="imagem" src="games_x-box/Sea-Of-Thieves-Emblema.jpg" alt="Sea of Thieves">
+              <div class="product-info">
+                  <h3 id="nome">Sea of Thieves</h3>
+                  <p id="preco" class="price">R$ 79.99</p>
+                  <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
+              </div>
+            </div>
+          
+          </div>
+    </main>
+
+>>>>>>> Thiago2.0
+  <footer>
+    <p>&copy; 2025 4Players - Todos os direitos reservados. <br> <br>
+      Bruno Washington<br><br>
+      Carlos Eduardo<br><br>
+      Thiago Rocha<br><br>
+<<<<<<< HEAD
       Yago Menezes
     </p>  
   </footer>
@@ -147,5 +226,13 @@
       window.open('HomePage/user.html');
     });
   </script>
+=======
+      Yago Menezes</p>
+  </footer>
+
+  <script src="../homePage.js"></script>
+  <script src="../utils/utils.js"></script>
+  <script src="./Cart.js"></script>
+>>>>>>> Thiago2.0
 </body>
 </html>

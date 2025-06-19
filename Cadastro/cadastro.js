@@ -6,12 +6,13 @@ document.getElementById('formCad').addEventListener('submit', function(event) {
     const usuario = document.getElementById('usuario').value.trim();
     const email = document.getElementById('email').value.trim();
     const senha = document.getElementById('senha').value;
-    const confirmarSenha = document.getElementById('confirmarSenha').value;
+    const confirmarSenhaInput = document.getElementById('confirmarSenha');
+    const confirmarSenha = confirmarSenhaInput.value;
 
     if (senha !== confirmarSenha) {
         redirecionarComErro("Erro: As senhas não coicidem.");
-        confirmarSenha.value = ''; // limpa o campo
-        confirmarSenha.focus(); // foca no campo
+        confirmarSenhaInput.value = ''; // limpa o campo
+        confirmarSenhaInput.focus(); // foca no campo
         return; // Impede o envio do formulário se as senhas não conferirem
     }
 

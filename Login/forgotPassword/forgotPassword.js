@@ -24,7 +24,7 @@ document.getElementById('formRecuperar').addEventListener('submit', function(eve
     localStorage.setItem('users', JSON.stringify(users));
 
     alert("Senha redefinida com sucesso.");
-    window.location.href = '/grupo/Login/login.html';
+    window.location.href = '../login.html'; // Corrigido para caminho relativo correto
 });
 
 // Alterna a visibilidade da senha

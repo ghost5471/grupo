@@ -1,3 +1,7 @@
 {
+<<<<<<< HEAD
     "bitoAI.codeCompletion.enableAutoCompletion": false
+=======
+    "liveServer.settings.port": 5501
+>>>>>>> Thiago2.0
 }

@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Loja de Jogos</title>
   <link rel="stylesheet" href="../homePage.css">
-  <link rel="stylesheet" href="/Components/Background.css">
   <link rel="stylesheet" href="gamepagestyle.css">
   <script src="../utils/theme.js"></script>
 </head>
@@ -25,11 +24,10 @@
       </ul>
     </nav>
     <div class="user-info">
-      <img src="./img/user.png" alt="Avatar" class="avatar">
-      <a href="../HomePage/user.html"><span id="user-name">Usuário</span></a>
-      <div class="cart-icon" id="cart-icon">
-        <a href="Cart.html">🛒</a>
-        <span class="cart-count" id="cart-count">0</span>
+      <img src="img/user.png" alt="Avatar" class="avatar">
+      <a href="user.html"><span>Usuário</span></a>
+      <div class="cart-icon" id="cart-icon"><a href="Cart.html">🛒</a>
+         <span class="cart-count" id="cart-count"></span>
       </div>
     </div>
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
@@ -51,7 +49,7 @@
             <div class="product-info">
               <h3 id="nome">Ghost Of Yotei</h3>
               <p id="preco" class="price">R$ 199.00</p>
-              <button class="add-to-cart-btn">Comprar</button>
+              <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
             </div>
           </div>
           <div class="product-card">
@@ -59,7 +57,7 @@
             <div class="product-info">
               <h3 id="nome">Spider Man 2</h3>
               <p id="preco" class="price">R$ 149.99</p>
-              <button class="add-to-cart-btn">Comprar</button>
+              <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
             </div>
           </div>
           <div class="product-card">
@@ -67,7 +65,7 @@
             <div class="product-info">
               <h3 id="nome">God of War</h3>
               <p id="preco" class="price">R$ 229.99</p>
-              <button class="add-to-cart-btn">Comprar</button>
+              <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
             </div>
           </div>
           <div class="product-card">
@@ -75,7 +73,7 @@
             <div class="product-info">
               <h3 id="nome">Fallout 76</h3>
               <p id="preco" class="price">R$ 129.99</p>
-              <button class="add-to-cart-btn">Comprar</button>
+              <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
             </div>
           </div>
           <div class="product-card">
@@ -83,7 +81,7 @@
             <div class="product-info">
               <h3 id="nome">Until Dawn</h3>
               <p id="preco" class="price">R$ 199.99</p>
-              <button class="add-to-cart-btn">Comprar</button>
+              <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
             </div>
           </div>
           <div class="product-card">
@@ -91,7 +89,7 @@
             <div class="product-info">
               <h3 id="nome">Wild Arms</h3>
               <p id="preco" class="price">R$ 99.99</p>
-              <button class="add-to-cart-btn">Comprar</button>
+              <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
             </div>
           </div>
           <div class="product-card">
@@ -99,7 +97,7 @@
             <div class="product-info">
               <h3 id="nome">Dino Crisis</h3>
               <p id="preco" class="price">R$ 189.99</p>
-              <button class="add-to-cart-btn">Comprar</button>
+              <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
             </div>
           </div>
           <div class="product-card">
@@ -107,7 +105,7 @@
             <div class="product-info">
               <h3 id="nome">Lego Star Wars</h3>
               <p id="preco" class="price">R$ 89.99</p>
-              <button class="add-to-cart-btn">Comprar</button>
+              <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
             </div>
           </div>
         </div>
@@ -118,6 +116,19 @@
       Bruno Washington<br><br>
       Carlos Eduardo<br><br>
       Thiago Rocha<br><br>
+      Yago Menezes</p>
+  </footer>
+
+  <script src="../homePage.js"></script>
+  <script src="../utils/utils.js"></script>
+  <script src="./Cart.js"></script>
+</body>
+</html>
+    <p>&copy; 2025 4Players - Todos os direitos reservados. <br> <br>
+      Bruno Washington<br><br>
+      Carlos Eduardo<br><br>
+      Thiago Rocha<br><br>
+<<<<<<< HEAD
       Yago Menezes
     </p>  
   </footer>
@@ -156,5 +167,13 @@
       window.open('HomePage/user.html');
     });
   </script>
+=======
+      Yago Menezes</p>
+  </footer>
+
+  <script src="../homePage.js"></script>
+  <script src="../utils/utils.js"></script>
+  <script src="./Cart.js"></script>
+>>>>>>> Thiago2.0
 </body>
 </html>

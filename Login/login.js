@@ -14,6 +14,7 @@ document.getElementById('formLog').addEventListener('submit', function(event) {
     }
 
     alert('Login bem-sucedido!');
+    localStorage.setItem('usuarioLogado', JSON.stringify(validUser));
     window.location.href = '../index.html';
 });
 
