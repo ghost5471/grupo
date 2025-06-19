@@ -72,3 +72,24 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const btnFinalizar = document.querySelector('.finalizar'); // primeiro botão "Finalizar Compra"
+
+    if (btnFinalizar) {
+      btnFinalizar.addEventListener('click', () => {
+        const usuarioLogado = localStorage.getItem('users'); // Ex: pode ser um nome, ID ou token
+
+        if (!usuarioLogado) {
+          alert("⚠️ Você precisa estar logado para finalizar a compra!");
+          return;
+        }
+
+        // Se estiver logado:
+        alert("✅ Compra finalizada com sucesso! Obrigado pela preferência.");
+        localStorage.removeItem('carrinhoJogos');
+        renderizarCarrinhoJogos(); // Atualiza a exibição na tela
+        atualizarContadorCarrinhoJogos(); // Zera o contador
+      });
+    }
+  });
