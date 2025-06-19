@@ -54,8 +54,22 @@ a {
 }
 
 .logo {
+  position: relative;
+  display: inline-block;
   font-size: 1.5em;
   font-weight: bold;
+  background: linear-gradient(90deg, #e0e0e0, #444444);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  transition: background-size 0.4s cubic-bezier(.4,0,.2,1), color 0.4s;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.logo:hover {
+  background-size: 100% 100%;
+  color: #121212; /* ou branco, se quiser contraste */
 }
 
 /* img dentro da logo, mantido igual */
@@ -87,6 +101,13 @@ a {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-wrap: nowrap; /* impede quebra de linha */
+  min-width: 0;      /* permite encolher se necessário */
+  overflow-x: auto;  /* adiciona rolagem se passar do limite */
+}
+
+.user-color:hover {
+  text-decoration: underline;
 }
 
 .avatar {
@@ -200,7 +221,52 @@ footer {
   gap: 5px;
 }
 
-@media (max-width: 768px) {
+.link1 {
+  background: linear-gradient(90deg, #8cff00, #ffff1c);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.4s cubic-bezier(.4,0,.2,1);
+  color: #121212;
+  border-radius: 20px;
+  padding: 0.5em 2em;
+}
+
+.link1:hover {
+  background-size: 100% 100%;
+  color: #121212; /* ou altere para branco se quiser contraste */
+}
+
+.link2 {
+  background: linear-gradient(90deg, #920000, #f80000);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.4s cubic-bezier(.4,0,.2,1);
+  color: #121212;
+  border-radius: 20px;
+  padding: 0.5em 2em;
+}
+
+.link2:hover {
+  background-size: 100% 100%;
+  color: #121212; /* ou altere para branco se quiser contraste */
+}
+
+.link3 {
+  background: linear-gradient(90deg, #004271, #00a1f8);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.4s cubic-bezier(.4,0,.2,1);
+  color: #121212;
+  border-radius: 20px;
+  padding: 0.5em 2em;
+}
+
+.link3:hover {
+  background-size: 100% 100%;
+  color: #121212; /* ou altere para branco se quiser contraste */
+}
+
+@media (max-width: 920px) {
   .main-menu {
     display: none;
   }
