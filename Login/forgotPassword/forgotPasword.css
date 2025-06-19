@@ -7,8 +7,8 @@
   }
   h2 {
     text-align: center;
-    margin-block: 3rem;
-    color: white;
+    margin-block: .125rem;
+    color: rgb(0, 0, 0);
   }
   /* Estilizando o corpo da página */
   body {
@@ -29,10 +29,11 @@
     height: 60vh;
     overflow-y: auto;
     padding: 20px;
-    background-color: white;
     border-radius: 20px;
-    background: rgba(0, 0, 0, 0.347);
-    box-shadow: rgba(0, 0, 0, .5);
+    background-color: rgba(95, 85, 85, 0.1);
+    box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.3);
+    color: white;
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,11 +69,12 @@
     padding: 10px;
     margin-top: 5px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
     width: 100%;
-    background-color: #333;
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.3);
+    color: rgb(0, 0, 0);
     border: none;
   }
 
@@ -116,7 +118,7 @@
 
 
   .troca{
-    position: relative;
+    position: fixed;
   }
 
   .volta{

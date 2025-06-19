@@ -15,6 +15,29 @@
     height: 100vh;
     margin: 0;
   }
+
+  /* Estilizando o botão de envio */
+  button {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    width: 100px;
+    background-color: #bd0af4;
+  }
+  
+  button:hover {
+    background-color: #60056a;
+  }
+
+  
+  #reset:active, #submit:active {
+    transform: scale(1.05);
+  }
   
   /* Estilizando o contêiner do formulário */
   .form-container {
@@ -25,9 +48,7 @@
     padding: 3vw 5vh;
     margin: 10vh auto;
     border-radius: 2vh;
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(1.5vh);
-    -webkit-backdrop-filter: blur(1.5vh);
+    background-color: rgba(95, 85, 85, 0.1);
     box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.3);
     color: white;
     text-align: center;
@@ -47,7 +68,7 @@
         max-width: 8.125rem;
         height: auto;
         border: none;
-        fill: rgba(62, 164, 154, 0.835); /* cor fosca */
+        fill: rgb(0, 0, 0); /* cor fosca */
         stroke: none;
       }
 
@@ -60,6 +81,7 @@
           border: none;
           border-radius: 1vh;
           background-color: rgba(255, 255, 255, 0.4);
+          box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.3);
           color: rgb(0, 0, 0);
           font-size: 1.2rem;
         }
@@ -72,7 +94,8 @@
           margin-bottom: 2vh;
           border: none;
           border-radius: 1vh;
-          background-color: rgba(255, 255, 255, 0.4);
+          background-color: rgba(255, 255, 255, 0.899);
+          box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.3);
           color: rgb(12, 12, 12);
           font-size: 1.2rem;
         }
@@ -89,13 +112,12 @@
 
     & .links {
        display: flex;
-       flex-direction: column;
+       flex-direction: row;
        align-items: center;
-       justify-content: center;
+       justify-content: space-around;
        gap: 0.5vh;
        width: 100%;
        text-align: center;
-       margin-top: 1vh;
 
      & p {
         font-size: .625rem;
@@ -104,69 +126,17 @@
        & a {
           text-decoration: none;
           font-size: .625rem;
-          margin-top: 3vh;
-
         }
       }
 
      & a {
-        margin-top: 3vh;
         text-decoration: none;
         font-size: .625rem;
       }
 
     }
-
-    & .buttons {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1vh;
-
-      & #reset {
-        width: 40%;
-        padding: 1.5vh 0;
-        margin: 2vh 5%;
-        border: none;
-        border-radius: 1vh;
-        background: linear-gradient(45deg, #023cc4, #01aff3);
-        color: white;
-        font-size: 1.2rem;
-        font-weight: bold;
-        cursor: pointer;
-      }
-
-      & #submit {
-        width: 40%;
-        padding: 1.5vh 0;
-        margin: 2vh 5%;
-        border: none;
-        border-radius: 1vh;
-        background: linear-gradient(45deg, #023cc4, #01aff3);
-        color: white;
-        font-size: 1.2rem;
-        font-weight: bold;
-        cursor: pointer;
-      }
-    }
   }
 
-  .darkTheme {
-     position: fixed;
-     top: 1rem;
-     right: 1rem;
-     padding: 4px 8px;
-     font-size: 0.75rem;
-     z-index: 1000;
-     border-radius: 6px;
-     cursor: pointer;
-     background: #ffffffaa;
-     color: #000;
-     transition: all 0.3s ease-in-out;
-     border: none;
-    }
-    
   /*estilizando a ancora*/
   a:hover {
     color: #043a63;
@@ -212,6 +182,14 @@
     position: relative;
     width: 100%;
   }
+
+  .butao{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+
   .toggle-password {
     position: absolute;
     right: 10px;
@@ -290,13 +268,5 @@
     padding: 0.4rem 0.8rem;
     flex: 1 1 40%; /* deixa eles ocuparem espaço proporcional */
     max-width: 100px;
-  }
-
-  .darkTheme {
-    font-size: 0.5rem;
-    padding: 5px 10px;
-    top: 10px;
-    right: 10px;
-    border: none;
   }
 }

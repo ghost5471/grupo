@@ -22,6 +22,17 @@ function applyFontSize(size) {
   } else {
     body.classList.remove('large-font');
   }
+
+  if (size === 'small') {
+    body.classList.add('small-font');
+  } else {
+    body.classList.remove('small-font');
+  }
+
+  if (size === 'normal') {
+    body.classList.remove('large-font', 'small-font');
+  }
+
 }
 
 function applyUserPreferences() {

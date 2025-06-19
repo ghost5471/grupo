@@ -28,7 +28,7 @@
     margin-bottom: 20px;
     text-align: center;
     font-size: 24px;
-    color: #fff9f9;
+    color: #000000;
   }
   
   /* Estilizando os rótulos */
@@ -43,11 +43,12 @@
     padding: 10px;
     margin-top: 5px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
     width: 100%;
-    background-color: #333;
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.3);
+    color: rgb(0, 0, 0);
     border: none;
   }
   
@@ -55,11 +56,12 @@
     padding: 10px;
     margin-top: 5px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
     width: 100%;
-    background-color: #333;
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.3);
+    color: rgb(0, 0, 0);
     border: none;
 
   }
@@ -76,6 +78,8 @@
     transition: background-color 0.3s;
     width: 100px;
     background-color: #bd0af4;
+    box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.3);
+
   }
   
   button:hover {
@@ -94,39 +98,24 @@
     height: 80vh;
     overflow-y: auto;
     padding: 20px;
-    background-color: white;
     border-radius: 20px;
-    background: rgba(0, 0, 0, 0.347);
-    box-shadow: rgba(0, 0, 0, .5);
-  }
-  
-
-  /* Estilizando a barra de rolagem */
-  .form-container::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-  .form-container::-webkit-scrollbar-thumb {
-    background-color: #88888870;
-    border-radius: 4px;
-  }
-  
-  .form-container::-webkit-scrollbar-thumb:active {
-    background-color: #555555;
+    background-color: rgba(95, 85, 85, 0.1);
+    box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.3);
+    color: white;
   }
 
   /*Estilizando tonalidade da opção desabilitada do select*/
   .custom-select {
     color: #999; /* Cor do texto do placeholder */
-}
-.custom-select option {
-    color: #999; /* Cor do texto das opções */
-}
+  }
+  .custom-select option {
+    color: #000000; /* Cor do texto das opções */
+  }
 /* Para o placeholder, você pode usar a propriedade 'opacity' para simular uma tonalidade mais clara */
-.custom-select option[value="none"]:disabled {
+  .custom-select option[value="none"]:disabled {
     display: none;
     color: #999;
-}
+  }
 
 .custom-select:valid {
   color: #999; /* Cor do texto do placeholder */

@@ -3,21 +3,9 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/grupo/utils/jQuery-3.7.1.min.js"></script>
   <link rel="stylesheet" href="login.css">
-  <link rel="stylesheet" href="/grupo/Components/Background.css">
   <link rel="website icon" type="png" href="img/user.png">
-  <script>
-    $(document).ready(function () {
-      $("#toggleTheme").click(() => {
-       document.body.classList.toggle("dark");
-      });
-    });
-  </script>
-
-  
     <title>4Players - Login</title>
-  
   </head>
   <body>
     <div class="form-container">
@@ -37,20 +25,20 @@
         </div>
       
         <div class="links">
-          <p><a href="../Cadastro/cadastro.html" target="_blank"> Register </a></p>
+          <a href="../Cadastro/cadastro.html" target="_blank"> Register </a>
           <a href="forgotPassword/forgotPassword.html" target="_blank">Forgot Password?</a>
         </div>
-        <div class="buttons">
+
+        <div class="buttons butao">
           <button type="reset" id="reset">Limpar</button>
           <button type="submit" id="submit">Enviar</button>
         </div>
       </form>
-    <button id="toggleTheme" class="darkTheme">Alternar Tema</button>
    </div>
   
     
 
     <script src="./login.js"></script>
-    <script src="../utils/utils.js"></script>
+    <script src="/utils/utils.js"></script>
   </body>
 </html>
