@@ -28,11 +28,6 @@ function applyFontSize(size) {
   } else {
     body.classList.remove('small-font');
   }
-
-  if (size === 'normal') {
-    body.classList.remove('large-font', 'small-font');
-  }
-
 }
 
 function applyUserPreferences() {

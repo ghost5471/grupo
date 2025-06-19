@@ -21,6 +21,18 @@
     background-size: cover;
     background-repeat: no-repeat;
   }
+
+body.dark-mode {
+  background-color: #121212 !important;
+  color: #f1f1f1 !important;
+}
+
+body.large-font {
+  font-size: 1.2em !important;
+}
+body.small-font {
+  font-size: 0.8em !important;
+}
   
   /* Estilizando o contêiner do formulário */
   .form-container {
@@ -72,7 +84,7 @@
     border-radius: 4px;
     font-size: 16px;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgb(255, 255, 255);
     box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.3);
     color: rgb(0, 0, 0);
     border: none;

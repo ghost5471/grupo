@@ -17,6 +17,18 @@
     background-size: cover;
     background-repeat: no-repeat;
   }
+
+body.dark-mode {
+  background-color: #121212 !important;
+}
+
+body.large-font {
+  font-size: 1.2em !important;
+}
+body.small-font {
+  font-size: 0.8em !important;
+}
+
     /* Estilizando o formulário */
   form {
     display: flex;
@@ -46,7 +58,7 @@
     border-radius: 4px;
     font-size: 16px;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgb(255, 255, 255);
     box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.3);
     color: rgb(0, 0, 0);
     border: none;
@@ -59,7 +71,7 @@
     border-radius: 4px;
     font-size: 16px;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgb(255, 255, 255);
     box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.3);
     color: rgb(0, 0, 0);
     border: none;
@@ -105,7 +117,7 @@
 
   /*Estilizando tonalidade da opção desabilitada do select*/
   .custom-select {
-    color: #999; /* Cor do texto do placeholder */
+    color: #000000; /* Cor do texto do placeholder */
   }
   .custom-select option {
     color: #000000; /* Cor do texto das opções */
@@ -113,11 +125,11 @@
 /* Para o placeholder, você pode usar a propriedade 'opacity' para simular uma tonalidade mais clara */
   .custom-select option[value="none"]:disabled {
     display: none;
-    color: #999;
+    color: #000000;
   }
 
 .custom-select:valid {
-  color: #999; /* Cor do texto do placeholder */
+  color: #000000; /* Cor do texto do placeholder */
 }
 
   /*alterações do botão de exibir/ocultar senha*/
