@@ -9,6 +9,7 @@
     text-align: center;
     margin-block: .125rem;
     color: rgb(0, 0, 0);
+    margin-bottom: 15%;
   }
   /* Estilizando o corpo da página */
   body {
@@ -137,6 +138,7 @@ body.small-font {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    margin-top: 10%;
   }
 
   /*Estilo da página de erro*/

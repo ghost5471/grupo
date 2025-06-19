@@ -128,14 +128,14 @@ a {
 }
 
 .jogo {
-  background-color: #fafafa; /* fundo quase branco */
   padding: 15px;
   border-radius: 10px;
   text-align: center;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* sombra leve */
-  transition: transform 0.3s;
+  background-color: #d6d6d6; /* fundo quase branco */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.262); /* sombra leve */
   color: #121212; /* texto escuro */
+  transition: transform 0.3s;
 }
 
 .jogo:hover {

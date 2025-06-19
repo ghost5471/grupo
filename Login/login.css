@@ -210,6 +210,8 @@ body.small-font {
     background: none !important;
     border: none;
     cursor: pointer;
+    margin-right: 2%;
+    margin-top: 0.5%;
     padding: 0;
     width: auto;
     height: auto;
