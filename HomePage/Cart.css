@@ -67,6 +67,16 @@ section {
     background-color: #218838; /* Cor de fundo mais escura ao passar o mouse no botão */
 }
 
+/* Fonte grande */
+    .large-font {
+      font-size: 1.2em;
+    }
+
+    /* Fonte pequena */
+    .small-font {
+      font-size: 0.8em;
+    }
+
     
     .product {
       border: 1px solid #ccc;

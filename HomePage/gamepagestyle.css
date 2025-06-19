@@ -18,6 +18,17 @@
     --link-color-light: #000000;
 }
 
+/* Fonte grande */
+    .large-font {
+      font-size: 1.2em;
+    }
+
+    /* Fonte pequena */
+    .small-font {
+      font-size: 0.8em;
+    }
+
+
  .main-content {
     padding: 20px; /* Preenchimento interno do conteúdo principal */
     margin-top: 20px; /* Margem superior para separar do cabeçalho */

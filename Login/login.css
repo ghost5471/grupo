@@ -201,6 +201,16 @@ body.small-font {
     justify-content: space-around;
   }
 
+  /* Fonte grande */
+    .large-font {
+      font-size: 1.2em;
+    }
+
+    /* Fonte pequena */
+    .small-font {
+      font-size: 0.8em;
+    }
+
 
   .toggle-password {
     position: absolute;

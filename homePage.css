@@ -23,14 +23,23 @@
     --link-color-light: #000000;
 }
 
-
-
 body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #ffffff; /* branco para claro */
   color: #121212; /* texto escuro */
   padding-top: 110px; /* ajuste conforme a altura do header */
 }
+
+/* Fonte grande */
+    .large-font {
+      font-size: 1.2em;
+    }
+
+    /* Fonte pequena */
+    .small-font {
+      font-size: 0.8em;
+    }
+
 
 header {
   position: fixed;
