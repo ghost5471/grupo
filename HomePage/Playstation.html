@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja de Jogos</title>
+  <link rel="stylesheet" href="../homePage.css">
+  <link rel="stylesheet" href="gamepagestyle.css">
+</head>
+<body>
+  <!-- Cabeçalho com logo, menu e usuário -->
+  <header>
+    <div class="logo">
+      <a href="../index.html" aria-label="Página inicial">
+        <img src="./img/logoProjeto.png" alt="Logo GameStore">
+      </a>
+    </div>
+    <nav class="main-menu">
+      <ul>
+        <li><a href="Xbox.html"><img src="../HomePage/img/logoXbox.png" alt="Xbox" width="30"> <h2>Xbox</h2></a></li>
+        <li><a href="Nintendo.html"><img src="../HomePage/img/LogoNintendo.png" alt="Nintendo" width="35"> <h2>Nintendo</h2></a></li>
+        <li><a href="Playstation.html"><img src="../HomePage/img/LogoPS.png" alt="PlayStation" width="30"> <h2>PlayStation</h2> </a></li>
+      </ul>
+    </nav>
+    <div class="user-info">
+      <img src="../img/user.png" alt="Avatar" class="avatar">
+      <a href="user.html"><span>Usuário</span></a>
+      <div class="cart-icon" id="cart-icon"><a href="Cart.html">🛒</a>
+         <span class="cart-count" id="cart-count"></span>
+      </div>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  </header>
+  <!-- Menu flutuante para mobile -->
+  <div id="floating-menu" class="floating-menu">
+    <ul>
+      <li><a href="Xbox.html"><img src="../HomePage/img/logoXbox.png" alt="Xbox" width="20"> Xbox</a></li>
+      <li><a href="Nintendo.html"><img src="../HomePage/img/LogoNintendo.png" alt="Nintendo" width="20"> Nintendo</a></li>
+      <li><a href="Playstation.html"><img src="../HomePage/img/LogoPS.png" alt="PlayStation" width="20"> PlayStation</a></li>
+    </ul>
+  </div>
+
+<!--  Grid dos jogos  -->
+  <main class="main-content container">
+        <div class="product-grid" id="product-grid">
+          <div class="product-card">
+            <img id="imagem" src="games_playstation/ghost-of-yotei-game-3840x2160-19048.jpg" alt="PS Jogo 1">
+            <div class="product-info">
+              <h3 id="nome">Ghost Of Yotei</h3>
+              <p id="preco" class="price">R$ 199.00</p>
+              <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <img id="imagem" src="games_playstation/marvels-spider-man-2-3840x2160-11609.jpg" alt="PS Jogo 2">
+            <div class="product-info">
+              <h3 id="nome">Spider Man 2</h3>
+              <p id="preco" class="price">R$ 149.99</p>
+              <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <img id="imagem" src="games_playstation/GodofWar.jpg" alt="PS Jogo 3">
+            <div class="product-info">
+              <h3 id="nome">God of War</h3>
+              <p id="preco" class="price">R$ 229.99</p>
+              <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <img id="imagem" src="games_playstation/Fallout76.jpg" alt="PS Jogo 4">
+            <div class="product-info">
+              <h3 id="nome">Fallout 76</h3>
+              <p id="preco" class="price">R$ 129.99</p>
+              <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <img id="imagem" src="games_playstation/UntilDawn.jpg" alt="PS Jogo 5">
+            <div class="product-info">
+              <h3 id="nome">Until Dawn</h3>
+              <p id="preco" class="price">R$ 199.99</p>
+              <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <img id="imagem" src="games_playstation/Wildarms.jpg" alt="PS Jogo 6">
+            <div class="product-info">
+              <h3 id="nome">Wild Arms</h3>
+              <p id="preco" class="price">R$ 99.99</p>
+              <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <img id="imagem" src="games_playstation/dinocrisis.jpg" alt="PS Jogo 7">
+            <div class="product-info">
+              <h3 id="nome">Dino Crisis</h3>
+              <p id="preco" class="price">R$ 189.99</p>
+              <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <img id="imagem" src="games_playstation/starwars.jpg" alt="PS Jogo 8">
+            <div class="product-info">
+              <h3 id="nome">Lego Star Wars</h3>
+              <p id="preco" class="price">R$ 89.99</p>
+              <button class="add-to-cart-btn" onclick="adicionarAoCarrinho()">Comprar</button>
+            </div>
+          </div>
+        </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 4Players - Todos os direitos reservados. <br> <br>
+      Bruno Washington<br><br>
+      Carlos Eduardo<br><br>
+      Thiago Rocha<br><br>
+      Yago Menezes</p>
+  </footer>
+
+  <script src="../homePage.js"></script>
+  <script src="../utils/utils.js"></script>
+  <script src="./Cart.js"></script>
+</body>
+</html>

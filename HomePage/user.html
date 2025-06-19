@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Configurações do Usuário</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    p, label {
+      margin: 10px 0;
+    }
+
+    /* Modo escuro */
+    body.dark-mode, .container.dark-mode {
+      background-color: #121212;
+      color: #f1f1f1;
+    }
+
+    /* Fonte grande */
+    .large-font {
+      font-size: 1.2em;
+    }
+
+    .settings {
+      margin-top: 30px;
+      border-top: 1px solid #ccc;
+      padding-top: 20px;
+    }
+
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="config-container">
+    <h2>Dados do Usuário</h2>
+    <p><strong>Usuário:</strong> <span id="username"></span></p>
+    <p><strong>E-mail:</strong> <span id="email"></span></p>
+    <p><strong>Senha:</strong> <span id="senha"></span></p>
+
+    <div class="settings">
+      <h2>Acessibilidade</h2>
+      <a href="../index.html" class="settings">Voltar</a>
+
+      <label for="theme-select">Tema:</label>
+      <select id="theme-select">
+        <option value="light">Claro</option>
+        <option value="dark">Escuro</option>
+      </select>
+
+      <label for="font-select">Tamanho da fonte:</label>
+      <select id="font-select">
+        <option value="normal">Normal</option>
+        <option value="large">Grande</option>
+      </select>
+    </div>
+  </div>
+
+  <script>
+   const users = JSON.parse(localStorage.getItem('users')) || [];
+    const user = users[users.length - 1];
+/**
+    if (user) {
+      document.getElementById('username').textContent = user.usuario;
+      document.getElementById('email').textContent = user.email;
+      document.getElementById('senha').textContent = user.senha;
+    } else {
+      window.location.href='../Login/login.html';
+    }*/ 
+
+    const body = document.body;
+    const container = document.getElementById('config-container');
+    const themeSelect = document.getElementById('theme-select');
+    const fontSelect = document.getElementById('font-select');
+
+    // Aplica preferências salvas
+    const savedTheme = localStorage.getItem('user-theme') || 'light';
+    const savedFontSize = localStorage.getItem('user-font') || 'normal';
+
+    themeSelect.value = savedTheme;
+    fontSelect.value = savedFontSize;
+
+    applyTheme(savedTheme);
+    applyFontSize(savedFontSize);
+
+    themeSelect.addEventListener('change', () => {
+      const theme = themeSelect.value;
+      applyTheme(theme);
+      localStorage.setItem('user-theme', theme);
+    });
+
+    fontSelect.addEventListener('change', () => {
+      const font = fontSelect.value;
+      applyFontSize(font);
+      localStorage.setItem('user-font', font);
+    });
+
+    function applyTheme(theme) {
+      if (theme === 'dark') {
+        body.classList.add('dark-mode');
+        container.classList.add('dark-mode');
+      } else {
+        body.classList.remove('dark-mode');
+        container.classList.remove('dark-mode');
+      }
+    }
+
+    function applyFontSize(size) {
+      if (size === 'large') {
+        container.classList.add('large-font');
+      } else {
+        container.classList.remove('large-font');
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="cadastro.css">
+  <link rel="stylesheet" href="/grupo/Components/Background.css">
+  <link rel="website icon" type="png" href="./img/iconGame.png">
+
+  <title>4Players - Cadastro</title>
+
+</head>
+<body>
+  <div class="form-container">
+    <form id="formCad">
+      
+      <h2>Cadastro</h2>
+
+      <input type="text" id="usuario" name="usuario" placeholder="Username" pattern="[A-Za-z0-9]{3,}" title="Mínimo de 3 caracteres, apenas letras e números" required>
+
+      <select name="genero" id="genero" class="custom-select" required>
+        <option value="none" selected disabled hidden>Selecione o sexo</option>
+        <option value="Masculino">Masculino</option>
+        <option value="Feminino">Feminino</option>
+      </select>
+
+      <input type="text" id="afiliation" name="afiliation" placeholder="Mother's name" required>
+      <input type="text" id="cpf" name="cpf" maxlength="14" placeholder="Cpf - 000.000.000-00" required>
+      <input type="email" id="email" name="email" placeholder="E-mail" required>
+
+      <div class="password-field">
+        <input type="password" id="senha" name="senha" minlength="8" placeholder="Password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" title="Mínimo de 8 caracteres, com pelo menos 1 letra e 1 número" required>
+        <button type="button" class="toggle-password" onclick="togglePassword('senha')">🔒</button>        
+      </div>
+
+      <div class="password-field">
+        <input type="password" id="confirmarSenha" name="confirmarSenha" minlength="8" placeholder="Confirm password" required>
+        <button type="button" class="toggle-password" onclick="togglePassword('confirmarSenha')">🔒</button>
+      </div>
+
+      <input type="text" id="telefoneFixo" name="landline" maxlength="14" placeholder=" Landline - (00) 0000-0000">
+      <input type="text" id="telefone" name="telefone" maxlength="15" placeholder="Telephone - (00) 00000-0000" required>
+      <input type="text" id="cep" name="endereco" maxlength="10" placeholder="CEP - 00000-000" required>
+
+
+    <div class="butao">
+      <button type="reset" id="reset">Limpar</button>
+      <button type="submit" id="submit">Enviar</button>
+    </div>
+
+    </form>
+  </div>
+  
+  <script src="./cadastro.js"></script>
+  <script src="/grupo/utils/utils.js"></script>
+</body>
+</html>
