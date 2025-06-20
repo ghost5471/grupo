@@ -9,6 +9,7 @@
       font-family: Arial, sans-serif;
       padding: 20px;
       transition: background-color 0.3s, color 0.3s;
+      display: flex;
     }
 
     .container {
@@ -17,7 +18,7 @@
       background: white;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 0 10px #ccc;
+      box-shadow: 1px 2px 5px #cccccc54;
       transition: background-color 0.3s, color 0.3s;
     }
 
@@ -59,22 +60,21 @@
 
     .user-actions-btns {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       gap: 10px;
       margin: 20px 0;
     }
     .user-actions-btns a {
-      flex: 1;
       text-decoration: none;
     }
     .user-actions-btns button {
-      width: 100%;
+      width: 120px;
       background: #28a745;
       color: #fff;
       border: none;
       border-radius: 5px;
       padding: 10px 0;
-      font-size: 1em;
+      font-size: 0.8em;
       cursor: pointer;
       transition: background 0.2s;
     }
@@ -142,8 +142,17 @@
       actionsDiv.innerHTML = `
         <div class="user-actions-btns">
           <a href="../Login/forgotPassword/forgotPassword.html"><button type="button">Trocar senha</button></a>
+          <button type="button" id="btnLogout">Logout</button>
         </div>
       `;
+
+        const btn = document.getElementById("btnLogout").addEventListener('click', function(){
+
+        localStorage.removeItem('users');
+        window.location.href = '../index.html';
+
+      });
+
     }
 
     // Preferências de tema e fonte

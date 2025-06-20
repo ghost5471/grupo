@@ -169,15 +169,6 @@
   </footer>
 
   <script>
-    // Aplica tema salvo
-    const userTheme = localStorage.getItem('user-theme') || 'light';
-    if (userTheme === 'dark') {
-      document.body.classList.add('dark-mode');
-    }
-  </script>
-
-
-  <script>
     const users = JSON.parse(localStorage.getItem('users')) || [];
     const user = users[users.length - 1];
     if (user) {

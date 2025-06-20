@@ -231,7 +231,7 @@ footer {
 }
 
 .link1 {
-  background: linear-gradient(90deg, #8cff00, #ffff1c);
+  background: linear-gradient(90deg, #66b405, #6fff1c);
   background-size: 0% 100%;
   background-repeat: no-repeat;
   transition: background-size 0.4s cubic-bezier(.4,0,.2,1);

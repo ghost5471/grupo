@@ -17,11 +17,13 @@ document.getElementById('formLog').addEventListener('submit', function(event)
 
     if(validUser) {
         userName.textContent = JSON.stringify(email);
+
+        alert('Login bem-sucedido!');
+        localStorage.setItem('usuarioLogado', JSON.stringify(validUser));
+        window.location.href = '../index.html';
     }
 
-    alert('Login bem-sucedido!');
-    localStorage.setItem('usuarioLogado', JSON.stringify(validUser));
-    window.location.href = '../index.html';
+    
 
 });
 
