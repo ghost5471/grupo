@@ -18,14 +18,14 @@
     background-repeat: no-repeat;
   }
 
-body.dark-mode {
+.dark-mode {
   background-color: #121212 !important;
 }
 
-body.large-font {
+.large-font {
   font-size: 1.2em !important;
 }
-body.small-font {
+.small-font {
   font-size: 0.8em !important;
 }
 
@@ -154,17 +154,6 @@ body.small-font {
     opacity: 0.7;
     background: none;
   }
-
-/* Fonte grande */
-    .large-font {
-      font-size: 1.2em;
-    }
-
-    /* Fonte pequena */
-    .small-font {
-      font-size: 0.8em;
-    }
-
 
 .butao{
     display: flex;

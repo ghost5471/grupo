@@ -9,16 +9,16 @@
       font-family: Arial, sans-serif;
       padding: 20px;
       transition: background-color 0.3s, color 0.3s;
-      display: flex;
+      background-color: #e5e5e5;
     }
 
     .container {
       max-width: 400px;
       margin: auto;
-      background: white;
+      background: rgba(197, 196, 196, 0.54);
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 1px 2px 5px #cccccc54;
+      box-shadow: 0px 2px 5px #cccccc80;
       transition: background-color 0.3s, color 0.3s;
     }
 
@@ -52,7 +52,7 @@
     }
 
     select {
-      width: 100%;
+      width: 50%;
       padding: 8px;
       margin-top: 5px;
       border-radius: 5px;
@@ -81,6 +81,20 @@
     .user-actions-btns button:hover {
       background: #218838;
     }
+
+    @media (max-width: 468px) {
+      .user-actions-btns button {
+        width: 80px;
+      }
+
+    }
+
+    @media (max-width: 338px) {
+      .user-actions-btns button {
+        width: 60px;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -95,13 +109,13 @@
       <h2>Acessibilidade</h2>
     <hr>
     
-    <label for="theme-select">Tema:</label>
+    <br><label for="theme-select">Tema:</label>
     <select id="theme-select">
       <option value="light">Claro</option>
       <option value="dark">Escuro</option>
     </select>
     
-    <label for="font-select">Tamanho da fonte:</label>
+    <br><br><label for="font-select">Fonte:</label>
       <select id="font-select">
         <option value="small">Pequena</option>
         <option value="normal">Normal</option>
