@@ -49,3 +49,6 @@ function redirecionarUsuarioOuLogin() {
     window.location.href = '../Login/login.html';
   }
 }
+
+// Garante que tema e fonte sejam reaplicados ao voltar para a página (mobile e desktop)
+window.addEventListener('pageshow', applyUserPreferences);
